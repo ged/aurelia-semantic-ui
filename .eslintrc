@@ -1,0 +1,13 @@
+{
+	"parser": "babel-eslint",
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"rules": {
+		"quotes": 0,
+		"no-multi-spaces": 0,
+		"no-trailing-spaces": 1,
+		"no-mixed-spaces-and-tabs": 0
+	}
+}
