@@ -16,6 +16,8 @@ The major "to do" list:
 
 ## Installing
 
+Again, this isn't released or production-ready yet, but once it is, this is how you'll install it.
+
 In your project install the plugin via `jspm` with following command
 
     jspm install aurelia-semantic-ui
@@ -46,6 +48,8 @@ Anywhere in your app add the following markup as a sample -
         <a class="header">Elyse</a>
       </ui-card-content>
     </ui-card>
+
+In the meantime, I think you can point jspm at [the Github mirror](https://github.com/ged/aurelia-semantic-ui) to try it out. You're probably the sort of person that already knows how to do that if you're into trying out experimental code. If it's not possible for some reason, let me know, especially if you're inclined to do so via a patch.
 
 
 ## Thanks
