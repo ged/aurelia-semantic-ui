@@ -1,4 +1,5 @@
 <template>
+	<require from="./element-section.css"></require>
 	<require from="./element-card"></require>
 
 	<section class="element">
@@ -7,24 +8,15 @@
 			ui-${name}
 		</h3>
 
-		<div class="ui clearing basic segment">
-			<ui-segment variations="basic right floated">
+		<div class="ui stackable mobile reversed two column grid">
+			<div class="twelve wide column">
+				<content>
+				</content>
+			</div>
+
+			<div class="four wide column">
 				<element-card></element-card>
-			</ui-segment>
-
-			<content select=".element-docs">
-				<p>Still to come.</p>
-			</content>
-		</div>
-
-		<div class="ui basic segment">
-			<!-- TO DO: The "Examples" header should go here, but it'd look bad
-				if any elements don't have examples. I suppose they all should, though,
-				so that might be a non-issue.
-			-->
-
-			<content select=".element-examples">
-			</content>
+			</div>
 		</div>
 
 	</section>
