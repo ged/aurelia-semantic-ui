@@ -2,6 +2,17 @@
 
 This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It contains custom elements for some of the [Semantic UI](http://semantic-ui.com/) widgets.
 
+It isn't really even alpha quality right now, as I'm still figuring out how half of this stuff works, so don't depend on anything quite yet.
+
+The major "to do" list:
+
+* Figure out how to be able to nest custom elements, as content selectors don't work inside them currently. See this Plnkr for a minimal demonstration: http://plnkr.co/edit/cvSYkXPXIc62YJvGBiPL?p=info .
+* Once I get the above figured out and I'm confident this isn't just a giant waste of time: TESTING. I have done none at all, mostly because I had no idea what things should look like. But I need get tests implemented ASAP.
+* Documentation via the demo app seems to be working well, but I've spent more time on layout and organization than content so far, so I need to catch up with the code so I can keep them in parity.
+* Figure out how to bundle the demo app so I can put it up somewhere.
+* Figure out how to distribute the plugin.
+* Finish making custom elements for the rest of the Semantic widgets.
+
 
 ## Installing
 
