@@ -1,111 +1,79 @@
 <template>
+
+	<require from="../components/element-section"></require>
+	<require from="../components/element-example"></require>
+	<require from="./views.css"></require>
 	
-	<header>
-		<h2 class="ui header">"Element" Custom Elements</h2>
-	</header>
+	<div class="ui centered container">
+		<header>
+			<h2 class="ui header">"View" Widgets</h2>
+		</header>
 
-	<p>These are custom elements from the "Elements" section of the Semantic
-		UI widget set.</p>
+		<p>These are custom elements from the "Views" section of the Semantic
+			UI widget set.</p>
+
+		<element-section
+			name="card"
+			category="view"
+			status="incomplete"
+			variations="fluid, centered, colored"
+			description="A card displays site content in a manner similar to a playing card">
+
+			<template replace-part="element-docs">
+				<p>The <code>ui-card</code> element corresponds to the Card
+				Semantic element.</p>
+
+				<p>Though the Semantic UI docs intermix the <code>card</code> and <code>cards</code>
+				widgets in the documentation (<code>cards</code> is listed in "Types", and several
+				of the "Variants" are actually variants on the <code>cards</code> container), they
+				are separate elements in this plugin.</p>
+			</template>
+
+			<template replace-part="element-examples">
+				<h3 class="ui header">Examples</h3>
+
+				<element-example language="markup">
+					<ui-card>
+						<ui-card-image src="assets/images/kristy.png"></ui-card-image>
+						<ui-card-content>
+							<a class="header">Kristy</a>
+							<ui-card-content-meta>
+								<span class="date">Joined in 2013</span>
+							</ui-card-content-meta>
+							<ui-card-content-description>
+								Kristy is an art director living in New York.
+							</ui-card-content-description>
+						</ui-card-content>
+						<ui-card-extra-content>
+							<a>
+								<ui-icon name="user"></ui-icon>
+								22 Friends
+							</a>
+						</ui-card-extra-content>
+					</ui-card>
+				</element-example>
+			</template>
+
+		</element-section>
 
 
-	<section class="element">
-		<h3 class="ui dividing header">
-			<ui-icon name="code outline"></ui-icon>
-			ui-header
-		</h3>
+		<element-section
+			name="cards"
+			category="view"
+			status="incomplete"
+			variations="column count, stackable, doubling"
+			description="A group of cards"
+			docs-href="http://semantic-ui.com/views/card.html#cards">
 
-		<ui-card>
-			<ui-card-content>
-				<ui-card-content-header>Header</ui-card-content-header>
-				<ui-card-content-meta>Element</ui-card-content-meta>
-				<ui-card-content-description>
-					<p>A header provides a short summary of content</p>
+			<template replace-part="element-docs">
+				<p>The <code>ui-cards</code> element corresponds to the Cards
+				Semantic element that's listed as a type of Card in the 
+				documentation.</p>
+			</template>
 
-					<ui-header type="sub">Supported Types</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>content</ui-list-item>
-						<ui-list-item>icon</ui-list-item>
-						<ui-list-item>sub</ui-list-item>
-					</ui-list>
+		</element-section>
 
-					<ui-header type="sub">Supported Variations</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>(none)</ui-list-item>
-					</ui-list>
-
-				</ui-card-content-description>
-			</ui-card-content>
-			<ui-card-extra-content>
-				<a class="left floated link" href="http://semantic-ui.com/elements/header.html">
-					<ui-icon name="external"></ui-icon>
-					Docs
-				</a>
-				<span class="right floated status">
-					<ui-icon name="warning sign"></ui-icon>
-					Incomplete
-				</span>
-			</ui-card-extra-content>
-		</ui-card>
-
-		<p>The <code>ui-header</code> element corresponds to the "content"-type Header
-		Semantic element.</p>
-		
-		<p>The "page"-type headers use the <code>H</code> tag, so you'll (currently) 
-			need to use those as-is.</p>
-
-		<div class="clearer"></div>
-	</section>
-
-	<section class="element">
-		<h3 class="ui dividing header">
-			<ui-icon name="code outline"></ui-icon>
-			ui-list
-		</h3>
-
-		<ui-card>
-			<ui-card-content>
-				<ui-card-content-header>List</ui-card-content-header>
-				<ui-card-content-meta>Element</ui-card-content-meta>
-				<ui-card-content-description>
-					<p>A list is used to group related content</p>
-
-					<ui-header type="sub">Supported Types</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>bulleted</ui-list-item>
-						<ui-list-item>ordered</ui-list-item>
-						<ui-list-item>link</ui-list-item>
-					</ui-list>
-
-					<ui-header type="sub">Supported Variations</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>horizontal</ui-list-item>
-						<ui-list-item>inverted</ui-list-item>
-						<ui-list-item>selection</ui-list-item>
-						<ui-list-item>animated</ui-list-item>
-						<ui-list-item>relaxed</ui-list-item>
-						<ui-list-item>divided</ui-list-item>
-						<ui-list-item>celled</ui-list-item>
-						<ui-list-item>size (mini, tiny, small, large, big, huge, massive)</ui-list-item>
-					</ui-list>
-
-				</ui-card-content-description>
-			</ui-card-content>
-			<ui-card-extra-content>
-				<a class="left floated link" href="http://semantic-ui.com/elements/list.html">
-					<ui-icon name="external"></ui-icon>
-					Docs
-				</a>
-				<span class="right floated status">
-					<ui-icon name="warning sign"></ui-icon>
-					Incomplete
-				</span>
-			</ui-card-extra-content>
-		</ui-card>
-
-		<p>The <code>ui-list</code> element corresponds to the List Semantic element.</p>
-
-		<div class="clearer"></div>
-	</section>
+	</div>
 
 </template>
 

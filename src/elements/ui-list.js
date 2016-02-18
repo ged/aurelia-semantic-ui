@@ -11,7 +11,7 @@ import {inject, customElement, useView, containerless, bindable} from 'aurelia-f
 export class UIListElement {
 
 	@bindable type = null;
-	@bindable variation = null;
+	@bindable variations = null;
 
 }
 
@@ -23,4 +23,13 @@ export class UIListElement {
 @useView('./ui-list/item.html')
 @containerless()
 export class UIListItemElement {}
+
+
+/**
+ * ui-list-item-content
+ */
+@customElement( 'ui-list-item-content' )
+@useView('./ui-list/item-content.html')
+@containerless()
+export class UIListItemContentElement {}
 

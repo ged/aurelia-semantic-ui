@@ -1,0 +1,413 @@
+/**
+ * SemanticUI prism.js theme for JavaScript, CSS and HTML
+ * Based on prism.css and the SemanticUI docs
+ * @author Michael Granger
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #333;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: "Source Code Pro", monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+
+code[class*="language-"] span,
+pre[class*="language-"] span {
+  -moz-transition: 0.5s color ease;
+  -webkit-transition: 0.5s color ease;
+  -ms-transition: 0.5s color ease;
+  transition: 0.5s color ease;
+}
+
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #858188;
+}
+pre:hover .token.punctuation {
+	color: #892A6F;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #858188;
+}
+pre:hover .token.property,
+pre:hover .token.tag,
+pre:hover .token.boolean,
+pre:hover .token.number,
+pre:hover .token.constant,
+pre:hover .token.symbol,
+pre:hover .token.deleted {
+  color: #892A6F;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+
+/* -- Semantic UI docs styles below. Move them up/discard them as they're converted. -- */
+
+
+/*--------------
+   Hover Only
+---------------*/
+
+
+code.code.xml {
+  color: #555555;
+}
+code.code.xml:hover {
+  color: #333333;
+}
+
+/* Class Name */
+code .string,
+code .tag .value,
+code .phpdoc,
+code .dartdoc,
+code .tex .formula {
+  color: #008C79;
+}
+code:hover .string,
+code:hover .tag .value,
+code:hover .phpdoc,
+code:hover .dartdoc,
+code:hover .tex .formula {
+  color: #007b6b;
+}
+
+/* Comment */
+code .comment,
+code .template_comment,
+code .diff .header,
+code .javadoc {
+  color: #AAAAAA;
+  font-style: italic;
+}
+
+
+/* Properties */
+code .tag,
+code .rules .property,
+code .django .tag .keyword {
+  color: #858188;
+  font-weight: normal;
+}
+
+code:hover .tag,
+code:hover .rules .property,
+code:hover .django .tag .keyword {
+  color: #892A6F;
+  font-weight: normal;
+}
+
+/* HTML Tag */
+code .tag .title {
+  color: #858188;
+  font-weight: normal;
+}
+code:hover .tag .title {
+  color: #892A6F;
+}
+
+/* Attribute */
+code .attribute,
+code .variable,
+code .lisp .body {
+  color: #8D8A8A;
+  transition: color 0.3s;
+}
+code:hover .attribute,
+code:hover .variable,
+code:hover .lisp .body {
+  color: #934E4E;
+}
+
+/* CSS ID */
+code .title,
+code .id,
+code .scss .preprocessor {
+  color: #9C989F;
+  font-weight: bold;
+}
+
+/* CSS Attribute */
+code .rule .attribute {
+  color: #892A6F;
+}
+code:hover .rule .attribute {
+  color: #892A6F;
+}
+
+/* CSS Value */
+code .number,
+code .hexcolor,
+code .ruby .constant {
+  color: #666666;
+}
+
+code:hover .number,
+code:hover .hexcolor,
+code:hover .ruby .constant {
+  color: #333333;
+}
+
+/* LESS */
+code.less .number,
+code.less .hexcolor,
+code.less .ruby .constant {
+  color: #005FAA;
+}
+code.less:hover .number,
+code.less:hover .hexcolor,
+code.less:hover .ruby .constant {
+  color: #005FAA;
+}
+/* LESS Variable */
+code.less .attribute,
+code.less .variable,
+code.less .lisp .body {
+  color: #333333;
+  transition: color 0.3s;
+}
+code.less:hover .attribute,
+code.less:hover .variable,
+code.less:hover .lisp .body {
+  color: #333333;
+}
+
+/* Emphasized Value */
+code.code .class {
+  color: #008C79;
+}
+code.code .class b {
+  font-weight: normal;
+  background-color: rgba(90, 90, 90, 0);
+  border-radius: 5px;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 0px -4px;
+  padding: 1px 4px;
+}
+code.code .class b {
+  background-color: rgba(218, 189, 40, 0.15);
+  color: #9E6C00;
+}
+
+/*
+code.code:hover .class.string b,
+code.code:hover .class.value b {
+  background-color: rgba(218, 189, 40, 0.1);
+  color: inherit;
+}
+*/
+
+
+/* Linked UI */
+code .tag .value a {
+  position: relative;
+  border-radius: 5px;
+  line-height: 1;
+  color: inherit;
+  margin: 0px -2px;
+  padding: 1px 4px;
+  background-color: rgba(150, 150, 150, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+code .tag .value a b {
+  border-radius: 0px;
+}
+code .tag .value a:hover {
+  background-color: rgba(40, 150, 218, 0.2);
+  color: #00689E;
+}
+code .tag .value a:hover b {
+  background-color: transparent;
+  color: inherit;
+}
+
+
+
+/*--------------
+      Normal
+---------------*/
+
+code .keyword,
+code .css .rule .keyword,
+code .winutils,
+code .javascript .title,
+code .nginx .title,
+code .subst,
+code .request,
+code .status {
+  color: #333;
+  font-weight: bold;
+}
+
+code .javascript .title,
+code .list .keyword,
+code .subst {
+  font-weight: normal;
+}
+
+code .class .title,
+code .type,
+code .vhdl .literal,
+code .tex .command {
+  color: #458;
+  font-weight: bold;
+}
+
+
+code .regexp {
+  color: #009926;
+}
+
+code .built_in {
+  color: #0086b3;
+}
+
+code .preprocessor,
+code .pragma,
+code .pi,
+code .doctype,
+code .shebang,
+code .cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+code .deletion {
+  background: #fdd;
+}
+
+code .addition {
+  background: #dfd;
+}
+
+code .diff .change {
+  background: #0086b3;
+}
+
+code .chunk {
+  color: #aaa;
+}

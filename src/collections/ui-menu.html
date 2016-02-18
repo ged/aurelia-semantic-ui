@@ -1,0 +1,12 @@
+<template>
+
+	<div class="ui ${variations} ${type} menu">
+		<content></content>
+
+		<template if.bind="router">
+		<a repeat.for="row of router.navigation" class="item ${row.isActive ? 'active' : ''}"
+			href.bind="row.href">${row.title}</a>
+		</template>
+	</div>
+	
+</template>

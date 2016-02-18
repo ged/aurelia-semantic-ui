@@ -1,0 +1,12 @@
+
+nav {
+	background: white;
+}
+
+@media only screen and (max-width: 700px) {
+    .ui.top.menu {
+        display: none !important;
+    }
+
+	
+}

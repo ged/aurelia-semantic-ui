@@ -1,60 +1,63 @@
 <template>
+
+	<require from="../components/element-section"></require>
 	
-	<header>
-		<h2 class="ui header">"Collection" Custom Elements</h2>
-	</header>
+	<div class="ui centered container">
+		<header>
+			<h2 class="ui header">"Collection" Widgets</h2>
+		</header>
 
-	<p>These are custom elements from the "Collections" section of the Semantic
-		UI widget set.</p>
+		<p>These are custom elements from the "Collections" section of the Semantic
+			UI widget set.</p>
 
 
-	<section class="collections element">
-		<h3 class="ui dividing header">
-			<ui-icon name="code outline"></ui-icon>
-			ui-breadcrumb
-		</h3>
+		<element-section
+			name="breadcrumb"
+			category="collection"
+			status="incomplete"
+			variations="size"
+			description="A breadcrumb is used to show hierarchy between content">
 
-		<ui-card>
-			<ui-card-content>
-				<ui-card-content-header>Breadcrumb</ui-card-content-header>
-				<ui-card-content-meta>Collection</ui-card-content-meta>
-				<ui-card-content-description>
-					<p>A breadcrumb is used to show hierarchy between content</p>
+			<template replace-part="element-docs">
+				<p>The <code>ui-breadcrumb</code> element corresponds to the Breadcrumb
+				Semantic element.</p>
+	
+				<h4 class="ui header">To Do</h4>
+	
+				<ul>
+					<li>You'll have to add your own dividers,
+						but it should auto-create them for you.</li>
+					<li>It should integrate with the Aurelia router.</li>
+				</ul>
+			</template>
 
-					<ui-header type="sub">Supported Variations</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>size</ui-list-item>
-					</ui-list>
+		</element-section>
 
-				</ui-card-content-description>
-			</ui-card-content>
-			<ui-card-extra-content>
-				<a class="left floated link"
-					href="http://semantic-ui.com/collections/breadcrumb.html">
-					<ui-icon name="external"></ui-icon>
-					Docs
-				</a>
-				<span class="right floated status">
-					<ui-icon name="warning sign"></ui-icon>
-					Incomplete
-				</span>
-			</ui-card-extra-content>
-		</ui-card>
 
-		<p>The <code>ui-breadcrumb</code> element corresponds to the Breadcrumb
-		Semantic element.</p>
-		
-		<h4 class="ui header">To Do</h4>
-		
-		<ui-list>
-			<ui-list-item>You'll have to add your own dividers,
-				but it should auto-create them for you. </ui-list-item>
-			<ui-list-item>It should integrate with the Aurelia router.</ui-list-item>
-		</ui-list>
+		<element-section
+			name="menu"
+			category="collection"
+			status="incomplete"
+			types="secondary, pointing, tabular, text, vertical, pagination"
+			variations="fixed, stackable, inverted, icon, labeled icon, fluid, compact, evenly divided, attached, horizontal size, borderless"
+			description="A menu displays grouped navigation actions">
 
-		<div class="clearer"></div>
-	</section>
+			<template replace-part="element-docs">
+				<p>The <code>ui-menu</code> element corresponds to the Menu
+				Semantic element.</p>
+	
+				<ul>
+					<li>Router integration</li>
+					<li><code>ui-menu-item</code></li>
+					<li><code>&lt;content&gt;</code></li>
+					<li><code>colored</code> and <code>fitted</code> variations are 
+						on <code>menu-item</code></li>
+				</ul>
+			</template>
 
+		</element-section>
+
+	</div>
 
 </template>
 

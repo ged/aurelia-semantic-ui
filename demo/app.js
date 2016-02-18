@@ -73,13 +73,6 @@ export class DemoApp {
 	}
 
 	attached() {
-		// :FIXME: These should eventually be moved into custom elements
-		$('.main.menu').
-			each( elem => this.logger.debug("Setting visibility of .main.menu ", elem) ).
-			visibility({ type: 'fixed' });
-		$('.overlay').
-			each( elem => this.logger.debug("Setting visibility of .overlay", elem) ).
-			visibility({ type: 'fixed', offset: 80 });
 
 		// lazy load images
 		$('.image').visibility({

@@ -1,111 +1,16 @@
 <template>
 	
-	<header>
-		<h2 class="ui header">"Element" Custom Elements</h2>
-	</header>
+	<require from="../components/element-section"></require>
 
-	<p>These are custom elements from the "Elements" section of the Semantic
-		UI widget set.</p>
+	<main class="ui centered container">
+		<header>
+			<h2 class="ui header">"Module" Widgets</h2>
+		</header>
 
+		<p>These are custom elements from the "Elements" section of the Semantic
+			UI widget set.</p>
 
-	<section class="element">
-		<h3 class="ui dividing header">
-			<ui-icon name="code outline"></ui-icon>
-			ui-header
-		</h3>
-
-		<ui-card>
-			<ui-card-content>
-				<ui-card-content-header>Header</ui-card-content-header>
-				<ui-card-content-meta>Element</ui-card-content-meta>
-				<ui-card-content-description>
-					<p>A header provides a short summary of content</p>
-
-					<ui-header type="sub">Supported Types</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>content</ui-list-item>
-						<ui-list-item>icon</ui-list-item>
-						<ui-list-item>sub</ui-list-item>
-					</ui-list>
-
-					<ui-header type="sub">Supported Variations</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>(none)</ui-list-item>
-					</ui-list>
-
-				</ui-card-content-description>
-			</ui-card-content>
-			<ui-card-extra-content>
-				<a class="left floated link" href="http://semantic-ui.com/elements/header.html">
-					<ui-icon name="external"></ui-icon>
-					Docs
-				</a>
-				<span class="right floated status">
-					<ui-icon name="warning sign"></ui-icon>
-					Incomplete
-				</span>
-			</ui-card-extra-content>
-		</ui-card>
-
-		<p>The <code>ui-header</code> element corresponds to the "content"-type Header
-		Semantic element.</p>
-		
-		<p>The "page"-type headers use the <code>H</code> tag, so you'll (currently) 
-			need to use those as-is.</p>
-
-		<div class="clearer"></div>
-	</section>
-
-	<section class="element">
-		<h3 class="ui dividing header">
-			<ui-icon name="code outline"></ui-icon>
-			ui-list
-		</h3>
-
-		<ui-card>
-			<ui-card-content>
-				<ui-card-content-header>List</ui-card-content-header>
-				<ui-card-content-meta>Element</ui-card-content-meta>
-				<ui-card-content-description>
-					<p>A list is used to group related content</p>
-
-					<ui-header type="sub">Supported Types</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>bulleted</ui-list-item>
-						<ui-list-item>ordered</ui-list-item>
-						<ui-list-item>link</ui-list-item>
-					</ui-list>
-
-					<ui-header type="sub">Supported Variations</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>horizontal</ui-list-item>
-						<ui-list-item>inverted</ui-list-item>
-						<ui-list-item>selection</ui-list-item>
-						<ui-list-item>animated</ui-list-item>
-						<ui-list-item>relaxed</ui-list-item>
-						<ui-list-item>divided</ui-list-item>
-						<ui-list-item>celled</ui-list-item>
-						<ui-list-item>size (mini, tiny, small, large, big, huge, massive)</ui-list-item>
-					</ui-list>
-
-				</ui-card-content-description>
-			</ui-card-content>
-			<ui-card-extra-content>
-				<a class="left floated link" href="http://semantic-ui.com/elements/list.html">
-					<ui-icon name="external"></ui-icon>
-					Docs
-				</a>
-				<span class="right floated status">
-					<ui-icon name="warning sign"></ui-icon>
-					Incomplete
-				</span>
-			</ui-card-extra-content>
-		</ui-card>
-
-		<p>The <code>ui-list</code> element corresponds to the List Semantic element.</p>
-
-		<div class="clearer"></div>
-	</section>
+	</main>
 
 </template>
 

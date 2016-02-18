@@ -1,0 +1,33 @@
+<template>
+
+	<require from="prism/themes/prism.css"></require>
+	<require from="./element-example.css"></require>
+
+	<!--
+		FIXME:
+		Why does changing these to ui-segment and ui-container
+		cause the content selector not to render?
+	-->
+	<div class="element-example ui raised segments">
+		<div class="ui segment">
+			<div class="ui stackable two column grid container">
+
+				<div class="six wide column">
+					<content></content>
+				</div>
+
+				<div class="ten wide column">
+					<pre><code class="example-source language-${language || 'none'}"
+							textcontent.bind="exampleSource">Loading...</code></pre>
+				</div>
+
+			</div>
+		</div>
+	
+		<div show.bind="caption" class="ui secondary segment">
+			<p>${caption}</p>
+		</div>
+	</div>
+
+</template>
+

@@ -1,111 +1,210 @@
 <template>
 
-	<header>
-		<h2 class="ui header">"Element" Custom Elements</h2>
-	</header>
+	<require from="../components/element-section"></require>
+	<require from="../components/element-example"></require>
+	
+	<div class="ui centered container">
+		<header>
+			<h2 class="ui header">"Element" Widgets</h2>
+		</header>
 
-	<p>These are custom elements from the "Elements" section of the Semantic
-		UI widget set.</p>
+		<p>These are custom elements from the "Elements" section of the Semantic
+			UI widget set.</p>
 
 
-	<section class="elements element">
-		<h3 class="ui dividing header">
-			<ui-icon name="code outline"></ui-icon>
-			ui-header
-		</h3>
+		<element-section
+			name="container"
+			category="element"
+			status="incomplete"
+			types="text, fluid, grid"
+			variations="*"
+			description="A container limits content to a maximum width">
 
-		<ui-card>
-			<ui-card-content>
-				<ui-card-content-header>Header</ui-card-content-header>
-				<ui-card-content-meta>Element</ui-card-content-meta>
-				<ui-card-content-description>
-					<p>A header provides a short summary of content</p>
+			<div class="element-docs">
+				<p>The <code>ui-container</code> element corresponds to the Container
+					Semantic element.</p>
+			</div>
 
-					<ui-header type="sub">Supported Types</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>content</ui-list-item>
-						<ui-list-item>icon</ui-list-item>
-						<ui-list-item>sub</ui-list-item>
-					</ui-list>
+		</element-section>
 
-					<ui-header type="sub">Supported Variations</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>(none)</ui-list-item>
-					</ui-list>
 
-				</ui-card-content-description>
-			</ui-card-content>
-			<ui-card-extra-content>
-				<a class="left floated link" href="http://semantic-ui.com/elements/header.html">
-					<ui-icon name="external"></ui-icon>
-					Docs
-				</a>
-				<span class="right floated status">
-					<ui-icon name="warning sign"></ui-icon>
-					Incomplete
-				</span>
-			</ui-card-extra-content>
-		</ui-card>
+		<element-section
+			name="segment"
+			category="element"
+			status="incomplete"
+			types="raised, stacked, piled, vertical"
+			variations="inverted, attached, padded, compact, colored, emphasis, circular, 
+				clearing, floated, text alignment, basic"
+			description="A segment is used to create a grouping of related content">
 
-		<p>The <code>ui-header</code> element corresponds to the "content"-type Header
-		Semantic element.</p>
-		
-		<p>The "page"-type headers use the <code>H</code> tag, so you'll (currently) 
-			need to use those as-is.</p>
+			<div class="element-docs">
+				<p>The <code>ui-segment</code> element corresponds to the Segment
+					Semantic element.</p>
 
-		<div class="clearer"></div>
-	</section>
+				<p>You can put segments in groups by wrapping them in a 
+					<code>ui-segments</code>.</p>
+			</div>
 
-	<section class="elements element">
-		<h3 class="ui dividing header">
-			<ui-icon name="code outline"></ui-icon>
-			ui-list
-		</h3>
+		</element-section>
 
-		<ui-card>
-			<ui-card-content>
-				<ui-card-content-header>List</ui-card-content-header>
-				<ui-card-content-meta>Element</ui-card-content-meta>
-				<ui-card-content-description>
-					<p>A list is used to group related content</p>
 
-					<ui-header type="sub">Supported Types</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>bulleted</ui-list-item>
-						<ui-list-item>ordered</ui-list-item>
-						<ui-list-item>link</ui-list-item>
-					</ui-list>
+		<element-section
+			name="segments"
+			category="element"
+			status="incomplete"
+			types="raised, stacked, piled, horizontal"
+			description="A group of segments can be formatted to appear together">
 
-					<ui-header type="sub">Supported Variations</ui-header>
-					<ui-list type="bulleted">
-						<ui-list-item>horizontal</ui-list-item>
-						<ui-list-item>inverted</ui-list-item>
-						<ui-list-item>selection</ui-list-item>
-						<ui-list-item>animated</ui-list-item>
-						<ui-list-item>relaxed</ui-list-item>
-						<ui-list-item>divided</ui-list-item>
-						<ui-list-item>celled</ui-list-item>
-						<ui-list-item>size (mini, tiny, small, large, big, huge, massive)</ui-list-item>
-					</ui-list>
+			<div class="element-docs">
+				<p>The <code>ui-segments</code> element corresponds to the "Groups"
+					described in the documentation of the Segment Semantic element.</p>
+			</div>
 
-				</ui-card-content-description>
-			</ui-card-content>
-			<ui-card-extra-content>
-				<a class="left floated link" href="http://semantic-ui.com/elements/list.html">
-					<ui-icon name="external"></ui-icon>
-					Docs
-				</a>
-				<span class="right floated status">
-					<ui-icon name="warning sign"></ui-icon>
-					Incomplete
-				</span>
-			</ui-card-extra-content>
-		</ui-card>
+		</element-section>
 
-		<p>The <code>ui-list</code> element corresponds to the List Semantic element.</p>
 
-		<div class="clearer"></div>
-	</section>
+		<element-section
+			name="header"
+			category="element"
+			status="incomplete"
+			types="content, icon, sub"
+			description="A header provides a short summary of content">
+
+			<div class="element-docs">
+				<p>The <code>ui-header</code> element corresponds to the "content"-type Header
+				Semantic element.</p>
+			</div>
+
+			<div class="element-examples">
+				<h3 class="ui header">Examples</h3>
+				
+				<element-example language="markup" caption="Various header sizes">
+				<ui-segment type="vertical">
+					<ui-header size="huge">Huge Header</ui-header>
+					<p></p>
+					<ui-header size="large">Large Header</ui-header>
+					<p></p>
+					<ui-header size="medium">Medium Header</ui-header>
+					<p></p>
+					<ui-header size="small">Small Header</ui-header>
+					<p></p>
+					<ui-header size="tiny">Tiny Header</ui-header>
+					<p></p>
+				</ui-segment>
+				</element-example>
+
+				<element-example language="markup" caption="Sub headers">
+				<ui-list variations="horizontal">
+					<ui-list-item>
+						<img class="ui mini circular image" src="/images/avatar2/small/molly.png">
+						<ui-list-item-content>
+							<ui-header variations="sub">Molly</ui-header>
+							Coordinator
+						</ui-liste-item-content>
+					</ui-list-item>
+					<ui-list-item>
+						<img class="ui mini circular image" src="/images/avatar2/small/elyse.png">
+						<ui-list-item-content>
+							<ui-header variations="sub">Elyse</ui-header>
+							Developer
+						</ui-liste-item-content>
+					</ui-list-item>
+					<ui-list-item>
+						<img src="/images/avatar2/small/eve.png" class="ui mini circular image">
+						<ui-list-item-content>
+							<ui-header variations="sub">Eve</ui-header>
+							Project Manager
+						</ui-liste-item-content>
+					</ui-list-item>
+				</ui-list>
+				</element-example>
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="list"
+			category="element"
+			status="incomplete"
+			types="bulleted, ordered, link"
+			variations="horizontal, inverted, selection, animated, relaxed, divided, celled, size"
+			description="A list is used to group related content">
+
+			<div class="element-docs">
+				<p>The <code>ui-list</code> element corresponds to the List Semantic element.</p>
+			</div>
+
+			<div class="element-examples">
+				<h3 class="ui header">Examples</h3>
+
+				<element-example language="markup" caption="The basic list type">
+				<ui-list>
+					<ui-list-item>Apples</ui-list-item>
+					<ui-list-item>Pears</ui-list-item>
+					<ui-list-item>Oranges</ui-list-item>
+				</ui-list>
+				</element-example>
+
+				<element-example language="markup" caption="With icons">
+				<ui-list>
+					<ui-list-item>
+						<ui-icon name="users"></ui-icon>
+						<ui-list-item-content>
+							Semantic UI
+						</ui-list-item-content>
+					</ui-list-item>
+					<ui-list-item>
+						<ui-icon name="marker"></ui-icon>
+						<ui-list-item-content>
+							New York, NY
+						</ui-list-item-content>
+					</ui-list-item>
+					<ui-list-item>
+						<ui-icon name="mail"></ui-icon>
+						<ui-list-item-content>
+							<a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+						</ui-list-item-content>
+					</ui-list-item>
+					<ui-list-item>
+						<ui-icon name="linkify"></ui-icon>
+						<ui-list-item-content>
+							<a href="http://www.semantic-ui.com">semantic-ui.com</a>
+						</ui-list-item-content>
+					</ui-list-item>
+				</ui-list>
+				</element-example>
+
+				<element-example language="markup" caption="With more complex content">
+				<ui-list variations="relaxed divided">
+					<ui-list-item>
+						<ui-icon size="large" name="github" variations="middle aligned"></ui-icon>
+						<ui-list-item-content>
+							<a class="header">Semantic-Org/Semantic-UI</a>
+							<div class="description">Updated 10 mins ago</div>
+						</ui-list-item-content>
+					</ui-list-item>
+					<ui-list-item>
+						<ui-icon size="large" name="github" variations="middle aligned"></ui-icon>
+						<ui-list-item-content>
+							<a class="header">Semantic-Org/Semantic-UI-Docs</a>
+							<div class="description">Updated 22 mins ago</div>
+						</ui-list-item-content>
+					</ui-list-item>
+					<ui-list-item>
+						<ui-icon size="large" name="github" variations="middle aligned"></ui-icon>
+						<ui-list-item-content>
+							<a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+							<div class="description">Updated 34 mins ago</div>
+						</ui-list-item-content>
+					</ui-list-item>
+				</ui-list>
+				</element-example>
+			</div>
+
+		</element-section>
+
+	</div>
 
 </template>
 

@@ -12,6 +12,8 @@ import {customElement, containerless, bindable} from 'aurelia-framework';
 export class UIIconElement {
 
 	@bindable name = "help circle";
+	@bindable size;
+	@bindable variations;
 
 }
 

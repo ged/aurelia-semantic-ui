@@ -12,6 +12,9 @@ export function configure(aurelia) {
 	aurelia.use.
 		standardConfiguration().
 		developmentLogging().
+		globalResources(
+			'demo/resources/index.js'
+		).
 		plugin( 'aurelia-animator-css' ).
 		plugin( 'aurelia-semantic-ui' );
 

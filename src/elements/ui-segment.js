@@ -5,15 +5,14 @@
  * Segment - http://semantic-ui.com/elements/segment.html
  */
 
-import {inject, customElement, computedFrom, bindable, LogManager} from 'aurelia-framework';
-import $ from 'jquery';
+import {customElement, computedFrom, bindable, inject, LogManager} from 'aurelia-framework';
 
-@customElement( 'ui-segment' )
 @inject( Element )
+@customElement( 'ui-segment' )
 export class UISegmentElement {
 
 	@bindable type = null;
-	@bindable variation = null;
+	@bindable variations = null;
 
 	@bindable loading = false;
 	@bindable disabled = false;
@@ -29,20 +28,17 @@ export class UISegmentElement {
 	get classes() {
 		let results = [];
 
-		this.logger.debug( "Getting the css classes: ", this._classes );
 		for ( let cls of this._classes.keys() ) {
-			this.logger.debug( `Adding class: ${cls}` );
 			results.push( cls );
 		}
-		this.logger.debug( `Classes set to '${results.join(" ")}'` );
 		return results.join( ' ' );
 	}
 
 
 	attached() {
-		this.logger.debug( "Attached to", this.element );
 		if ( this.loading ) { this._classes.add('loading') }
 		if ( this.disabled ) { this._classes.add('disabled') }
+		return true;
 	}
 
 
@@ -51,7 +47,7 @@ export class UISegmentElement {
 		if ( newValue ) {
 			this._classes.add( 'loading' );
 		} else {
-			this._classes.delete( 'type' );
+			this._classes.delete( 'loading' );
 		}
 	}
 

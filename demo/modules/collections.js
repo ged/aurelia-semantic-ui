@@ -1,7 +1,7 @@
 /* -*- javascript -*- */
 "use strict";
 
-export class Elements {
-	heading = 'Elements';
+export class Collections {
+	heading = 'Collections';
 }
 

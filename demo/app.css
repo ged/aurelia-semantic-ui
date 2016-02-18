@@ -3,8 +3,8 @@
 body {
     background-color: #FFFFFF;
 }
-.main.container {
-    margin-top: 2em;
+main {
+    padding-top: 2em;
 }
 
 div.segment pre {
@@ -15,6 +15,12 @@ ui-segment + p {
 	margin-top: 1em;
 }
 
+code, kbd, pre, samp {
+	font-family: 'Source Code Pro';
+}
+p code {
+	background: rgba(240,240,0, 0.2);
+}
 
 /* Element sections */
 section.element {
@@ -23,11 +29,6 @@ section.element {
 section.element div.clearer {
 	clear: both;
 }
-
-section.element ui-card {
-	float: right;
-}
-
 
 
 /* Menu visibility stuff */
@@ -42,33 +43,20 @@ section.element ui-card {
     margin-right: 1.5em;
 }
 
-.overlay {
-    float: left;
-    margin: 0em 3em 1em 0em;
-}
-.overlay .menu {
-    position: relative;
-    left: 0;
-    transition: left 0.5s ease;
-}
-
 .main.menu.fixed {
     background-color: #FFFFFF;
     border: 1px solid #DDD;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
-.overlay.fixed .menu {
-    left: 800px;
-}
 
-.text.container .left.floated.image {
-    margin: 2em 2em 2em -4em;
-}
-.text.container .right.floated.image {
-    margin: 2em -4em 2em 2em;
-}
 
 .ui.footer.segment {
     margin: 5em 0em 0em;
     padding: 5em 0em;
 }
+
+.header .logo {
+	padding-right: 1em;
+}
+
+

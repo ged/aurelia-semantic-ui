@@ -5,21 +5,22 @@ var browserSync = require('browser-sync');
 // to create a dev server instance
 // at http://localhost:9000
 gulp.task('serve', ['build'], function(done) {
-  browserSync({
-    online: false,
-    open: false,
-    port: 6161,
-    logLevel: 'debug',
-    ui: {
-      port: 6163,
-    },
-    server: {
-      baseDir: ['.'],
-      directory: true,
-      middleware: function (req, res, next) {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        next();
-      }
-    }
-  }, done);
+	browserSync({
+		online: false,
+		open: false,
+		port: 6161,
+		logLevel: 'debug',
+		logConnections: true,
+		ui: {
+			port: 6163,
+		},
+		server: {
+			index: 'demo.html',
+			baseDir: ['.'],
+			middleware: function (req, res, next) {
+				res.setHeader('Access-Control-Allow-Origin', '*');
+				next();
+			}
+		}
+	}, done);
 });

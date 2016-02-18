@@ -12,8 +12,8 @@ import $ from 'jquery';
 @inject( Element )
 export class UICardElement {
 
-	@bindable type = null;
-	@bindable variation = null;
+	@bindable type;
+	@bindable variations;
 
 }
 
@@ -25,6 +25,17 @@ export class UICardElement {
 @useView('./ui-card/content.html')
 @containerless()
 export class UICardContentElement {}
+
+
+/**
+ * ui-card-image
+ */
+@customElement( 'ui-card-image' )
+@useView('./ui-card/image.html')
+@containerless()
+export class UICardImageElement {
+	@bindable src;
+}
 
 
 /**

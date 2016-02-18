@@ -27,7 +27,7 @@ Create (if you haven't already) a file `main.js` in your `src` folder with follo
 
 Anywhere in your app add the following markup as a sample -
 
-    <ui-card variation="centered">
+    <ui-card variations="centered">
       <ui-card-image>
         <img src="/images/avatar2/large/elyse.png">
       </ui-card-image>

@@ -5,7 +5,7 @@
  * Breadcrumb - http://semantic-ui.com/collections/breadcrumb.html
  */
 
-import {inject, Element, customElement, useView, containerless, bindable} from 'aurelia-framework';
+import {inject, customElement, useView, containerless, bindable} from 'aurelia-framework';
 
 @inject(Element)
 @customElement( 'ui-breadcrumb' )
@@ -13,6 +13,10 @@ export class UIBreadcrumbElement {
 
 	@bindable divider = null;
 	@bindable size = null;
+
+	constructor( element ) {
+		this.element = element;
+	}
 
 	attached() {
 		// TODO: Figure out how to auto-inject the divider
