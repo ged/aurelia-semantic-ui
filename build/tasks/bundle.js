@@ -3,36 +3,33 @@ var bundle = require('aurelia-bundler').bundle;
 
 var config = {
 	force: true,
-	baseURL: '.',                   // baseURL of the application
-	configPath: './config.js',      // config.js file. Must be within `baseURL`
+	baseURL: '.',
+	configPath: './config.js',
 	bundles: {
-		"dist/demo/app-build": {           // bundle name/path. Must be within `baseURL`. Final path is: `baseURL/dist/app-build.js`.
+		"dist/demo/app-build": {
 			includes: [
-				'[demo/*.js]',
 				'demo.html!text',
+				'[demo/main.js]',
 				'demo/*.html!text',
 				'demo/*.css!text'
 			],
-			excludes: [
-				'core-js',
-				'github:jspm/nodelibs-process'
-			],
 			options: {
 				inject: true,
-				minify: true,
-				rev: true
+				// minify: true,
+				// rev: true
 			}
 		},
 		"dist/demo/vendor-build": {
 			includes: [
 				'aurelia-bootstrapper',
 				'aurelia-animator-css',
+				'prismjs',
 				'semantic',
 				'semantic/semantic.css!text'
 			],
 			options: {
 				inject: true,
-				minify: true
+				// minify: true
 			}
 		}
 	}

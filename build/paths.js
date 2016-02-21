@@ -11,7 +11,7 @@ module.exports = {
 	css: appRoot + '**/*.css',
 	demoCss: demoRoot + '**/*.css',
 	html: appRoot + '**/*.html',
-	demoHtml: demoRoot + '**/*.html',
+	demoHtml: [ './demo.html', demoRoot + '**/*.html'],
 	output: 'dist/',
 	doc:'./doc',
 	e2eSpecsSrc: 'test/e2e/src/*.js',

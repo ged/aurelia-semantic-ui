@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var debug = require('gulp-debug');
 var runSequence = require('run-sequence');
 var to5 = require('gulp-babel');
 var sourcemaps = require('gulp-sourcemaps');
@@ -77,16 +78,19 @@ gulp.task('build-system', ['build-html-system'], function () {
 
 gulp.task('build-html-demo', function () {
 	return gulp.src(paths.demoHtml).
+		pipe(debug({title: 'build-html-demo'})).
 		pipe(gulp.dest(paths.output + 'demo'));
 });
 
 gulp.task('build-css-demo', function () {
 	return gulp.src(paths.demoCss).
+		pipe(debug({title: 'build-css-demo'})).
 		pipe(gulp.dest(paths.output + 'demo'));
 });
 
 gulp.task('build-demo', function () {
 	return gulp.src(paths.demoSource).
+		pipe(debug({title: 'build-demo'})).
 		pipe(sourcemaps.init()).
 		pipe(to5(assign({}, compilerOptions, {modules:'system'}))).
 		pipe(sourcemaps.write()).
