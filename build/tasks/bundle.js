@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var bundle = require('aurelia-bundler').bundle;
+var bundler = require('aurelia-bundler');
+var runSequence = require('run-sequence');
 
 var config = {
 	force: true,
@@ -8,34 +9,53 @@ var config = {
 	bundles: {
 		"dist/demo/app-build": {
 			includes: [
-				'demo.html!text',
-				'[demo/main.js]',
+				'[demo/*.js]',
 				'demo/*.html!text',
 				'demo/*.css!text'
 			],
 			options: {
 				inject: true,
-				// minify: true,
-				// rev: true
+				minify: true,
+				rev: true
 			}
 		},
 		"dist/demo/vendor-build": {
 			includes: [
-				'aurelia-bootstrapper',
-				'aurelia-animator-css',
-				'prismjs',
-				'semantic',
-				'semantic/semantic.css!text'
+				"aurelia-animator-css",
+				"aurelia-bootstrapper",
+				"aurelia-framework",
+				"aurelia-history-browser",
+				"aurelia-loader-default",
+				"aurelia-logging-console",
+				"aurelia-router",
+				"aurelia-templating-binding",
+				"aurelia-templating-resources",
+				"aurelia-templating-router",
+				"prismjs",
+				"jquery",
+				"numeral",
+				"moment",
+				"dompurify",
+				"semantic",
+				"semantic/semantic.css!text"
 			],
 			options: {
 				inject: true,
-				// minify: true
+				minify: true
 			}
 		}
 	}
 };
 
 gulp.task('bundle', function() {
-	return bundle(config);
+	return bundler.bundle( config );
+});
+
+gulp.task('unbundle', function() {
+	return bundler.unbundle( config );
+});
+
+gulp.task('rebundle', function(callback) {
+	return runSequence( 'unbundle', 'bundle', callback );
 });
 

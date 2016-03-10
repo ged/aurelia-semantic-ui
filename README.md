@@ -6,12 +6,12 @@ It isn't really even alpha quality right now, as I'm still figuring out how half
 
 The major "to do" list:
 
-* Figure out how to be able to nest custom elements, as content selectors don't work inside them currently. See this Plnkr for a minimal demonstration: http://plnkr.co/edit/cvSYkXPXIc62YJvGBiPL?p=info .
-* Once I get the above figured out and I'm confident this isn't just a giant waste of time: TESTING. I have done none at all, mostly because I had no idea what things should look like. But I need get tests implemented ASAP.
+* TESTING. I have done very little, as I wasn't even sure this would be useful or implemented in a way that made sense. Now that I've used it in anger, though, I need get tests implemented ASAP.
 * Documentation via the demo app seems to be working well, but I've spent more time on layout and organization than content so far, so I need to catch up with the code so I can keep them in parity.
 * Figure out how to bundle the demo app so I can put it up somewhere.
 * Figure out how to distribute the plugin.
-* Finish making custom elements for the rest of the Semantic widgets.
+* Finish making custom attributes for the rest of the Semantic widgets.
+* Finish hooking up the Modules and Behaviors further into Aurelia.
 
 
 ## Installing
@@ -40,14 +40,14 @@ Create (if you haven't already) a file `main.js` in your `src` folder with follo
 
 Anywhere in your app add the following markup as a sample -
 
-    <ui-card variations="centered">
-      <ui-card-image>
+    <div ui-card class="centered">
+      <div class="image">
         <img src="/images/avatar2/large/elyse.png">
-      </ui-card-image>
-      <ui-card-content>
+      </div>
+      <div class="content">
         <a class="header">Elyse</a>
-      </ui-card-content>
-    </ui-card>
+      </div>
+    </div>
 
 In the meantime, I think you can point jspm at [the Github mirror](https://github.com/ged/aurelia-semantic-ui) to try it out. You're probably the sort of person that already knows how to do that if you're into trying out experimental code. If it's not possible for some reason, let me know, especially if you're inclined to do so via a patch.
 

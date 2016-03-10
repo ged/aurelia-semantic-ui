@@ -5,31 +5,14 @@
  * List - http://semantic-ui.com/elements/list.html
  */
 
-import {inject, customElement, useView, containerless, bindable} from 'aurelia-framework';
+import {constants} from '../constants';
+import {customAttribute, bindable} from 'aurelia-framework';
+import {UIAttribute, bindableEnum} from '../ui-attribute';
 
-@customElement( 'ui-list' )
-export class UIListElement {
+@customAttribute( `${constants.attributePrefix}list` )
+export class UIListAttribute extends UIAttribute {
 
-	@bindable type = null;
-	@bindable variations = null;
+	@bindableEnum( ...constants.VALID_SIZES ) size;
 
 }
-
-
-/**
- * ui-list-item
- */
-@customElement( 'ui-list-item' )
-@useView('./ui-list/item.html')
-@containerless()
-export class UIListItemElement {}
-
-
-/**
- * ui-list-item-content
- */
-@customElement( 'ui-list-item-content' )
-@useView('./ui-list/item-content.html')
-@containerless()
-export class UIListItemContentElement {}
 

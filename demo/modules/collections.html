@@ -1,13 +1,14 @@
 <template>
 
 	<require from="../components/element-section"></require>
+	<require from="../components/element-example"></require>
 	
 	<div class="ui centered container">
 		<header>
 			<h2 class="ui header">"Collection" Widgets</h2>
 		</header>
 
-		<p>These are custom elements from the "Collections" section of the Semantic
+		<p>These are custom attributes that correspond to the "Collections" section of the Semantic
 			UI widget set.</p>
 
 
@@ -19,19 +20,100 @@
 			description="A breadcrumb is used to show hierarchy between content">
 
 			<div class="element-docs">
-				<p>The <code>ui-breadcrumb</code> element corresponds to the Breadcrumb
-				Semantic element.</p>
+				<p>The <code>ui-breadcrumb</code> attribute corresponds to the Breadcrumb Semantic element.</p>
 	
 				<h4 class="ui header">To Do</h4>
 	
 				<ul>
-					<li>You'll have to add your own dividers,
-						but it should auto-create them for you.</li>
-					<li>It should integrate with the Aurelia router.</li>
+					<li>Integration with the Aurelia router (
+						<code>&lt;ui-breadcrumb="router.bind: router"&gt;</code>).</li>
 				</ul>
 			</div>
 
+			<div class="element-examples">
+
+				<element-example caption="Text divider">
+					<div ui-breadcrumb="divider: /">
+						<a ui-breadcrumb-section>Home</a>
+						<a ui-breadcrumb-section>Store</a>
+						<div ui-breadcrumb-section="active: true">T-Shirt</div>
+					</div>
+				</element-example>
+
+				<element-example caption="Icon divider">
+					<div ui-breadcrumb="divider: right angle icon">
+						<a ui-breadcrumb-section>Home</a>
+						<a ui-breadcrumb-section>Store</a>
+						<div ui-breadcrumb-section="active: true">T-Shirt</div>
+					</div>
+				</element-example>
+
+				<element-example caption="Manual text dividers">
+					<div ui-breadcrumb>
+						<a ui-breadcrumb-section>Home</a>
+						<span ui-breadcrumb-divider>/</span>
+						<a ui-breadcrumb-section>Registration</a>
+						<span ui-breadcrumb-divider>/</span>
+						<div ui-breadcrumb-section="active: true">Personal Information</div>
+					</div>
+				</element-example>
+
+				<element-example caption="Manual icon dividers">
+					<div ui-breadcrumb>
+						<a ui-breadcrumb-section>Home</a>
+						<i ui-icon="name: right chevron" ui-breadcrumb-divider></i>
+						<a ui-breadcrumb-section>Registration</a>
+						<i ui-icon="name: right arrow" ui-breadcrumb-divider></i>
+						<div ui-breadcrumb-section="active: true">Personal Information</div>
+					</div>
+				</element-example>
+
+				<element-example caption="Sizes">
+					<div ui-breadcrumb="size: small; divider: right chevron icon">
+						<a ui-breadcrumb-section>Home</a>
+						<a ui-breadcrumb-section>Registration</a>
+						<div ui-breadcrumb-section="active: true">Personal Information</div>
+					</div>
+					<div ui-breadcrumb="size: large; divider: right chevron icon">
+						<a ui-breadcrumb-section>Home</a>
+						<a ui-breadcrumb-section>Registration</a>
+						<div ui-breadcrumb-section="active: true">Personal Information</div>
+					</div>
+					<div ui-breadcrumb="size: huge; divider: right chevron icon">
+						<a ui-breadcrumb-section>Home</a>
+						<a ui-breadcrumb-section>Registration</a>
+						<div ui-breadcrumb-section="active: true">Personal Information</div>
+					</div>
+				</element-example>
+
+			</div>
+
 		</element-section>
+
+		<element-section
+			name="form"
+			category="collection"
+			description="A form displays a set of related user input fields in a structured way">
+
+			<div class="element-docs">
+				<p>The <code>ui-form</code> attribute corresponds to the Form
+				Semantic element.</p>
+
+				<h3 ui-header>Sub-Element Custom Attributes</h3>
+
+				<ul ui-list>
+					<li><code>ui-checkbox</code></li>
+				</ul>
+			</div>
+
+			<div class="element-examples"></div>
+
+		</element-section>
+
+		<!-- element-section
+			name="grid"
+			category="collection"
+			description="" -->
 
 
 		<element-section
@@ -43,10 +125,10 @@
 			description="A menu displays grouped navigation actions">
 
 			<div class="element-docs">
-				<p>The <code>ui-menu</code> element corresponds to the Menu
+				<p>The <code>ui-menu</code> attribute corresponds to the Menu
 				Semantic element.</p>
 	
-				<ul>
+				<ul ui-list>
 					<li>Router integration</li>
 					<li><code>ui-menu-item</code></li>
 					<li><code>&lt;content&gt;</code></li>
@@ -55,7 +137,157 @@
 				</ul>
 			</div>
 
+			<div class="element-examples">
+
+				<element-example caption="Simple menu bar">
+				<div ui-menu class="three item">
+					<a ui-menu-item="active: true">Editorials</a>
+					<a ui-menu-item>Reviews</a>
+					<a ui-menu-item>Upcoming Events</a>
+				</div>
+				</element-example>
+				
+
+				<element-example caption="Top-attached menu with a dropdown and a search">
+				<div ui-menu class="top attached">
+					<div ui-dropdown ui-menu-item class="icon">
+						<i ui-icon="name: wrench"></i>
+						<div ui-menu>
+							<div ui-menu-item>
+								<i ui-icon="name: dropdown"></i>
+								<span class="text">New</span>
+								<div ui-menu>
+									<div ui-menu-item>Document</div>
+									<div ui-menu-item>Image</div>
+								</div>
+							</div>
+							<div ui-menu-item>
+								Open...
+							</div>
+							<div ui-menu-item>
+								Save...
+							</div>
+							<div ui-menu-item>Edit Permissions</div>
+							<div class="divider"></div>
+							<div class="header">
+								Export
+							</div>
+							<div ui-menu-item>
+								Share...
+							</div>
+						</div>
+					</div>
+					<div ui-menu class="right">
+						<div ui-menu-item ui-search class="right aligned category">
+							<div class="ui transparent icon input">
+								<input class="prompt" type="text" placeholder="Search animals...">
+								<i ui-icon="name: search link"></i>
+							</div>
+							<div class="results"></div>
+						</div>
+					</div>
+				</div>
+				<div ui-segment class="bottom attached">
+					<p class="placeholder"></p>
+				</div>
+				</element-example>
+				
+			</div>
+
+
 		</element-section>
+
+
+		<element-section
+			name="message"
+			category="collection"
+			description="A message displays information that explains nearby content">
+
+			<div class="element-docs">
+				
+				<p>The <code>ui-message</code> attribute corresponds to the Message
+				Semantic element.</p>
+	
+				<ul ui-list>
+					<li><code>icon</code> binding</li>
+					<li>Hook up the <code>close</code> icon?</li>
+					<li><code>hidden</code>/<code>visible</code> enum state binding</li>
+					<li><code>color</code> binding?</li>
+					<li><code>size</code> binding?</li>
+				</ul>
+
+			</div>
+
+
+			<div class="element-examples">
+
+				<element-example caption="A basic message">
+				<div ui-message>
+					<div class="header">
+						Changes in Service
+					</div>
+					<p>We just updated our privacy policy here to better service
+						our customers. We recommend reviewing the changes.</p>
+				</div>
+				</element-example>
+
+
+				<element-example caption="A message with a list">
+				<div ui-message>
+					<div class="header">
+						New Site Features
+					</div>
+					<ul class="list">
+						<li>You can now have cover images on blog pages</li>
+						<li>Drafts will now auto-save while writing</li>
+					</ul>
+				</div>
+				</element-example>
+
+				<element-example caption="Icon binding">
+				<div ui-message="icon.bind: messageIcon">
+					<div class="content">
+						<div class="header">
+							Have you heard about our mailing list?
+						</div>
+						<p>Get the best news in your e-mail every day.</p>
+					</div>
+				</div>
+
+				<div ui-dropdown="selection: messageIcon">
+					<input name="messageIcon" type="hidden" value.bind="messageIcon">
+					<i class="dropdown icon"></i>
+					<div class="default text">Message Icon</div>
+					<div class="menu">
+						<div class="item" data-value="inbox">Inbox</div>
+						<div class="item" data-value="teal lab">Lab</div>
+						<div class="item" data-value="payment">Payment</div>
+						<div class="item" data-value="calendar">Calendar</div>
+						<div class="item" data-value="horizontally flipped comment">Comment</div>
+					</div>
+				</div>
+				</element-example>
+				
+				
+				<element-example caption="Icon variants">
+				<div ui-message="icon: blue loading notched circle">
+					<div class="content">
+						<div class="header">
+							Just one second
+						</div>
+						<p>We're fetching that content for you.</p>
+					</div>
+				</div>
+				</element-example>
+			</div>
+
+		</element-section>
+
+		<!-- element-section
+			name="table"
+			category="collection"
+			description="" -->
+
 
 	</div>
 

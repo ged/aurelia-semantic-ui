@@ -1,4 +1,8 @@
+/*
+ * Aurelia Semantic UI Toolkit Demo CSS
+ */
 
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700);
 
 body {
     background-color: #FFFFFF;
@@ -59,4 +63,10 @@ section.element div.clearer {
 	padding-right: 1em;
 }
 
+
+p.placeholder {
+	display: block;
+	background: url('../../assets/images/wireframe/paragraph.png') no-repeat;
+	height: 220px;
+}
 

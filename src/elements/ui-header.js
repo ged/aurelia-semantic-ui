@@ -5,14 +5,15 @@
  * Content Header - http://semantic-ui.com/elements/header.html#content-headers
  */
 
-import {inject, customElement, bindable} from 'aurelia-framework';
-import $ from 'jquery';
+import {constants} from '../constants';
+import {UIAttribute, bindableEnum} from '../ui-attribute';
+import {customAttribute} from 'aurelia-framework';
 
-@customElement( 'ui-header' )
-export class UIHeaderElement {
+@customAttribute( `${constants.attributePrefix}header` )
+export class UIHeaderAttribute extends UIAttribute {
 
-	@bindable type = null;
-	@bindable size = null;
+	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( ...constants.VALID_COLORS ) color;
 
 }
 

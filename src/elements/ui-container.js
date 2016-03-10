@@ -5,13 +5,10 @@
  * Container - http://semantic-ui.com/elements/container.html
  */
 
-import {customElement, bindable} from 'aurelia-framework';
+import {UIAttribute} from '../ui-attribute';
+import {customAttribute} from 'aurelia-framework';
 
-@customElement( 'ui-container' )
-export class UIContainerElement {
-
-	@bindable type;
-	@bindable variations;
-
+@customAttribute( 'ui-container' )
+export class UIContainerAttribute extends UIAttribute {
 }
 

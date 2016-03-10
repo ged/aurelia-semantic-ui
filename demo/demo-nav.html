@@ -3,17 +3,18 @@
 	<require from='./demo-nav.css'></require>
 
 	<!-- Following Menu -->
-	<nav>
-	<ui-segment variations="basic">
+	<div ui-segment class="basic topmenu">
 		<ui-container>
-			<ui-menu type="top" variations="large pointing" router.bind="router">
-				<ui-menu-item href="#" type="header">
+			<nav ui-menu class="top large pointing">
+				<a ui-menu-item href="#" class="header">
 					<img class="logo" src="assets/images/logo.png">
 					Aurelia Semantic UI
-				</ui-menu-item>
-			</ui-menu>
+				</a>
+				<a repeat.for="row of router.navigation"
+					ui-menu-item="active.bind: row.isActive"
+ 					href.bind="row.href">${row.title}</a>
+			</nav>
 		</ui-container>
-	</ui-segment>
-	</nav>
+	</div>
 
 </template>

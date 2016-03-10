@@ -5,16 +5,35 @@
  * Menu - http://semantic-ui.com/collections/menu.html
  */
 
-import {inject, customElement, useView, containerless, bindable} from 'aurelia-framework';
+import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
+import {inject, customAttribute, children, bindable} from 'aurelia-framework';
 
-@customElement( 'ui-menu' )
-export class UIMenuElement {
+@customAttribute( 'ui-menu' )
+export class UIMenuAttribute extends UIAttribute {
 
-	@bindable type;
-	@bindable variations;
 	@bindable router;
+	@children( '[ui-menu-item]' ) items;
 
-	attached() {}
+
+	isSubmenu() {
+		let parent = this.element.parentElement;
+		if ( !parent ) { return false; }
+
+		let classes = parent.classList
+		if ( !classes ) { return false; }
+
+		return (classes.contains('item') || classes.contains('menu'))
+	}
+
+
+	bind() {
+		// Don't super for sub-menus because they shouldn't get the 'ui'
+		if ( this.isSubmenu() ) {
+			this.element.classList.add( 'menu' );
+		} else {
+			super.bind();
+		}
+	}
 
 }
 
@@ -22,13 +41,15 @@ export class UIMenuElement {
 /**
  * ui-menu-item
  */
-@customElement( 'ui-menu-item' )
-@useView('./ui-menu/item.html')
-@containerless()
-export class UIMenuItemElement {
+@customAttribute( 'ui-menu-item' )
+export class UIMenuItemAttribute extends UIAttribute {
 
-	@bindable type;
-	@bindable href;
+	@bindableToggle active = false;
+
+	bind() {
+		// no super
+		this.element.classList.add( 'item' );
+	}
 
 }
 

@@ -5,21 +5,47 @@
  * Breadcrumb - http://semantic-ui.com/collections/breadcrumb.html
  */
 
-import {inject, customElement, useView, containerless, bindable} from 'aurelia-framework';
+import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
+import {inject, customAttribute, children, bindable, LogManager} from 'aurelia-framework';
 
-@inject(Element)
-@customElement( 'ui-breadcrumb' )
-export class UIBreadcrumbElement {
+@customAttribute( 'ui-breadcrumb' )
+export class UIBreadcrumbAttribute extends UIAttribute {
 
-	@bindable divider = null;
-	@bindable size = null;
+	@bindable divider;
+	@bindableEnum('small', 'large', 'huge') size;
+	@children( '[ui-breadcrumb-section]' ) sections;
 
-	constructor( element ) {
-		this.element = element;
-	}
 
-	attached() {
-		// TODO: Figure out how to auto-inject the divider
+	bind() {
+		super.bind();
+
+		if ( this.divider ) {
+			let dividerNode = null;
+
+			// Icon divider (<i>)
+			if ( this.divider.match(/\bicon\b/) ) {
+				this.logger.debug( `Icon divider (${this.divider})` );
+				dividerNode = document.createElement( 'i' );
+				dividerNode.classList.add( ...this.divider.split(/\s+/) );
+				dividerNode.classList.add( 'divider' );
+			}
+
+			// Text divider (<span>)
+			else {
+				this.logger.debug( `Text divider (${this.divider})` );
+				let content = document.createTextNode( this.divider );
+				dividerNode = document.createElement( 'span' );
+				dividerNode.classList.add( 'divider' );
+				dividerNode.appendChild( content );
+			}
+
+			for ( let i in this.sections ) {
+				if ( i > 0 ) {
+					let section = this.sections[ i ];
+					this.element.insertBefore( dividerNode.cloneNode(true), section );
+				}
+			}
+		}
 	}
 
 }
@@ -28,8 +54,31 @@ export class UIBreadcrumbElement {
 /**
  * ui-breadcrumb-section
  */
-@customElement( 'ui-breadcrumb-section' )
-@useView('./ui-breadcrumb/section.html')
-@containerless()
-export class UIBreadcrumbSectionElement {}
+@customAttribute( 'ui-breadcrumb-section' )
+export class UIBreadcrumbSectionAttribute extends UIAttribute {
+
+	@bindableToggle active = false;
+
+	bind() {
+		// No super
+		this.element.classList.add( 'section' );
+	}
+
+}
+
+
+/**
+ * ui-breadcrumb-divider
+ */
+@customAttribute( 'ui-breadcrumb-divider' )
+export class UIBreadcrumbDividerAttribute extends UIAttribute {
+
+	bind() {
+		// No super
+		if ( this.element.classList ) {
+			this.element.classList.add( 'divider' );
+		}
+	}
+
+}
 

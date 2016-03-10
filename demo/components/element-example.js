@@ -5,6 +5,7 @@ import Prism from 'prism';
 
 import {
 	TargetInstruction,
+	BehaviorPropertyObserver,
 	LogManager,
 	child,
 	customElement,
@@ -29,13 +30,20 @@ export class ElementExampleElement {
 	@bindable exampleSource;
 	@bindable caption;
 
+	// TODO: This doesn't work, as I can't figure out how to pass the contents
+	// of a content selector in as the content of a composed view. E.g., this
+	// doesn't work:
+	//
+	//    <compose view="./example-layouts/${layout}.html"><content></content></compose>
+	//
+	@bindable layout = 'side-by-side';
+
 
 	constructor( element, targetInstruction ) {
 		this.element = element;
 		this.logger = LogManager.getLogger( 'element-example' );
 		this.exampleSource = this.extractRawContent( targetInstruction );
 	}
-
 
 	extractRawContent( targetInstruction ) {
 		if ( targetInstruction.elementInstruction.exampleSource ) {

@@ -5,20 +5,24 @@
  * Modal - http://semantic-ui.com/modules/modal.html
  */
 
-import {inject, customElement, bindable} from 'aurelia-framework';
-import $ from 'jquery';
+import {inject, customAttribute, bindable} from 'aurelia-framework';
 
-@customElement( 'ui-modal' )
+@customAttribute( 'ui-modal' )
 @inject( Element )
 export class UIModalElement {
 
 	@bindable active = false;
 
+
 	constructor( element ) {
 		this.element = element;
 	}
 
-	attached() {}
+
+	bind() {
+		this.element.classList.add( 'ui', 'modal' );
+	}
+
 
 	activeChanged( newValue ) {
 		if ( newValue ) {
@@ -27,5 +31,6 @@ export class UIModalElement {
 			$( this.modal ).modal( 'hide' );
 		}
 	}
+
 }
 
