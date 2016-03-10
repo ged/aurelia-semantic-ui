@@ -1,49 +1,123 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Aurelia-Semantic-UI : A collection of Semantic UI widgets for Aurelia applications">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Aurelia-Semantic-UI</title>
+    <meta charset="UTF-8">
+    <title>Aurelia-Semantic-UI by ged</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Aurelia-Semantic-UI</h1>
+      <h2 class="project-tagline">A collection of Semantic UI widgets for Aurelia applications</h2>
+      <a href="https://github.com/ged/aurelia-semantic-ui" class="btn">View on GitHub</a>
+      <a href="https://github.com/ged/aurelia-semantic-ui/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ged/aurelia-semantic-ui/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ged/aurelia-semantic-ui">View on GitHub</a>
+    <section class="main-content">
+      <h1>
+<a id="aurelia-semantic-ui" class="anchor" href="#aurelia-semantic-ui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>aurelia-semantic-ui</h1>
 
-          <h1 id="project_title">Aurelia-Semantic-UI</h1>
-          <h2 id="project_tagline">A collection of Semantic UI widgets for Aurelia applications</h2>
+<p>This plugin is for the <a href="http://www.aurelia.io/">Aurelia</a> platform. It contains custom elements for some of the <a href="http://semantic-ui.com/">Semantic UI</a> widgets.</p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ged/aurelia-semantic-ui/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ged/aurelia-semantic-ui/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+<p>It isn't really even alpha quality right now, as I'm still figuring out how half of this stuff works, so don't depend on anything quite yet.</p>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>There's currently only <a href="demo.html">a demo that doubles as the documentation</a>.</p>
-      </section>
-    </div>
+<p>There's <a href="demo.html">a demo that doubles as the documentation</a>. I haven't figured out bundling yet, either, so it's pretty slow, but it's functional.</p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Aurelia-Semantic-UI maintained by <a href="https://github.com/ged">ged</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+<p>The major "to do" list:</p>
+
+<ul>
+<li>TESTING. I have done very little, as I wasn't even sure this would be useful or implemented in a way that made sense. Now that I've used it in anger, though, I need get tests implemented ASAP.</li>
+<li>Documentation via the demo app seems to be working well, but I've spent more time on layout and organization than content so far, so I need to catch up with the code so I can keep them in parity.</li>
+<li>Figure out how to bundle the demo app so I can put it up somewhere.</li>
+<li>Figure out how to distribute the plugin.</li>
+<li>Finish making custom attributes for the rest of the Semantic widgets.</li>
+<li>Finish hooking up the Modules and Behaviors further into Aurelia.</li>
+</ul>
+
+<h2>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing</h2>
+
+<p>Again, this isn't released or production-ready yet, but once it is, this is how you'll install it.</p>
+
+<p>In your project install the plugin via <code>jspm</code> with following command</p>
+
+<pre><code>jspm install aurelia-semantic-ui
+</code></pre>
+
+<p>Make sure you use <a href="http://aurelia.io/docs#startup-and-configuration">manual bootstrapping</a>. In order to do so open your <code>index.html</code> and locate the element with the attribute aurelia-app. Change it to look like this:</p>
+
+<pre><code>&lt;body aurelia-app="main"&gt;
+</code></pre>
+
+<p>Create (if you haven't already) a file <code>main.js</code> in your <code>src</code> folder with following content:</p>
+
+<pre><code>export function configure(aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .developmentLogging()
+    // Install the plugin
+    .plugin('aurelia-semantic-ui');
+
+  aurelia.start().then(a =&gt; a.setRoot());
+}
+</code></pre>
+
+<p>Anywhere in your app add the following markup as a sample -</p>
+
+<pre><code>&lt;div ui-card class="centered"&gt;
+  &lt;div class="image"&gt;
+    &lt;img src="/images/avatar2/large/elyse.png"&gt;
+  &lt;/div&gt;
+  &lt;div class="content"&gt;
+    &lt;a class="header"&gt;Elyse&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>In the meantime, I think you can point jspm at <a href="https://github.com/ged/aurelia-semantic-ui">the Github mirror</a> to try it out. You're probably the sort of person that already knows how to do that if you're into trying out experimental code. If it's not possible for some reason, let me know, especially if you're inclined to do so via a patch.</p>
+
+<h2>
+<a id="thanks" class="anchor" href="#thanks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Thanks</h2>
+
+<p>Many thanks to the <a href="https://github.com/PWKad/aurelia-bs-modal">aurelia-bs-modal</a> plugin by Patrick Walters upon which this plugin is based. Used under the terms of The MIT License (MIT):</p>
+
+<blockquote>
+<p>Copyright (c) 2014 Durandal Inc.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+</blockquote>
+
+<p>The rest is Copyright (c) 2016 Michael Granger, but otherwise distributed under the same MIT License.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ged/aurelia-semantic-ui">Aurelia-Semantic-UI</a> is maintained by <a href="https://github.com/ged">ged</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
