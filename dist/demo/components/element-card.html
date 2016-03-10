@@ -1,0 +1,43 @@
+<template>
+	<div ui-card>
+		<div class="content">>
+			<div class="header">${parentSection.name | capitalize}</div>
+			<div class="meta">${parentSection.category | capitalize}</div>
+			<div class="description">
+				<p show.bind="description">${parentSection.description}</p>
+
+				<template if.bind="supportedTypes.length != 0">
+				<div ui-segment class="basic vertical">
+					<div ui-header class="sub">Supported Types</div>
+					<div ui-list class="bulleted">
+						<div class="item"
+							repeat.for="type of supportedTypes">${type}</div>
+					</div>
+				</div>
+				</template>
+
+				<template if.bind="supportedVariations.length != 0">
+				<div ui-segment class="basic vertical">
+					<div ui-header class="sub">Supported Variations</div>
+					<div ui-list class="bulleted">
+						<div class="item" 
+							repeat.for="variation of supportedVariations">${variation}</div>
+					</div>
+				</div>
+				</template>
+
+			</div>
+		</div>
+		<div class="extra content">
+			<a class="left floated link" href="${ parentSection.docsHref || defaultUrl }">
+				<i ui-icon="name: external"></i>
+				Docs
+			</a>
+			<span class="right floated status">
+				<i ui-icon="name.bind: statusIcon"></i>
+				${parentSection.status | capitalize}
+			</span>
+		</div>
+	</div>
+</template>
+

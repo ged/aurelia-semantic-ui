@@ -1,0 +1,12 @@
+<template>
+	<div ui-container class="stackable two column grid">
+		<div class="six wide column">
+			<content></content>
+		</div>
+
+		<div class="ten wide column">
+			<pre><code class="example-source language-${language || 'none'}"
+				textcontent.bind="exampleSource">Loading...</code></pre>
+		</div>
+	</div>
+</template>

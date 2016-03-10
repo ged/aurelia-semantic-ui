@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aurelia Semantic UI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body aurelia-app="demo/main">
+
+	<div id="loader" class="ui main text container">
+		<div class="ui active dimmer">
+			<div class="ui text loader">Loading...</div>
+		</div>
+		<p></p>
+	</div>
+
+	<script src="jspm_packages/system.js"></script>
+	<script src="config.js"></script>
+	<script>
+		System.import('aurelia-bootstrapper');
+	</script>
+</body>
+</html>

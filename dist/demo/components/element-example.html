@@ -1,0 +1,26 @@
+<template>
+
+	<require from="prism/themes/prism.css"></require>
+	<require from="./element-example.css"></require>
+
+	<div ui-segments class="raised element-example">
+		<div ui-segment>
+			<div ui-container class="stackable two column grid">
+				<div class="six wide column">
+					<content></content>
+				</div>
+
+				<div class="ten wide column">
+					<pre><code class="example-source language-${language || 'none'}"
+						textcontent.bind="exampleSource">Loading...</code></pre>
+				</div>
+			</div>
+		</div>
+	
+		<div ui-segment show.bind="caption" class="secondary">
+			<p>${caption}</p>
+		</div>
+	</div>
+
+</template>
+

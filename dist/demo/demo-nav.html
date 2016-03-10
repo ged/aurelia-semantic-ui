@@ -1,0 +1,20 @@
+<template>
+
+	<require from='./demo-nav.css'></require>
+
+	<!-- Following Menu -->
+	<div ui-segment class="basic topmenu">
+		<ui-container>
+			<nav ui-menu class="top large pointing">
+				<a ui-menu-item href="#" class="header">
+					<img class="logo" src="assets/images/logo.png">
+					Aurelia Semantic UI
+				</a>
+				<a repeat.for="row of router.navigation"
+					ui-menu-item="active.bind: row.isActive"
+ 					href.bind="row.href">${row.title}</a>
+			</nav>
+		</ui-container>
+	</div>
+
+</template>

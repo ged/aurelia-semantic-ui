@@ -1,0 +1,962 @@
+<template>
+
+	<require from="../components/element-section"></require>
+	<require from="../components/element-example"></require>
+	
+	<div class="ui centered container">
+		<header>
+			<h2 class="ui header">"Element" Widgets</h2>
+		</header>
+
+		<p>These are custom attributes that correspond to the "Elements" section of the Semantic
+			UI widget set.</p>
+
+		<element-section
+			name="button"
+			category="element"
+			description="A button indicates a possible user action">
+
+			<div class="element-docs">
+				<p>The <code>ui-button</code> attribute corresponds to the Button
+					Semantic element.</p>
+			</div>
+
+
+			<div class="element-examples">
+				
+				<element-example caption="A standard button">
+					<button ui-button>Follow</button>
+				</element-example>
+				
+
+				<element-example caption="Emphasis">
+				<button ui-button class="primary">
+					Save
+				</button>
+				<button ui-button class="secondary">
+					Checkpoint
+				</button>
+				<button ui-button>
+					Discard
+				</button>
+				</element-example>
+
+
+				<element-example caption="Animation">
+				<div ui-button class="animated" tabindex="0">
+					<div class="visible content">Next</div>
+					<div class="hidden content">
+						<i class="right arrow icon"></i>
+					</div>
+				</div>
+				<div ui-button class="vertical animated" tabindex="0">
+					<div class="hidden content">Shop</div>
+					<div class="visible content">
+						<i class="shop icon"></i>
+					</div>
+				</div>
+				<div ui-button class="animated fade" tabindex="0">
+					<div class="visible content">Sign-up for a Pro account</div>
+					<div class="hidden content">
+						$12.99 a month
+					</div>
+				</div>
+				</element-example>
+
+
+				<element-example caption="Icon binding">
+				<button ui-button="icon.bind: buttonIcon"></button>
+
+				<div ui-dropdown="selection: buttonIcon">
+					<input name="buttonIcon" type="hidden" value.bind="buttonIcon">
+					<i class="dropdown icon"></i>
+					<div class="default text">Button Icon</div>
+					<div class="menu">
+						<div class="item" data-value="cloud">Cloud</div>
+						<div class="item" data-value="comment outline">Comment Outline</div>
+						<div class="item" data-value="horizontally flipped comments outline">
+							Horizontally Flipped Comments Outline
+						</div>
+						<div class="item" data-value="red heartbeat">Red Heartbeat</div>
+					</div>
+				</div>
+				</element-example>
+				
+
+				<element-example caption="Labeled icon button">
+				<button ui-button="icon: pause" class="labeled">Pause</button>
+				<button ui-button="icon: right arrow" class="labeled">Next</button>
+				</element-example>
+				
+
+				<element-example caption="Color binding">
+				<div ui-segment>
+					<button ui-button="color.bind: buttonColor">${buttonColor | capitalize}</button>
+				</div>
+
+				<button ui-button class="red basic" click.delegate="buttonColor = 'red'">Red</button>
+				<button ui-button class="orange basic" click.delegate="buttonColor = 'orange'">Orange</button>
+				<button ui-button class="yellow basic" click.delegate="buttonColor = 'yellow'">Yellow</button>
+				<button ui-button class="olive basic" click.delegate="buttonColor = 'olive'">Olive</button>
+				<button ui-button class="green basic" click.delegate="buttonColor = 'green'">Green</button>
+				<button ui-button class="teal basic" click.delegate="buttonColor = 'teal'">Teal</button>
+				<button ui-button class="blue basic" click.delegate="buttonColor = 'blue'">Blue</button>
+				<button ui-button class="violet basic" click.delegate="buttonColor = 'violet'">Violet</button>
+				<button ui-button class="purple basic" click.delegate="buttonColor = 'purple'">Purple</button>
+				<button ui-button class="pink basic" click.delegate="buttonColor = 'pink'">Pink</button>
+				<button ui-button class="brown basic" click.delegate="buttonColor = 'brown'">Brown</button>
+				<button ui-button class="grey basic" click.delegate="buttonColor = 'grey'">Grey</button>
+				<button ui-button class="black basic" click.delegate="buttonColor = 'black'">Black</button>
+				</element-example>
+
+
+				<element-example caption="Button groups">
+				<div ui-buttons class="vertical labeled icon">
+					<button ui-button="icon: pause">Pause</button>
+					<button ui-button="icon: play">Play</button>
+					<button ui-button="icon: shuffle">Shuffle</button>
+				</div>
+				</element-example>
+			</div>
+
+		</element-section>
+
+		<element-section
+			name="container"
+			category="element"
+			status="incomplete"
+			description="A container limits content to a maximum width">
+
+			<div class="element-docs">
+				<p>The <code>ui-container</code> attribute corresponds to the Container
+					Semantic element.</p>
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="divider"
+			category="element"
+			description="A divider visually segments content into groups">
+
+			<div class="element-docs">
+				<p>The <code>ui-divider</code> attribute corresponds to the Divider
+					Semantic element.</p>
+			</div>
+
+
+			<div class="element-examples">
+
+				<element-example caption="A standard divider">
+				<p class="placeholder"></p>
+				<div ui-divider></div>
+				<p class="placeholder"></p>
+				</element-example>
+
+
+				<element-example caption="Horizontal icon divider headers">
+				<h4 ui-header ui-divider class="horizontal">
+					<i ui-icon="name: tag"></i>
+					Description
+				</h4>
+
+				<p>Doggie treats are good for all times of the year. 
+					Proven to be eaten by 99.9% of all dogs worldwide.</p>
+
+				<h4 ui-divider ui-header class="horizontal">
+					<i ui-icon="name: bar chart"></i>
+					Specifications
+				</h4>
+
+				<table ui-table class="definition">
+					<tbody>
+						<tr>
+							<td class="two wide column">Size</td>
+							<td>1" x 2"</td>
+						</tr>
+						<tr>
+							<td>Weight</td>
+							<td>6 ounces</td>
+						</tr>
+						<tr>
+							<td>Color</td>
+							<td>Yellowish</td>
+						</tr>
+						<tr>
+							<td>Odor</td>
+							<td>Not Much Usually</td>
+						</tr>
+					</tbody>
+				</table>
+				</element-example>
+
+			</div>
+
+		</element-section>
+
+		<element-section
+			name="flag"
+			category="element"
+			description="A flag is is used to represent a political state">
+
+			<div class="element-docs">
+				<p>The <code>ui-flag</code> attribute corresponds to the Flag Semantic element.</p>
+			</div>
+
+
+			<div class="element-examples">
+				
+				<element-example caption="A flag can use the two digit country code, the 
+					full name, or a common alias">
+				<i ui-flag="country: ae"></i>
+				<i ui-flag="country: france"></i>
+				<i ui-flag="country: myanmar"></i>
+				</element-example>
+				
+			</div>
+
+		</element-section>
+		
+
+		<element-section
+			name="header"
+			category="element"
+			status="incomplete"
+			types="content, icon, sub"
+			description="A header provides a short summary of content">
+
+			<div class="element-docs">
+				<p>The <code>ui-header</code> attribute corresponds to the "content"-type Header
+				Semantic element.</p>
+			</div>
+
+			<div class="element-examples">
+				<h3 class="ui header">Examples</h3>
+				
+				<element-example language="markup" caption="Page headers">
+				<div ui-segment class="vertical">
+					<h1 ui-header>Header 1</h1>
+					<p></p>
+					<h2 ui-header>Header 2</h2>
+					<p></p>
+					<h3 ui-header>Header 3</h3>
+					<p></p>
+					<h4 ui-header>Header 4</h4>
+					<p></p>
+					<h5 ui-header>Header 5</h5>
+					<p></p>
+				</div>
+				</element-example>
+
+				<element-example language="markup" caption="Content headers">
+				<div ui-segment class="vertical">
+					<div ui-header="size: huge">Huge Header</div>
+					<p></p>
+					<div ui-header="size: large">Large Header</div>
+					<p></p>
+					<div ui-header="size: medium">Medium Header</div>
+					<p></p>
+					<div ui-header="size: small">Small Header</div>
+					<p></p>
+					<div ui-header="size: tiny">Tiny Header</div>
+					<p></p>
+				</div>
+				</element-example>
+
+				<element-example language="markup" caption="Sub headers">
+				<div ui-list>
+					<div class="item">
+						<img class="ui mini circular image" src="assets/images/avatar2/small/molly.png">
+						<div class="content">
+							<div ui-header class="sub">Molly</div>
+							Coordinator
+						</div>
+					</div>
+					<div class="item">
+						<img class="ui mini circular image" src="assets/images/avatar2/small/elyse.png">
+						<div class="content">
+							<div ui-header class="sub">Elyse</div>
+							Developer
+						</div>
+					</div>
+					<div class="item">
+						<img class="ui mini circular image" src="assets/images/avatar2/small/eve.png">
+						<div class="content">
+							<div ui-header class="sub">Eve</div>
+							Project Manager
+						</div>
+					</div>
+				</div>
+				</element-example>
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="icon"
+			category="element"
+			status="incomplete"
+			description="An icon is a glyph used to represent something else">
+
+			<div class="element-docs">
+				<p>The <code>ui-icon</code> attribute corresponds to the Icon Semantic element.</p>
+
+				<ul ui-list>
+					<li>Groups supported with the <code>ui-icons</code> attribute</li>
+					<li>Bindable <code>name</code> (defaults to <code>help circle</code>)</li>
+					<li>Bindable <code>size</code>, <code>color</code>, <code>disabled</code>,
+						and <code>loading</code> attributes.</li>
+				</ul>
+			</div>
+
+			<div class="element-examples">
+				<h3 class="ui header">Examples</h3>
+
+				<element-example language="markup">
+					<i ui-icon="name: right chevron"></i>
+				</element-example>
+
+				<element-example language="markup" caption="Size attribute">
+					<i ui-icon="name: user; size: mini"></i>
+					<i ui-icon="name: user; size: small"></i>
+					<i ui-icon="name: user; size: large"></i>
+					<i ui-icon="name: user; size: huge"></i>
+				</element-example>
+
+				<element-example language="markup" caption="Binding.">
+					<i ui-icon="name: cube; size.bind: iconSize; loading.bind: iconsIsLoading"></i>
+					<i ui-icon="name: cubes; size.bind: iconSize; loading.bind: iconsIsLoading"></i>
+					<i ui-icon="name: asterisk; size.bind: iconSize; loading.bind: iconsIsLoading"></i>
+					<i ui-icon="name: square; size.bind: iconSize; loading.bind: iconsIsLoading"></i>
+
+					<i ui-icons="size: huge">
+						<i ui-icon="name: sun; size: big; loading.bind: iconsIsLoading"></i>
+						<i ui-icon="name.bind: userIcon"></i>
+					</i>
+
+					<div ui-form>
+						<div class="inline field">
+							<label>Size</label>
+							<select ui-dropdown value.bind="iconSize">
+								<option value="mini">Mini</option>
+								<option value="small">Small</option>
+								<option value="large">Large</option>
+								<option value="big">Big</option>
+								<option value="huge">Huge</option>
+							</select>
+						</div>
+
+						<div class="inline field">
+							<label>User Icon</label>
+							<select ui-dropdown value.bind="userIcon">
+								<option value="user">User</option>
+								<option value="users">Users</option>
+								<option value="child">Child</option>
+								<option value="doctor">Doctor</option>
+								<option value="spy">Spy</option>
+							</select>
+						</div>
+
+						<div class="field">
+							<div ui-checkbox>
+								<input checked.bind="iconsIsLoading" type="checkbox" tabindex="0"
+									class="hidden">
+								<label>Loading?</label>
+							</div>
+						</div>
+					</div>
+				</element-example>
+
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="image"
+			category="element"
+			description="An image is a graphic representation of something">
+
+			<div class="element-docs">
+				<p>The <code>ui-image</code> attribute corresponds to the Image Semantic
+					element.</p>
+
+				<ul ui-list>
+					<li>Group images with the <code>ui-images</code> attribute.</li>
+					<li>Bindable <code>size</code>, <code>hidden</code>, 
+						<code>disabled</code>.</li>
+				</ul>
+			</div>
+
+			<div class="element-examples">
+				
+				<element-example caption="On the img tag">
+				<img ui-image="size: small" src="../assets/images/wireframe/image.png">
+				</element-example>
+
+
+				<element-example caption="Binding to the size">
+				<img ui-image="size.bind: imageSize" src="../assets/images/wireframe/image.png">
+
+				<div ui-segment>
+					<div ui-dropdown="selection: imageSize">
+						<input type="hidden" name="imageSize" value.bind="imageSize">
+						<i class="dropdown icon"></i>
+						<div class="default text">Size</div>
+						<div class="menu">
+							<div ui-menu-item data-value="mini">Mini</div>
+							<div ui-menu-item data-value="tiny">Tiny</div>
+							<div ui-menu-item data-value="small">Small</div>
+							<div ui-menu-item data-value="large">Large</div>
+							<div ui-menu-item data-value="big">Big</div>
+							<div ui-menu-item data-value="huge">Huge</div>
+						</div>
+					</div>
+				</div>
+				</element-example>
+				
+
+				<element-example caption="On a container">
+				<a href="http://example.com/" ui-image="size: small">
+					<img src="../assets/images/wireframe/image-text.png">
+				</a>
+				</element-example>
+
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="input"
+			category="element"
+			description="An input is a field used to elicit a response from a user">
+
+			<div class="element-docs">
+				<p>The <code>ui-input</code> attribute corresponds to the Input Semantic
+					element.</p>
+			</div>
+
+
+			<div class="element-examples">
+
+				<element-example caption="A standard input">
+				<div ui-input>
+					<input type="text" placeholder="Search...">
+				</div>
+				</element-example>
+
+
+				<element-example caption="Bindings">
+				<div ui-input="focus.bind: inputIsFocused;
+					loading.bind: inputIsLoading;
+					disabled.bind: inputIsDisabled;
+					error.bind: inputErrorMessage;
+					size.bind: inputSize" class="right icon">
+					<input type="text" placeholder="Name">
+					<i ui-icon="name: search"></i>
+				</div>
+
+				<div ui-segment>
+					<div ui-form>
+						<div ui-form-field class="inline">
+							<div ui-checkbox>
+								<input type="checkbox" checked.bind="inputIsFocused" class="hidden">
+								<label>Focused?</label>
+							</div>
+						</div>
+
+						<div ui-form-field class="inline">
+							<div ui-checkbox>
+								<input type="checkbox" checked.bind="inputIsLoading" class="hidden">
+								<label>Loading?</label>
+							</div>
+						</div>
+
+						<div ui-form-field class="inline">
+							<div ui-checkbox>
+								<input type="checkbox" checked.bind="inputIsDisabled" class="hidden">
+								<label>Disabled?</label>
+							</div>
+						</div>
+
+						<div ui-form-field class="inline">
+							<label>Size</label>
+							<select ui-dropdown value.bind="inputSize">
+								<option value="mini">Mini</option>
+								<option value="small">Small</option>
+								<option selected value="medium">Medium</option>
+								<option value="large">Large</option>
+								<option value="big">Big</option>
+								<option value="huge">Huge</option>
+							</select>
+						</div>
+
+						<div ui-form-field>
+							<label>Error Message</label>
+							<input type="text" value.bind="inputErrorMessage"
+								placeholder="Set this to toggle the 'error' state.">
+						</div>
+					</div>
+				</div>
+				</element-example>
+
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="label"
+			category="element"
+			description="A label displays content classification">
+
+			<div class="element-docs">
+				<p>The <code>ui-label</code> attribute corresponds to the Label Semantic
+					element.</p>
+
+				<ul ui-list>
+					<li>Labels can be grouped together with the <code>ui-labels</code>
+						attribute.</li>
+					<li>Can bind to <code>size</code> and <code>color</code> on both
+						<code>ui-label</code> and <code>ui-labels</code>.</li>
+				</ul>
+			</div>
+			
+			<div class="element-examples">
+
+				<element-example caption="A label">
+				<div ui-label>
+					<i ui-icon="name: mail"></i> 23
+				</div>
+				</element-example>
+
+
+				<element-example caption="Image labels">
+				<a ui-label="color: blue" class="image">
+					<img src="../assets/images/avatar/small/veronika.jpg">
+					Veronika
+					<div class="detail">Friend</div>
+				</a>
+				<a ui-label="color: teal" class="image">
+					<img src="../assets/images/avatar/small/jenny.jpg">
+					Jenny
+					<div class="detail">Student</div>
+				</a>
+				<a ui-label="color: yellow" class="image">
+					<img src="../assets/images/avatar/small/christian.jpg">
+					Christian
+					<div class="detail">Co-worker</div>
+				</a>
+				</element-example>
+
+
+				<element-example caption="Grouping">
+				<div ui-labels class="small blue tag">
+					<a ui-label>javascript</a>
+					<a ui-label>html</a>
+					<a ui-label>webdev</a>
+					<a ui-label>dom</a>
+					<a ui-label>css</a>
+				</div>
+				</element-example>
+			
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="list"
+			category="element"
+			status="incomplete"
+			types="bulleted, ordered, link"
+			variations="horizontal, inverted, selection, animated, relaxed, divided, celled, size"
+			description="A list is used to group related content">
+
+			<div class="element-docs">
+				<p>The <code>ui-list</code> attribute corresponds to the List Semantic
+					element.</p>
+					
+				<ul ui-list>
+					<li>The <code>size</code> attribute is bindable.</li>
+				</ul>
+			</div>
+
+
+			<div class="element-examples">
+				<h3 class="ui header">Examples</h3>
+
+				<element-example language="markup" caption="The basic list type">
+				<div ui-list>
+					<div class="item">Apples</div>
+					<div class="item">Pears</div>
+					<div class="item">Oranges</div>
+				</div>
+				</element-example>
+
+				<element-example language="markup" caption="With icons">
+				<div ui-list>
+					<div class="item">
+						<i ui-icon="name: users"></i>
+						<div class="content">
+							Semantic UI
+						</div>
+					</div>
+					<div class="item">
+						<i ui-icon="name: marker"></i>
+						<div class="content">
+							New York, NY
+						</div>
+					</div>
+					<div class="item">
+						<i ui-icon="name: mail"></i>
+						<div class="content">
+							<a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+						</div>
+					</div>
+					<div class="item">
+						<i ui-icon="name: linkify"></i>
+						<div class="content">
+							<a href="http://www.semantic-ui.com">semantic-ui.com</a>
+						</div>
+					</div>
+				</div>
+				</element-example>
+
+				<element-example language="markup" caption="With more complex content">
+				<div ui-list class="relaxed divided">
+					<div class="item">
+						<i ui-icon="size: large; name: github" class="middle aligned"></i>
+						<div class="content">
+							<a class="header">Semantic-Org/Semantic-UI</a>
+							<div class="description">Updated 10 mins ago</div>
+						</div>
+					</div>
+					<div class="item">
+						<i ui-icon="size: large; name: github" class="middle aligned"></i>
+						<div class="content">
+							<a class="header">Semantic-Org/Semantic-UI-Docs</a>
+							<div class="description">Updated 22 mins ago</div>
+						</div>
+					</div>
+					<div class="item">
+						<i ui-icon="size: large; name: github" class="middle aligned"></i>
+						<div class="content">
+							<a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+							<div class="description">Updated 34 mins ago</div>
+						</div>
+					</div>
+				</div>
+				</element-example>
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="loader"
+			category="element"
+			description="A loader alerts a user to wait for an activity to complete">
+
+			<div class="element-docs">
+				<p>The <code>ui-loader</code> attribute corresponds to the Loader
+					Semantic element.</p>
+			</div>
+			
+			<div class="element-examples">
+
+				<element-example caption="Binding">
+				<div ui-segment>
+					<div ui-loader="active.bind: loaderIsLoading"></div>
+					<p class="placeholder"></p>
+				</div>
+
+				<div ui-segment>
+					<div ui-checkbox>
+						<input type="checkbox" checked.bind="loaderIsLoading">
+						<label>Loading?</label>
+					</div>
+				</div>
+				</element-example>
+				
+				
+			</div>
+
+		</element-section>
+
+
+
+		<element-section
+			name="rail"
+			category="element"
+			description="A rail is used to show accompanying content outside the boundaries 
+				of the main view of a site">
+
+			<div class="element-docs">
+				<p>The <code>ui-rail</code> attribute corresponds to the Rail
+					Semantic element.</p>
+			</div>
+			
+			
+			<div class="element-examples">
+
+				<element-example caption="A rail can be presented on the left or right side 
+					of a container">
+				<div ui-segment>
+					<p class="placeholder"></p>
+					<div ui-rail="side: left" style="width: 80px">
+						<div ui-segment>
+							<i ui-icon="name: chevron left"></i>
+						</div>
+					</div>
+					<p class="placeholder"></p>
+				</div>
+				</element-example>
+
+			</div>
+
+		</element-section>
+
+		<element-section
+			name="reveal"
+			category="element"
+			description="A reveal displays additional content in place of previous content 
+				when activated">
+
+			<div class="element-docs">
+				<p>The <code>ui-reveal</code> attribute corresponds to the Reveal
+					Semantic element.</p>
+
+				<ul ui-list>
+					<li>Bind <code>active</code> to programmatically reveal.</li>
+					<li>Use <code>ui-reveal-visible</code> on the element that you want to
+						be be on top, and <code>ui-reveal-hidden</code> for the content
+						that will be revealed.</li>
+				</ul>
+			</div>
+			
+			<div class="element-examples">
+
+				<element-example caption="Fade">
+				<div ui-reveal class="fade">
+					<div ui-reveal-visible>
+						<img ui-image="size: small" src="../assets/images/wireframe/square-image.png">
+					</div>
+					<div ui-reveal-hidden>
+						<img ui-image="size: small" src="../assets/images/avatar/large/ade.jpg">
+					</div>
+				</div>
+				</element-example>
+
+
+				<element-example caption="Move">
+				<div ui-reveal class="move">
+					<div ui-reveal-visible>
+						<img ui-image="size: small" src="../assets/images/wireframe/square-image.png">
+					</div>
+					<div ui-reveal-hidden>
+						<img ui-image="size: small" src="../assets/images/avatar/large/jenny.jpg">
+					</div>
+				</div>
+				<div ui-reveal class="move right">
+					<div ui-reveal-visible>
+						<img ui-image="size: small" src="../assets/images/wireframe/square-image.png">
+					</div>
+					<div ui-reveal-hidden>
+						<img ui-image="size: small" src="../assets/images/avatar/large/justen.jpg">
+					</div>
+				</div>
+				<div ui-reveal class="move up">
+					<div ui-reveal-visible>
+						<img ui-image="size: small" src="../assets/images/wireframe/square-image.png">
+					</div>
+					<div ui-reveal-hidden>
+						<img ui-image="size: small" src="../assets/images/avatar/large/nan.jpg">
+					</div>
+				</div>
+				</element-example>
+
+
+				<element-example caption="Binding">
+				<div ui-reveal="active.bind: activateReveal" class="fade">
+					<div ui-reveal-visible>
+						<img ui-image="size: small" src="../assets/images/wireframe/square-image.png">
+					</div>
+					<div ui-reveal-hidden>
+						<img ui-image="size: small" src="../assets/images/avatar/large/ade.jpg">
+					</div>
+				</div>
+
+				<div ui-segment>
+					<div ui-checkbox class="toggle">
+						<input type="checkbox" checked.bind="activateReveal">
+						<label>Activate</label>
+					</div>
+				</div>
+
+				</element-example>
+
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="segment"
+			category="element"
+			status="incomplete"
+			types="raised, stacked, piled, vertical"
+			variations="inverted, attached, padded, compact, colored, emphasis, circular, 
+				clearing, floated, text alignment, basic"
+			description="A segment is used to create a grouping of related content">
+
+			<div class="element-docs">
+				<p>The <code>ui-segment</code> attribute corresponds to the Segment
+					Semantic element.</p>
+
+				<p>You can put segments in groups by wrapping them in a block-level element
+					with a <code>ui-segments</code> attribute.</p>
+			</div>
+
+			<div class="element-examples">
+
+				<element-example caption="A segment of content">
+				<div ui-segment>
+					<p class="placeholder"></p>
+				</div>
+				</element-example>
+
+
+				<element-example caption="A segment of content">
+				<div ui-segment>
+					<p class="placeholder"></p>
+				</div>
+				</element-example>
+
+
+				<element-example caption="Segments group">
+				<div ui-segments>
+					<div ui-segment>
+						<p>Top</p>
+					</div>
+					<div ui-segment>
+						<p>Middle</p>
+					</div>
+					<div ui-segment>
+						<p>Middle</p>
+					</div>
+					<div ui-segment>
+						<p>Middle</p>
+					</div>
+					<div ui-segment>
+						<p>Bottom</p>
+					</div>
+				</div>
+				</element-example>
+			</div>
+
+		</element-section>
+
+
+		<element-section
+			name="step"
+			category="element"
+			description="A step shows the completion status of an activity in a series of activities">
+
+			<div class="element-docs">
+				<p>The <code>ui-step</code> attribute corresponds to the Step
+					Semantic element.</p>
+			</div>
+
+			<div class="element-examples">
+
+				<element-example caption="A single step">
+				<div ui-steps>
+					<div ui-step>Shipping</div>
+				</div>
+				</element-example>
+
+
+				<element-example caption="A set of steps">
+				<div ui-steps class="vertical">
+					<div ui-step="completed: true">
+						<i ui-icon="name: truck"></i>
+						<div class="content">
+							<div class="title">Shipping</div>
+							<div class="description">Choose your shipping options</div>
+						</div>
+					</div>
+					<div ui-step="active: true">
+						<i ui-icon="name: payment"></i>
+						<div class="content">
+							<div class="title">Billing</div>
+							<div class="description">Enter billing information</div>
+						</div>
+					</div>
+					<div ui-step="disabled: true">
+						<i ui-icon="name: info"></i>
+						<div class="content">
+							<div class="title">Confirm Order</div>
+						</div>
+					</div>
+				</div>
+				</element-example>
+
+
+				<element-example caption="Binding">
+				<div ui-steps class="vertical">
+					<div ui-step="completed.bind: currentStep > 1; 
+						active.bind: currentStep == 1">
+						<i ui-icon="name: user"></i>
+						<div class="content">
+							<div class="title">New User</div>
+							<div class="description">Create your account</div>
+						</div>
+					</div>
+					<div ui-step="completed.bind: currentStep > 2;
+						disabled.bind: currentStep < 2;
+						active.bind: currentStep == 2">
+						<i ui-icon="name: payment"></i>
+						<div class="content">
+							<div class="title">Billing</div>
+							<div class="description">Enter billing information</div>
+						</div>
+					</div>
+					<div ui-step="completed.bind: currentStep > 3;
+						disabled.bind: currentStep < 3;
+						active.bind: currentStep == 3">
+						<i ui-icon="name: info"></i>
+						<div class="content">
+							<div class="title">Confirm Order</div>
+							<div class="description">Ensure everything's correct'</div>
+						</div>
+					</div>
+				</div>
+				
+				<div ui-segment>
+					<p>Current step:</p>
+					<div ui-dropdown="selection: currentStep">
+						<input name="currentStep" type="hidden" value.bind="currentStep">
+						<i class="dropdown icon"></i>
+						<div class="default text">Current Step</div>
+						<div class="menu">
+							<div class="item" data-value="1">First</div>
+							<div class="item" data-value="2">Second</div>
+							<div class="item" data-value="3">Third</div>
+							<div class="item" data-value="4">Finished</div>
+						</div>
+					</div>
+				</div>
+				</element-example>
+
+			</div>
+
+		</element-section>
+
+	</div>
+
+</template>
+

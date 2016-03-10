@@ -1,0 +1,65 @@
+<template>
+
+	<require from="./semantic-prism-theme.css"></require>
+
+	<div class="ui centered text container">
+		<h1 class="ui header">Aurelia Semantic UI</h1>
+
+		<p>A collection of <a href="http://semantic-ui.com/">Semantic UI</a> 
+			custom elements for Aurelia applications.</p>
+
+		<section>
+			<header>
+				<h2 class="ui header">Overview</h2>
+			</header>
+
+			<p>In your project install the plugin via <kbd>jspm</kbd> with following command</p>
+
+			<div ui-segment class="raised inverted">
+				<pre>jspm install aurelia-semantic-ui</pre>
+			</div>
+
+			<p>Make sure you use <a href="http://aurelia.io/docs#startup-and-configuration">manual 
+				bootstrapping</a>. In order to do so open your <kbd>index.html</kbd> and locate
+				the element with the attribute <kbd>aurelia-app</kbd>. Change it to look like this:
+			</p>
+
+			<div ui-segment class="raised">
+				<pre><code class="language-markup">&lt;body aurelia-app=&quot;main&quot;&gt;</code></pre>
+			</div>
+
+			<p>Create (if you haven't already) a file <kbd>main.js</kbd> in your <kbd>src</kbd>
+				folder with following content:
+			</p>
+
+			<div ui-segment class="raised">
+			<pre><code class="language-javascript">export function configure(aurelia) {
+  aurelia.use.
+    standardConfiguration().
+    developmentLogging().
+    // Install the plugin
+    plugin('aurelia-semantic-ui');
+
+  aurelia.start().then(a => a.setRoot());
+}</code></pre>
+			</div>
+
+			<p>Then you can use any of the custom elements in your views, like so:</p>
+
+	
+			<div ui-segment class="raised">
+			<pre><code class="language-markup">&lt;div ui-card class=&quot;centered&quot;&gt;
+  &lt;div class="image"&gt;
+    &lt;img src=&quot;/images/avatar2/large/elyse.png&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class="content"&gt;
+    &lt;a class=&quot;header&quot;&gt;Elyse&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+
+		</section>
+	</div>
+
+</template>
+

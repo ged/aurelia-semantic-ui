@@ -1,0 +1,61 @@
+<template>
+
+	<require from="../components/element-section"></require>
+	<require from="../components/element-example"></require>
+	<require from="./views.css"></require>
+	
+	<div class="ui centered container">
+		<header>
+			<h2 class="ui header">"View" Widgets</h2>
+		</header>
+
+		<p>These are custom elements from the "Views" section of the Semantic
+			UI widget set.</p>
+
+		<element-section
+			name="card"
+			category="view"
+			status="incomplete"
+			variations="fluid, centered, colored"
+			description="A card displays site content in a manner similar to a playing card">
+
+			<div class="element-docs">
+				<p>The <code>ui-card</code> attribute corresponds to the Card
+				Semantic element.</p>
+
+				<p>You can group <code>ui-card</code>s together using a block-level element
+					with a <code>ui-cards</code> attribute.</p>
+			</div>
+
+			<div class="element-examples">
+				<h3 class="ui header">Examples</h3>
+
+				<element-example language="markup" caption="A card with some common sections">
+					<div ui-card>
+						<div class="image"><img src="assets/images/kristy.png"></div>
+						<div class="content">
+							<a class="header">Kristy</a>
+							<div class="meta">
+								<span class="date">Joined in 2013</span>
+							</div>
+							<div class="description">
+								Kristy is an art director living in New York.
+							</div>
+						</div>
+						<div class="extra content">
+							<a>
+								<i ui-icon="name: user"></i>
+								22 Friends
+							</a>
+						</div>
+					</div>
+				</element-example>
+			</div>
+
+		</element-section>
+
+
+	</div>
+
+</template>
+
