@@ -5,30 +5,27 @@
  * Modal - http://semantic-ui.com/modules/modal.html
  */
 
-import {inject, customAttribute, bindable} from 'aurelia-framework';
+import {constants} from '../constants';
+import {customAttribute} from 'aurelia-framework';
+import {UIAttribute, bindableToggle} from '../ui-attribute';
 
 @customAttribute( 'ui-modal' )
-@inject( Element )
-export class UIModalElement {
+export class UIModalAttribute extends UIAttribute {
 
-	@bindable active = false;
-
-
-	constructor( element ) {
-		this.element = element;
-	}
+	@bindableToggle active = false;
 
 
-	bind() {
-		this.element.classList.add( 'ui', 'modal' );
+
+	attached() {
+		$( this.element ).modal();
 	}
 
 
 	activeChanged( newValue ) {
 		if ( newValue ) {
-			$( this.modal ).modal( 'show' );
+			$( this.element ).modal( 'show' );
 		} else {
-			$( this.modal ).modal( 'hide' );
+			$( this.element ).modal( 'hide' );
 		}
 	}
 

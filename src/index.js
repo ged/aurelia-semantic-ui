@@ -37,6 +37,7 @@ export function configure(config) {
 		'./modules/ui-dropdown',
 		'./modules/ui-modal',
 		'./modules/ui-search',
+		'./modules/ui-sidebar',
 		'./views/ui-card'
 	);
 }
