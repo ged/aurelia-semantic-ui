@@ -19,6 +19,7 @@ export function configure(config) {
 		'./collections/ui-form',
 		'./collections/ui-menu',
 		'./collections/ui-message',
+		'./collections/ui-table',
 		'./elements/ui-button',
 		'./elements/ui-container',
 		'./elements/ui-divider',
