@@ -6,8 +6,8 @@
  * - Michael Granger <ged@FaerieMUD.org>
  */
 
-import 'semantic';
-import 'semantic/semantic.css!';
+import 'semantic-ui';
+import 'semantic-ui/semantic.css!';
 
 
 export var VERSION = '0.0.1.dev';
