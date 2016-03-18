@@ -283,11 +283,82 @@
 
 		</element-section>
 
-		<!-- element-section
+		<element-section
 			name="table"
 			category="collection"
-			description="" -->
+			description="A table displays a collections of data grouped into rows">
 
+			<div class="element-docs">
+				<p>The <code>ui-table</code> attribute corresponds to the Table
+				Semantic element.</p>
+
+				<h4 ui-header>To-do</h4>
+				<ul ui-list>
+					<li>Implement a way to automate binding data to a table with a column 
+						map (the second example).</li>
+				</ul>
+			</div>
+
+			<div class="element-examples">
+
+				<element-example caption="A standard table">
+				<table ui-table class="celled">
+				<thead>
+					<tr>
+						<th>Header</th>
+						<th>Header</th>
+						<th>Header</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<div ui-label class="ribbon">First</div>
+						</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="3">
+							<div ui-menu class="right floated pagination">
+								<a class="icon item">
+									<i ui-icon="name: left chevron"></i>
+								</a>
+								<a class="item">1</a>
+								<a class="item">2</a>
+								<a class="item">3</a>
+								<a class="item">4</a>
+								<a class="icon item">
+									<i ui-icon="name: right chevron"></i>
+								</a>
+							</div>
+						</th>
+					</tr>
+				</tfoot>
+				</table>
+				</element-example>
+
+
+				<element-example caption="Data tables">
+				<table ui-table="data.bind: tableUsers, columns.bind: userColumns" 
+					class="celled"></table>
+				</element-example>
+
+			</div>
+
+		</element-section>
 
 	</div>
 
