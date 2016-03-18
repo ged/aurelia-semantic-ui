@@ -746,21 +746,6 @@ System.config({
       "npm:prismjs@1.4.1/prism.js",
       "npm:process@0.11.2.js",
       "npm:process@0.11.2/browser.js"
-    ],
-    "demo/app-build-c7d6c1a8da.js": [
-      "demo/app.css!github:systemjs/plugin-text@0.0.4.js",
-      "demo/app.html!github:systemjs/plugin-text@0.0.4.js",
-      "demo/app.js",
-      "demo/demo-footer.html!github:systemjs/plugin-text@0.0.4.js",
-      "demo/demo-footer.js",
-      "demo/demo-nav.css!github:systemjs/plugin-text@0.0.4.js",
-      "demo/demo-nav.html!github:systemjs/plugin-text@0.0.4.js",
-      "demo/demo-nav.js",
-      "demo/demo.html!github:systemjs/plugin-text@0.0.4.js",
-      "demo/main.js",
-      "demo/overview.html!github:systemjs/plugin-text@0.0.4.js",
-      "demo/overview.js",
-      "demo/semantic-prism-theme.css!github:systemjs/plugin-text@0.0.4.js"
     ]
   }
 });

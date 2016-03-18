@@ -205,53 +205,9 @@
 			name="sidebar"
 			category="module"
 			description="">
-
 			<div class="element-docs">
 				<p>The <code>ui-sidebar</code> attribute corresponds to the Sidebar Semantic element.</p>	
 			</div>
-
-			<div class="element-examples">
-
-				<element-example caption="A sidebar with a context">
-				<div ui-menu class="top attached">
-					<a class="item" click.delegate="demoSidebar.toggle()">
-						<i ui-icon="name: sidebar"></i>
-						Menu
-					</a>
-				</div>
-				<div ui-segment class="bottom attached pushable">
-					<div ui-menu ui-sidebar="context: .bottom.attached"
-						ui-sidebar.ref="demoSidebar"
-						class="inverted labeled icon left inline vertical">
-						<a class="item">
-							<i ui-icon="name: home"></i>
-							Home
-						</a>
-						<a class="item">
-							<i ui-icon="name: block layout"></i>
-							Topics
-						</a>
-						<a class="item">
-							<i ui-icon="name: smile"></i>
-							Friends
-						</a>
-						<a class="item">
-							<i ui-icon="name: calendar"></i>
-							History
-						</a>
-					</div>
-					<div class="pusher">
-						<div ui-segment class="basic">
-							<h3 ui-header>Application Content</h3>
-							<p class="placeholder"></p>
-							<p class="placeholder"></p>
-						</div>
-					</div>
-				</div>
-				</element-example>
-
-			</div>
-
 		</element-section>
 		
 		<element-section
