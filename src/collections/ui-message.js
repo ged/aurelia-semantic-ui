@@ -5,10 +5,11 @@
  * Message - http://semantic-ui.com/collections/message.html
  */
 
+import {constants} from '../constants';
 import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
 import {inject, child, customAttribute, children, bindable} from 'aurelia-framework';
 
-@customAttribute( 'ui-message' )
+@customAttribute( `${constants.attributePrefix}message` )
 export class UIMessageAttribute extends UIAttribute {
 
 	@bindable icon;

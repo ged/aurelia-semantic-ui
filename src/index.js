@@ -17,6 +17,7 @@ export function configure(config) {
 	config.globalResources(
 		'./collections/ui-breadcrumb',
 		'./collections/ui-form',
+		'./collections/ui-grid',
 		'./collections/ui-menu',
 		'./collections/ui-message',
 		'./collections/ui-table',

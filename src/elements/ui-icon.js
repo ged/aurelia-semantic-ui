@@ -10,7 +10,7 @@ import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
 import {customAttribute, bindable} from 'aurelia-framework';
 
 
-@customAttribute( 'ui-icon' )
+@customAttribute( `${constants.attributePrefix}icon` )
 export class UIIconAttribute extends UIAttribute {
 
 	@bindable name = "help circle";
@@ -36,7 +36,7 @@ export class UIIconAttribute extends UIAttribute {
 }
 
 
-@customAttribute( 'ui-icons' )
+@customAttribute( `${constants.attributePrefix}icons` )
 export class UIIconsAttribute extends UIAttribute {
 
 	@bindableEnum( ...constants.VALID_SIZES ) size;

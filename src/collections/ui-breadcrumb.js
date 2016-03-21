@@ -5,10 +5,11 @@
  * Breadcrumb - http://semantic-ui.com/collections/breadcrumb.html
  */
 
+import {constants} from '../constants';
 import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
 import {inject, customAttribute, children, bindable, LogManager} from 'aurelia-framework';
 
-@customAttribute( 'ui-breadcrumb' )
+@customAttribute( `${constants.attributePrefix}breadcrumb` )
 export class UIBreadcrumbAttribute extends UIAttribute {
 
 	@bindable divider;
@@ -54,7 +55,7 @@ export class UIBreadcrumbAttribute extends UIAttribute {
 /**
  * ui-breadcrumb-section
  */
-@customAttribute( 'ui-breadcrumb-section' )
+@customAttribute( `${constants.attributePrefix}breadcrumb-section` )
 export class UIBreadcrumbSectionAttribute extends UIAttribute {
 
 	@bindableToggle active = false;
@@ -70,7 +71,7 @@ export class UIBreadcrumbSectionAttribute extends UIAttribute {
 /**
  * ui-breadcrumb-divider
  */
-@customAttribute( 'ui-breadcrumb-divider' )
+@customAttribute( `${constants.attributePrefix}breadcrumb-divider` )
 export class UIBreadcrumbDividerAttribute extends UIAttribute {
 
 	bind() {

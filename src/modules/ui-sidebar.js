@@ -10,7 +10,7 @@ import {customAttribute, bindable} from 'aurelia-framework';
 import {UIAttribute} from '../ui-attribute';
 
 
-@customAttribute( 'ui-sidebar' )
+@customAttribute( `${constants.attributePrefix}sidebar` )
 export class UISidebarAttribute extends UIAttribute {
 
 	@bindable context;

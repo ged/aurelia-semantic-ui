@@ -5,10 +5,11 @@
  * Menu - http://semantic-ui.com/collections/menu.html
  */
 
+import {constants} from '../constants';
 import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
 import {inject, customAttribute, children, bindable} from 'aurelia-framework';
 
-@customAttribute( 'ui-menu' )
+@customAttribute( `${constants.attributePrefix}menu` )
 export class UIMenuAttribute extends UIAttribute {
 
 	@bindable router;
@@ -41,7 +42,7 @@ export class UIMenuAttribute extends UIAttribute {
 /**
  * ui-menu-item
  */
-@customAttribute( 'ui-menu-item' )
+@customAttribute( `${constants.attributePrefix}menu-item` )
 export class UIMenuItemAttribute extends UIAttribute {
 
 	@bindableToggle active = false;

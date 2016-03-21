@@ -26,7 +26,7 @@ export class UIStepAttribute extends UIAttribute {
 }
 
 
-@customAttribute( 'ui-steps' )
+@customAttribute( `${constants.attributePrefix}steps` )
 export class UIStepsAttribute extends UIAttribute {
 }
 

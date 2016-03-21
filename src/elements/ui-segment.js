@@ -9,7 +9,7 @@ import {constants} from '../constants';
 import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
 import {customAttribute, computedFrom, bindable, inject, LogManager} from 'aurelia-framework';
 
-@customAttribute( 'ui-segment' )
+@customAttribute( `${constants.attributePrefix}segment` )
 export class UISegmentAttribute extends UIAttribute {
 
 	@bindableToggle loading = false;
@@ -19,7 +19,7 @@ export class UISegmentAttribute extends UIAttribute {
 }
 
 
-@customAttribute( 'ui-segments' )
+@customAttribute( `${constants.attributePrefix}segments` )
 export class UISegmentsAttribute extends UIAttribute {
 }
 

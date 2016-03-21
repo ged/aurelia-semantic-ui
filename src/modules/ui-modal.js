@@ -9,7 +9,7 @@ import {constants} from '../constants';
 import {customAttribute} from 'aurelia-framework';
 import {UIAttribute, bindableToggle} from '../ui-attribute';
 
-@customAttribute( 'ui-modal' )
+@customAttribute( `${constants.attributePrefix}modal` )
 export class UIModalAttribute extends UIAttribute {
 
 	@bindableToggle active = false;
