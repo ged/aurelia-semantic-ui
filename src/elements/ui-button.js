@@ -14,6 +14,7 @@ export class UIButtonAttribute extends UIAttribute {
 
 	@bindable icon;
 	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableToggle disabled;
 
 	@child( 'i.ui.icon' ) iconElement;
 
