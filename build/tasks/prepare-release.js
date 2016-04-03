@@ -7,9 +7,9 @@ var bump = require('gulp-bump');
 var args = require('../args');
 
 gulp.task('bump-version', function(){
-	return gulp.src(['./package.json', './bower.json'])
-	.pipe(bump({type:args.bump })) //major|minor|patch|prerelease
-	.pipe(gulp.dest('./'));
+	return gulp.src( ['./package.json', './bower.json'] ).
+		pipe( bump({type:args.bump }) ). //major|minor|patch|prerelease
+		pipe( gulp.dest('./') );
 });
 
 gulp.task('changelog', function(callback) {

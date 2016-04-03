@@ -54,7 +54,6 @@
       "babel-plugin-transform-es2015-modules-systemjs": "^6.6.5",
       "babel-preset-stage-2": "^6.5.0",
       "babel-runtime": "^5.8.24",
-      "browser-sync": "^2.11.2",
       "conventional-changelog": "^1.1.0",
       "core-js": "^1.1.4",
       "css": "github:systemjs/plugin-css@^0.1.20",
@@ -92,6 +91,7 @@
     "aurelia-pal-browser": "^1.0.0-beta.1.2.0",
     "aurelia-tools": "^0.1.20",
     "babel": "^6.5.2",
+    "babel-eslint": "^6.0.2",
     "babel-plugin-syntax-flow": "^6.5.0",
     "babel-plugin-transform-class-properties": "^6.6.0",
     "babel-plugin-transform-decorators": "^6.6.5",
@@ -104,7 +104,6 @@
     "babel-preset-es2015-loose": "^7.0.0",
     "babel-preset-stage-1": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
-    "browser-sync": "^2.11.2",
     "conventional-changelog": "^1.1.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
@@ -116,6 +115,7 @@
     "gulp-karma": "0.0.5",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "jasmine-core": "^2.4.1",
@@ -128,7 +128,8 @@
     "karma-jspm": "^2.1.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
-    "vinyl-paths": "^2.1.0"
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^4.3.2"
   },
   "peerDepedencies": {
     "aurelia-framework": "^1.0.0-beta.1.2.1",
