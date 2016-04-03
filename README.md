@@ -1,6 +1,6 @@
 # aurelia-semantic-ui
 
-This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It contains custom elements for some of the [Semantic UI](http://semantic-ui.com/) widgets.
+This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It contains custom attributes for some of the [Semantic UI](http://semantic-ui.com/) widgets.
 
 It isn't really even alpha quality right now, as I'm still figuring out how half of this stuff works, so don't depend on anything quite yet.
 
