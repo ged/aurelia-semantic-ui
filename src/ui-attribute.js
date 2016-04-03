@@ -23,7 +23,6 @@ export class UIAttribute {
 
 		if ( nameMatch ) {
 			let attrName = nameMatch[ 1 ].toLowerCase();
-			this.logger.debug( `Adding 'ui ${attrName}' to the classList.` );
 			this.element.classList.add( 'ui', attrName );
 		} else {
 			this.logger.warn( "Attribute class doesn't match the naming convention; ",
@@ -35,10 +34,10 @@ export class UIAttribute {
 
 
 export function bindableEnum( ...validValues ) {
-	console.debug( "Bindable enum decorator called with: ", validValues );
+	// console.debug( "Bindable enum decorator called with: ", validValues );
 	return function( target, name, descriptor ) {
 		let changedMethodName = `${name}Changed`;
-		console.debug( "Setting up a ", changedMethodName, " method on ", target );
+		// console.debug( "Setting up a ", changedMethodName, " method on ", target );
 		target[ changedMethodName ] = function( newValue, oldValue ) {
 			this.logger.debug( `Changing ${name} to ${newValue} from ${oldValue}` );
 			this.element.classList.remove( oldValue );
@@ -59,9 +58,9 @@ export function bindableEnum( ...validValues ) {
 
 
 export function bindableToggle( target, name, descriptor ) {
-	console.debug( "Bindable toggle decorator called with args: ", target, name, descriptor );
+	// console.debug( "Bindable toggle decorator called with args: ", target, name, descriptor );
 	let changedMethodName = `${name}Changed`;
-	console.debug( "Setting up a ", changedMethodName, " method on ", target );
+	// console.debug( "Setting up a ", changedMethodName, " method on ", target );
 	target[ changedMethodName ] = function( newValue ) {
 		this.logger.debug( `Toggling ${name} to ${newValue ? 'on' : 'off'}.` );
 		if ( newValue ) { this.element.classList.add(name); }
