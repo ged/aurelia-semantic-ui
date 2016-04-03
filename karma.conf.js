@@ -14,12 +14,14 @@ module.exports = function(config) {
 
 		jspm: {
 			// Edit this to your needs
-			loadFiles: ['src/**/*.js', 'test/**/*.js']
+			loadFiles: ['test/helpers.js', 'src/**/*.js', 'test/**/*.js']
 		},
 
 
 		// list of files / patterns to load in the browser
-		files: [],
+		files: [
+			'test/**/*.html'
+		],
 
 
 		// list of files to exclude
@@ -34,13 +36,15 @@ module.exports = function(config) {
 			'src/**/*.js': ['babel']
 		},
 		babelPreprocessor: {
-			plugins: [
-				"transform-decorators-legacy",
-				"transform-class-properties"
-			],
-			presets: [
-				"stage-2"
-			]
+			options: {
+				sourceMap: 'inline',
+				presets: [ 'es2015-loose', 'stage-1'],
+				plugins: [
+					'syntax-flow',
+					'transform-decorators-legacy',
+					'transform-flow-strip-types'
+				]
+			}
 		},
 
 		// test results reporter to use

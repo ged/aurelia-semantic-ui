@@ -114,21 +114,4 @@ describe('UIBreadcrumbAttribute', () => {
 		done();
 	});
 
-	it( '', done => {
-		uiBreadcrumb = templatingEngine.
-			createViewModelForUnitTest( UIBreadcrumbAttribute, {divider: 'right angle icon'} );
-		// TODO: Is there a way to have the @children do this instead?
-		uiBreadcrumb.sections = element.querySelectorAll( '[ui-breadcrumb-section]' );
-
-		spyOn( element, 'insertBefore' ).and.callThrough();
-		uiBreadcrumb.bind();
-		jasmine.clock().tick(1);
-
-		expect( element.insertBefore.calls.count() ).toEqual( 2 );
-		expect(
-			element.insertBefore
-		).toHaveBeenCalledWith( jasmine.any(HTMLElement), jasmine.any(HTMLElement) );
-
-		done();
-	});
 });
