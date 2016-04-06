@@ -13,7 +13,10 @@ import {inject, customAttribute, children, bindable} from 'aurelia-framework';
 export class UIFormAttribute extends UIAttribute {
 
 	@bindableToggle loading = false;
-	@bindableEnum('error', 'success', 'warning') state;
+	@bindableToggle error;
+	@bindableToggle success;
+	@bindableToggle warning;
+
 	@children( '.field' ) fields;
 
 }
