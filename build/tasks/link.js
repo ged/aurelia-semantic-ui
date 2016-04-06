@@ -5,7 +5,7 @@ var shell       = require( 'gulp-shell' );
 var paths       = require( '../paths' );
 
 gulp.task('link-jspm', shell.task([
-	'jspm link github:ged/aurelia-semantic-ui@dev -y'
+	'jspm link npm:aurelia-semantic-ui@dev -y'
 ]));
 
 
