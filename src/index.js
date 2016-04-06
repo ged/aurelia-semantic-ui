@@ -10,7 +10,7 @@ import 'semantic-ui';
 import 'semantic-ui/semantic.css!';
 
 
-export var VERSION = '0.0.1.dev';
+export var VERSION = '0.0.1.alpha.2';
 
 // Aurelia plugin hook
 export function configure(config) {
