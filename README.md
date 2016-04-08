@@ -1,5 +1,7 @@
 # aurelia-semantic-ui
 
+[![Join the chat at https://gitter.im/ged/aurelia-semantic-ui](https://badges.gitter.im/ged/aurelia-semantic-ui.svg)](https://gitter.im/ged/aurelia-semantic-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It contains custom attributes for some of the [Semantic UI](http://semantic-ui.com/) widgets.
 
 It isn't really even alpha quality right now, as I'm still figuring out how half of this stuff works, so don't depend on anything quite yet.
