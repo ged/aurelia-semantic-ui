@@ -13,6 +13,78 @@ The major "to do" list:
 * Finish making custom attributes for the rest of the Semantic widgets.
 * Figure out conventions for hooking up the Modules and Behaviors further into Aurelia. I haven't really used them enough to have a feel for what they might look like aside from calling `$( this.element ).dropdown();` from `attached()` or whatever.
 
+## Progress
+
+The plan is to provide implementations for all of the Collections, Elements, Modules, and Views, and any of the Behaviors that make sense to use in the context of an Aurelia app. 
+
+*Legend*
+
+    [x] Complete and adequate test coverage
+    [-] Implemented but not complete
+    [?] Not sure if this will be included
+    [ ] Not implemented yet, but planned
+
+### Behaviors
+
+- [?] Form Validation (will this be easier to use than `aurelia-validation` when it's done?)
+- [?] API (consider omitting)
+- [ ] Visibility (`ui-on-top-visible`, `ui-on-top-passed`, etc.)
+
+### Collections
+
+- [-] Breadcrumb
+- [-] Form
+- [-] Grid
+- [-] Menu
+- [-] Message
+- [-] Table
+
+### Elements
+
+- [-] Button
+- [-] Container
+- [-] Divider
+- [-] Flag
+- [-] Header
+- [-] Icon
+- [-] Image
+- [-] Input
+- [-] Label
+- [-] List
+- [-] Loader
+- [-] Rail
+- [-] Reveal
+- [-] Segment
+- [-] Step
+
+### Modules
+
+- [ ] Accordion
+- [ ] Checkbox
+- [ ] Dimmer
+- [-] Dropdown
+- [ ] Embed
+- [-] Modal
+- [ ] Nag
+- [ ] Popup
+- [ ] Progress
+- [ ] Rating
+- [-] Search
+- [ ] Shape
+- [-] Sidebar
+- [ ] Sticky
+- [ ] Tab
+- [ ] Transition
+
+### Views
+
+- [ ] Ad
+- [-] Card
+- [ ] Comment
+- [ ] Feed
+- [ ] Item
+- [ ] Statistic
+
 
 ## Installing
 
