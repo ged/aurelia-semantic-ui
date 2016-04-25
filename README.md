@@ -83,7 +83,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 - [ ] Comment
 - [ ] Feed
 - [ ] Item
-- [ ] Statistic
+- [-] Statistic
 
 
 ## Installing

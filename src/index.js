@@ -10,7 +10,7 @@ import 'semantic-ui';
 import 'semantic-ui/semantic.css!';
 
 
-export var VERSION = '0.0.1.alpha.2';
+export var VERSION = '0.0.1.alpha.3';
 
 // Aurelia plugin hook
 export function configure(config) {
@@ -40,7 +40,8 @@ export function configure(config) {
 		'./modules/ui-modal',
 		'./modules/ui-search',
 		'./modules/ui-sidebar',
-		'./views/ui-card'
+		'./views/ui-card',
+		'./views/ui-statistic'
 	);
 }
 
