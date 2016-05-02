@@ -59,7 +59,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 
 ### Modules
 
-- [ ] Accordion
+- [-] Accordion
 - [ ] Checkbox
 - [ ] Dimmer
 - [-] Dropdown

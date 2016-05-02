@@ -36,6 +36,7 @@ export function configure(config) {
 		'./elements/ui-reveal',
 		'./elements/ui-segment',
 		'./elements/ui-step',
+		'./modules/ui-accordion',
 		'./modules/ui-dropdown',
 		'./modules/ui-modal',
 		'./modules/ui-search',

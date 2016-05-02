@@ -1,1 +1,1 @@
-exclude = {$exclude,node_modules,jspm_packages}
+exclude = {$exclude,dist,node_modules,jspm_packages}
