@@ -39,6 +39,7 @@ export function configure(config) {
 		'./modules/ui-accordion',
 		'./modules/ui-dropdown',
 		'./modules/ui-modal',
+		'./modules/ui-popup',
 		'./modules/ui-search',
 		'./modules/ui-sidebar',
 		'./views/ui-card',
