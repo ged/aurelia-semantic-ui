@@ -66,7 +66,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 - [ ] Embed
 - [-] Modal
 - [ ] Nag
-- [ ] Popup
+- [-] Popup
 - [ ] Progress
 - [ ] Rating
 - [-] Search
@@ -81,7 +81,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 - [ ] Ad
 - [-] Card
 - [ ] Comment
-- [ ] Feed
+- [-] Feed
 - [ ] Item
 - [-] Statistic
 
