@@ -17,6 +17,8 @@ export class UIDropdownAttribute extends UIAttribute {
 	@bindableToggle error = false;
 	@bindableToggle disabled = false;
 
+	@bindable options = {};
+
 
 	bind( ...args ) {
 		super.bind( ...args );
@@ -54,7 +56,7 @@ export class UIDropdownAttribute extends UIAttribute {
 
     attached() {
 		this.logger.debug( "Activating dropdown for ", this.element );
-        $( this.element ).dropdown();
+        $( this.element ).dropdown( this.options );
     }
 
 }
