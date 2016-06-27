@@ -23,10 +23,20 @@ export class UIModalAttribute extends UIAttribute {
 
 	activeChanged( newValue ) {
 		if ( newValue ) {
-			$( this.element ).modal( 'show' );
+			this.show();
 		} else {
-			$( this.element ).modal( 'hide' );
+			this.hide();
 		}
+	}
+
+
+	show() {
+		$( this.element ).modal( 'show' );
+	}
+
+
+	hide() {
+		$( this.element ).modal( 'hide' );
 	}
 
 }
