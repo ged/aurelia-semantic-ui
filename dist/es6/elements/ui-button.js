@@ -6,11 +6,24 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {customAttribute, inject, child, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {customAttribute, customElement, inject, child, bindable} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}button` )
+export class SemanticUIButtonElement extends SemanticUIElement {
+
+	@bindable icon;
+	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableToggle disabled;
+	@bindableToggle primary;
+	@bindableToggle secondary;
+	@bindableToggle basic;
+
+}
+
 
 @customAttribute( `${constants.attributePrefix}button` )
-export class UIButtonAttribute extends UIAttribute {
+export class SemanticUIButtonAttribute extends SemanticUIAttribute {
 
 	@bindable icon;
 	@bindableEnum( ...constants.VALID_COLORS ) color;
@@ -52,6 +65,10 @@ export class UIButtonAttribute extends UIAttribute {
 }
 
 
+@customElement( `${constants.elementPrefix}buttons` )
+export class SemanticUIButtonsElement extends SemanticUIElement {}
+
 @customAttribute( `${constants.attributePrefix}buttons` )
-export class UIButtonsAttribute extends UIAttribute {
+export class SemanticUIButtonsAttribute extends SemanticUIAttribute {
 }
+

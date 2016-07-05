@@ -1,4 +1,4 @@
-define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], function (exports, _constants, _uiAttribute, _aureliaFramework) {
+define(['exports', '../constants', '../ui-base', 'aurelia-framework'], function (exports, _constants, _uiBase, _aureliaFramework) {
   /* -*- javascript -*- */
   "use strict";
 
@@ -9,10 +9,11 @@ define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], func
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.UIContainerAttribute = undefined;
+  exports.SemanticUIContainerAttribute = exports.SemanticUIContainerElement = undefined;
 
-  var _dec, _class;
+  var _dec, _class, _dec2, _class2;
 
-  let UIContainerAttribute = exports.UIContainerAttribute = (_dec = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }container`), _dec(_class = class UIContainerAttribute extends _uiAttribute.UIAttribute {}) || _class);
+  let SemanticUIContainerElement = exports.SemanticUIContainerElement = (_dec = (0, _aureliaFramework.customElement)(`${ _constants.constants.elementPrefix }container`), _dec(_class = class SemanticUIContainerElement extends _uiBase.SemanticUIElement {}) || _class);
+  let SemanticUIContainerAttribute = exports.SemanticUIContainerAttribute = (_dec2 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }container`), _dec2(_class2 = class SemanticUIContainerAttribute extends _uiBase.SemanticUIAttribute {}) || _class2);
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVsZW1lbnRzL3VpLWNvbnRhaW5lci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7QUFDQTs7QUFFQTs7Ozs7Ozs7Ozs7TUFTYSxvQixXQUFBLG9CLFdBRFosdUNBQWtCLElBQUUscUJBQVUsZUFBZ0IsWUFBOUMsQyxnQkFDTSxNQUFNLG9CQUFOLGtDQUErQyxFIiwiZmlsZSI6ImVsZW1lbnRzL3VpLWNvbnRhaW5lci5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIC0qLSBqYXZhc2NyaXB0IC0qLSAqL1xuXCJ1c2Ugc3RyaWN0XCI7XG5cbi8qKlxuICogQ29udGFpbmVyIC0gaHR0cDovL3NlbWFudGljLXVpLmNvbS9lbGVtZW50cy9jb250YWluZXIuaHRtbFxuICovXG5cbmltcG9ydCB7Y29uc3RhbnRzfSBmcm9tICcuLi9jb25zdGFudHMnO1xuaW1wb3J0IHtVSUF0dHJpYnV0ZX0gZnJvbSAnLi4vdWktYXR0cmlidXRlJztcbmltcG9ydCB7Y3VzdG9tQXR0cmlidXRlfSBmcm9tICdhdXJlbGlhLWZyYW1ld29yayc7XG5cbkBjdXN0b21BdHRyaWJ1dGUoIGAke2NvbnN0YW50cy5hdHRyaWJ1dGVQcmVmaXh9Y29udGFpbmVyYCApXG5leHBvcnQgY2xhc3MgVUlDb250YWluZXJBdHRyaWJ1dGUgZXh0ZW5kcyBVSUF0dHJpYnV0ZSB7XG59XG5cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVsZW1lbnRzL3VpLWNvbnRhaW5lci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7QUFDQTs7QUFFQTs7Ozs7Ozs7Ozs7TUFTYSwwQixXQUFBLDBCLFdBRFoscUNBQWdCLElBQUUscUJBQVUsYUFBYyxZQUExQyxDLGdCQUNNLE1BQU0sMEJBQU4sbUNBQTJELEU7TUFHckQsNEIsV0FBQSw0QixZQURaLHVDQUFrQixJQUFFLHFCQUFVLGVBQWdCLFlBQTlDLEMsa0JBQ00sTUFBTSw0QkFBTixxQ0FBK0QsRSIsImZpbGUiOiJlbGVtZW50cy91aS1jb250YWluZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvKiAtKi0gamF2YXNjcmlwdCAtKi0gKi9cblwidXNlIHN0cmljdFwiO1xuXG4vKipcbiAqIENvbnRhaW5lciAtIGh0dHA6Ly9zZW1hbnRpYy11aS5jb20vZWxlbWVudHMvY29udGFpbmVyLmh0bWxcbiAqL1xuXG5pbXBvcnQge2NvbnN0YW50c30gZnJvbSAnLi4vY29uc3RhbnRzJztcbmltcG9ydCB7U2VtYW50aWNVSUVsZW1lbnQsIFNlbWFudGljVUlBdHRyaWJ1dGV9IGZyb20gJy4uL3VpLWJhc2UnO1xuaW1wb3J0IHtjdXN0b21BdHRyaWJ1dGUsIGN1c3RvbUVsZW1lbnR9IGZyb20gJ2F1cmVsaWEtZnJhbWV3b3JrJztcblxuQGN1c3RvbUVsZW1lbnQoIGAke2NvbnN0YW50cy5lbGVtZW50UHJlZml4fWNvbnRhaW5lcmAgKVxuZXhwb3J0IGNsYXNzIFNlbWFudGljVUlDb250YWluZXJFbGVtZW50IGV4dGVuZHMgU2VtYW50aWNVSUVsZW1lbnQge31cblxuQGN1c3RvbUF0dHJpYnV0ZSggYCR7Y29uc3RhbnRzLmF0dHJpYnV0ZVByZWZpeH1jb250YWluZXJgIClcbmV4cG9ydCBjbGFzcyBTZW1hbnRpY1VJQ29udGFpbmVyQXR0cmlidXRlIGV4dGVuZHMgU2VtYW50aWNVSUF0dHJpYnV0ZSB7XG59XG5cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

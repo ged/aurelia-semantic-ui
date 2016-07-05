@@ -2,4 +2,3 @@
 "use strict";
 
 import 'aurelia-polyfills';
-

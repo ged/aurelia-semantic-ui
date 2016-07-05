@@ -1,4 +1,4 @@
-define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], function (exports, _constants, _uiAttribute, _aureliaFramework) {
+define(['exports', '../constants', '../ui-base', 'aurelia-framework'], function (exports, _constants, _uiBase, _aureliaFramework) {
   /* -*- javascript -*- */
   "use strict";
 
@@ -9,10 +9,11 @@ define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], func
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.UICardAttribute = undefined;
+  exports.SemanticUICardAttribute = exports.SemanticUICardElement = undefined;
 
-  var _dec, _class;
+  var _dec, _class, _dec2, _class2;
 
-  let UICardAttribute = exports.UICardAttribute = (_dec = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }card`), _dec(_class = class UICardAttribute extends _uiAttribute.UIAttribute {}) || _class);
+  let SemanticUICardElement = exports.SemanticUICardElement = (_dec = (0, _aureliaFramework.customElement)(`${ _constants.constants.elementPrefix }card`), _dec(_class = class SemanticUICardElement extends _uiBase.SemanticUIElement {}) || _class);
+  let SemanticUICardAttribute = exports.SemanticUICardAttribute = (_dec2 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }card`), _dec2(_class2 = class SemanticUICardAttribute extends _uiBase.SemanticUIAttribute {}) || _class2);
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpZXdzL3VpLWNhcmQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0FBQ0E7O0FBRUE7Ozs7Ozs7Ozs7O01BU2EsZSxXQUFBLGUsV0FEWix1Q0FBa0IsSUFBRSxxQkFBVSxlQUFnQixPQUE5QyxDLGdCQUNNLE1BQU0sZUFBTixrQ0FBMEMsRSIsImZpbGUiOiJ2aWV3cy91aS1jYXJkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLyogLSotIGphdmFzY3JpcHQgLSotICovXG5cInVzZSBzdHJpY3RcIjtcblxuLyoqXG4gKiBDYXJkIC0gaHR0cDovL3NlbWFudGljLXVpLmNvbS92aWV3cy9jYXJkLmh0bWxcbiAqL1xuXG5pbXBvcnQge2NvbnN0YW50c30gZnJvbSAnLi4vY29uc3RhbnRzJztcbmltcG9ydCB7VUlBdHRyaWJ1dGV9IGZyb20gJy4uL3VpLWF0dHJpYnV0ZSc7XG5pbXBvcnQge2N1c3RvbUF0dHJpYnV0ZX0gZnJvbSAnYXVyZWxpYS1mcmFtZXdvcmsnO1xuXG5AY3VzdG9tQXR0cmlidXRlKCBgJHtjb25zdGFudHMuYXR0cmlidXRlUHJlZml4fWNhcmRgIClcbmV4cG9ydCBjbGFzcyBVSUNhcmRBdHRyaWJ1dGUgZXh0ZW5kcyBVSUF0dHJpYnV0ZSB7XG59XG5cblxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpZXdzL3VpLWNhcmQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0FBQ0E7O0FBRUE7Ozs7Ozs7Ozs7O01BU2EscUIsV0FBQSxxQixXQURaLHFDQUFnQixJQUFFLHFCQUFVLGFBQWMsT0FBMUMsQyxnQkFDTSxNQUFNLHFCQUFOLG1DQUFzRCxFO01BR2hELHVCLFdBQUEsdUIsWUFEWix1Q0FBa0IsSUFBRSxxQkFBVSxlQUFnQixPQUE5QyxDLGtCQUNNLE1BQU0sdUJBQU4scUNBQTBELEUiLCJmaWxlIjoidmlld3MvdWktY2FyZC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIC0qLSBqYXZhc2NyaXB0IC0qLSAqL1xuXCJ1c2Ugc3RyaWN0XCI7XG5cbi8qKlxuICogQ2FyZCAtIGh0dHA6Ly9zZW1hbnRpYy11aS5jb20vdmlld3MvY2FyZC5odG1sXG4gKi9cblxuaW1wb3J0IHtjb25zdGFudHN9IGZyb20gJy4uL2NvbnN0YW50cyc7XG5pbXBvcnQge1NlbWFudGljVUlFbGVtZW50LCBTZW1hbnRpY1VJQXR0cmlidXRlfSBmcm9tICcuLi91aS1iYXNlJztcbmltcG9ydCB7Y3VzdG9tQXR0cmlidXRlLCBjdXN0b21FbGVtZW50fSBmcm9tICdhdXJlbGlhLWZyYW1ld29yayc7XG5cbkBjdXN0b21FbGVtZW50KCBgJHtjb25zdGFudHMuZWxlbWVudFByZWZpeH1jYXJkYCApXG5leHBvcnQgY2xhc3MgU2VtYW50aWNVSUNhcmRFbGVtZW50IGV4dGVuZHMgU2VtYW50aWNVSUVsZW1lbnQge31cblxuQGN1c3RvbUF0dHJpYnV0ZSggYCR7Y29uc3RhbnRzLmF0dHJpYnV0ZVByZWZpeH1jYXJkYCApXG5leHBvcnQgY2xhc3MgU2VtYW50aWNVSUNhcmRBdHRyaWJ1dGUgZXh0ZW5kcyBTZW1hbnRpY1VJQXR0cmlidXRlIHtcbn1cblxuXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

@@ -6,10 +6,13 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {inject, child, customAttribute, children, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {inject, child, customAttribute, customElement, children, bindable} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}table` )
+export class SemanticUITableElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}table` )
-export class UITableAttribute extends UIAttribute {
+export class SemanticUITableAttribute extends SemanticUIAttribute {
 }
 

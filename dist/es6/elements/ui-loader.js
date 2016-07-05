@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute} from '../ui-attribute';
-import {customAttribute, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {customAttribute, customElement, bindable} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}loader` )
+export class SemanticUILoaderElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}loader` )
-export class UILoaderAttribute extends UIAttribute {
+export class SemanticUILoaderAttribute extends SemanticUIAttribute {
 
 	@bindable active = false;
 

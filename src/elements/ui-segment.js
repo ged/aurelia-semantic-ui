@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {customAttribute, computedFrom, bindable, inject, LogManager} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {customAttribute, customElement} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}segment` )
+export class SemanticUISegmentElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}segment` )
-export class UISegmentAttribute extends UIAttribute {
+export class SemanticUISegmentAttribute extends SemanticUIAttribute {
 
 	@bindableToggle loading = false;
 	@bindableToggle disabled = false;
@@ -19,8 +22,11 @@ export class UISegmentAttribute extends UIAttribute {
 }
 
 
+@customElement( `${constants.elementPrefix}segments` )
+export class SemanticUISegmentsElement extends SemanticUIElement {}
+
 @customAttribute( `${constants.attributePrefix}segments` )
-export class UISegmentsAttribute extends UIAttribute {
+export class SemanticUISegmentsAttribute extends SemanticUIAttribute {
 }
 
 

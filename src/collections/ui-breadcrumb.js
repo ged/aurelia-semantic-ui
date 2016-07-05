@@ -6,59 +6,54 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {inject, customAttribute, children, bindable, LogManager} from 'aurelia-framework';
-
-@customAttribute( `${constants.attributePrefix}breadcrumb` )
-export class UIBreadcrumbAttribute extends UIAttribute {
-
-	@bindable divider;
-	@bindableEnum('small', 'large', 'huge') size;
-	@children( '[ui-breadcrumb-section]' ) sections;
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {inject, customAttribute, customElement, children, bindable, LogManager} from 'aurelia-framework';
 
 
-	bind( ...args ) {
-		this.logger.debug( "Bound!" );
-		return super.bind( ...args );
+function addDividerNodes( element, divider ) {
+	let dividerNode = null;
+	let sections = element.querySelectorAll( '[ui-breadcrumb-section]' );
+
+	if ( sections.length === 0 ) {
+		return;
 	}
+
+	// Icon divider (<i>)
+	if ( divider.match(/\bicon\b/) ) {
+		dividerNode = document.createElement( 'i' );
+		dividerNode.classList.add( ...divider.split(/\s+/) );
+		dividerNode.classList.add( 'divider' );
+	}
+
+	// Text divider (<span>)
+	else {
+		let content = document.createTextNode( divider );
+		dividerNode = document.createElement( 'span' );
+		dividerNode.classList.add( 'divider' );
+		dividerNode.appendChild( content );
+	}
+
+	for ( let i in sections ) {
+		if ( i > 0 ) {
+			let section = sections[ i ];
+			element.insertBefore( dividerNode.cloneNode(true), section );
+		}
+	}
+}
+
+
+@customElement( `${constants.elementPrefix}breadcrumb` )
+export class SemanticUIBreadcrumbElement extends SemanticUIElement {
+	@bindable divider;
+	@bindableEnum(constants.VALID_SIZES) size;
+	@children( '[ui-breadcrumb-section]' ) sections;
 
 	attached( ...args ) {
 		this.logger.debug( "Attached!" );
 
 		if ( this.divider ) {
-			console.log( "Divider is: ", this.divider );
-			let dividerNode = null;
-
-			// Icon divider (<i>)
-			if ( this.divider.match(/\bicon\b/) ) {
-				this.logger.debug( `Icon divider (${this.divider})` );
-				dividerNode = document.createElement( 'i' );
-				dividerNode.classList.add( ...this.divider.split(/\s+/) );
-				dividerNode.classList.add( 'divider' );
-			}
-
-			// Text divider (<span>)
-			else {
-				this.logger.debug( `Text divider (${this.divider})` );
-				let content = document.createTextNode( this.divider );
-				dividerNode = document.createElement( 'span' );
-				dividerNode.classList.add( 'divider' );
-				dividerNode.appendChild( content );
-			}
-
-			// Have to do this for testing, as the StageComponent apparently doesn't
-			// populate @children attributes
-			if ( !this.sections ) {
-				this.sections = this.element.querySelectorAll( '[ui-breadcrumb-section]' );
-			}
-
-			this.logger.debug( "Adding divider to sections: ", this.sections );
-			for ( let i in this.sections ) {
-				if ( i > 0 ) {
-					let section = this.sections[ i ];
-					this.element.insertBefore( dividerNode.cloneNode(true), section );
-				}
-			}
+			let div = this.element.querySelector( 'div' );
+			addDividerNodes( div, this.divider );
 		}
 
 		this.logger.debug( "Done with attached()." );
@@ -67,11 +62,32 @@ export class UIBreadcrumbAttribute extends UIAttribute {
 }
 
 
+@customAttribute( `${constants.attributePrefix}breadcrumb` )
+export class SemanticUIBreadcrumbAttribute extends SemanticUIAttribute {
+
+	@bindable divider;
+	@bindableEnum(constants.VALID_SIZES) size;
+	@children( '[ui-breadcrumb-section]' ) sections;
+
+	attached( ...args ) {
+		this.logger.debug( "Attached!" );
+
+		if ( this.divider ) {
+			addDividerNodes( this.element, this.divider );
+		}
+
+		this.logger.debug( "Done with attached()." );
+	}
+
+
+}
+
+
 /**
  * ui-breadcrumb-section
  */
 @customAttribute( `${constants.attributePrefix}breadcrumb-section` )
-export class UIBreadcrumbSectionAttribute extends UIAttribute {
+export class SemanticUIBreadcrumbSection extends SemanticUIAttribute {
 
 	@bindableToggle active = false;
 
@@ -87,7 +103,7 @@ export class UIBreadcrumbSectionAttribute extends UIAttribute {
  * ui-breadcrumb-divider
  */
 @customAttribute( `${constants.attributePrefix}breadcrumb-divider` )
-export class UIBreadcrumbDividerAttribute extends UIAttribute {
+export class SemanticUIBreadcrumbDivider extends SemanticUIAttribute {
 
 	bind() {
 		// No super

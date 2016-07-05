@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {inject, customAttribute, bindable, bindingMode} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {inject, customAttribute, customElement, bindable, bindingMode} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}popup` )
+export class SemanticUIPopupElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}popup` )
-export class UIPopupAttribute extends UIAttribute {
+export class SemanticUIPopupAttribute extends SemanticUIAttribute {
 
 	@bindable title = null;
 	@bindable content = null;

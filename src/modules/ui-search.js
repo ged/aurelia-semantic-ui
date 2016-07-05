@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute} from '../ui-attribute';
-import {customAttribute, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {customAttribute, customElement, bindable} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}search` )
+export class SemanticUISearchElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}search` )
-export class UISearchAttribute extends UIAttribute {
+export class SemanticUISearchAttribute extends SemanticUIAttribute {
 
 	@bindable options = {};
 

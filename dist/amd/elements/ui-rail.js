@@ -1,4 +1,4 @@
-define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], function (exports, _constants, _uiAttribute, _aureliaFramework) {
+define(['exports', '../constants', '../ui-base', 'aurelia-framework'], function (exports, _constants, _uiBase, _aureliaFramework) {
   /* -*- javascript -*- */
   "use strict";
 
@@ -9,7 +9,7 @@ define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], func
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.UIRailAttribute = undefined;
+  exports.SemanticUIRailAttribute = exports.SemanticUIRailElement = undefined;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -54,20 +54,21 @@ define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], func
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
   }
 
-  var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
+  var _dec, _class, _dec2, _dec3, _class2, _desc, _value, _class3, _descriptor;
 
-  let UIRailAttribute = exports.UIRailAttribute = (_dec = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }rail`), _dec2 = (0, _uiAttribute.bindableEnum)('left', 'right'), _dec(_class = (_class2 = class UIRailAttribute extends _uiAttribute.UIAttribute {
+  let SemanticUIRailElement = exports.SemanticUIRailElement = (_dec = (0, _aureliaFramework.customElement)(`${ _constants.constants.elementPrefix }rail`), _dec(_class = class SemanticUIRailElement extends _uiBase.SemanticUIElement {}) || _class);
+  let SemanticUIRailAttribute = exports.SemanticUIRailAttribute = (_dec2 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }rail`), _dec3 = (0, _uiBase.bindableEnum)('left', 'right'), _dec2(_class2 = (_class3 = class SemanticUIRailAttribute extends _uiBase.SemanticUIAttribute {
     constructor(...args) {
       var _temp;
 
       return _temp = super(...args), _initDefineProp(this, 'side', _descriptor, this), _temp;
     }
 
-  }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'side', [_dec2], {
+  }, (_descriptor = _applyDecoratedDescriptor(_class3.prototype, 'side', [_dec3], {
     enumerable: true,
     initializer: function () {
       return 'left';
     }
-  })), _class2)) || _class);
+  })), _class3)) || _class2);
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVsZW1lbnRzL3VpLXJhaWwuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0FBQ0E7O0FBRUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztNQVNhLGUsV0FBQSxlLFdBRFosdUNBQWtCLElBQUUscUJBQVUsZUFBZ0IsT0FBOUMsQyxVQUdDLCtCQUFjLE1BQWQsRUFBc0IsT0FBdEIsQywyQkFGSyxNQUFNLGVBQU4sa0NBQTBDO0FBQUE7QUFBQTs7QUFBQTtBQUFBOztBQUFBLEc7OzthQUVSLE0iLCJmaWxlIjoiZWxlbWVudHMvdWktcmFpbC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIC0qLSBqYXZhc2NyaXB0IC0qLSAqL1xuXCJ1c2Ugc3RyaWN0XCI7XG5cbi8qKlxuICogQ29udGVudCBSYWlsIC0gaHR0cDovL3NlbWFudGljLXVpLmNvbS9lbGVtZW50cy9yYWlsLmh0bWxcbiAqL1xuXG5pbXBvcnQge2NvbnN0YW50c30gZnJvbSAnLi4vY29uc3RhbnRzJztcbmltcG9ydCB7VUlBdHRyaWJ1dGUsIGJpbmRhYmxlRW51bX0gZnJvbSAnLi4vdWktYXR0cmlidXRlJztcbmltcG9ydCB7Y3VzdG9tQXR0cmlidXRlLCBiaW5kYWJsZX0gZnJvbSAnYXVyZWxpYS1mcmFtZXdvcmsnO1xuXG5AY3VzdG9tQXR0cmlidXRlKCBgJHtjb25zdGFudHMuYXR0cmlidXRlUHJlZml4fXJhaWxgIClcbmV4cG9ydCBjbGFzcyBVSVJhaWxBdHRyaWJ1dGUgZXh0ZW5kcyBVSUF0dHJpYnV0ZSB7XG5cblx0QGJpbmRhYmxlRW51bSggJ2xlZnQnLCAncmlnaHQnICkgc2lkZSA9ICdsZWZ0JztcblxufVxuXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVsZW1lbnRzL3VpLXJhaWwuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0FBQ0E7O0FBRUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztNQVNhLHFCLFdBQUEscUIsV0FEWixxQ0FBZ0IsSUFBRSxxQkFBVSxhQUFjLE9BQTFDLEMsZ0JBQ00sTUFBTSxxQkFBTixtQ0FBc0QsRTtNQUdoRCx1QixXQUFBLHVCLFlBRFosdUNBQWtCLElBQUUscUJBQVUsZUFBZ0IsT0FBOUMsQyxVQUdDLDBCQUFjLE1BQWQsRUFBc0IsT0FBdEIsQyw2QkFGSyxNQUFNLHVCQUFOLHFDQUEwRDtBQUFBO0FBQUE7O0FBQUE7QUFBQTs7QUFBQSxHOzs7YUFFeEIsTSIsImZpbGUiOiJlbGVtZW50cy91aS1yYWlsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLyogLSotIGphdmFzY3JpcHQgLSotICovXG5cInVzZSBzdHJpY3RcIjtcblxuLyoqXG4gKiBDb250ZW50IFJhaWwgLSBodHRwOi8vc2VtYW50aWMtdWkuY29tL2VsZW1lbnRzL3JhaWwuaHRtbFxuICovXG5cbmltcG9ydCB7Y29uc3RhbnRzfSBmcm9tICcuLi9jb25zdGFudHMnO1xuaW1wb3J0IHtTZW1hbnRpY1VJRWxlbWVudCwgU2VtYW50aWNVSUF0dHJpYnV0ZSwgYmluZGFibGVFbnVtfSBmcm9tICcuLi91aS1iYXNlJztcbmltcG9ydCB7Y3VzdG9tQXR0cmlidXRlLCBjdXN0b21FbGVtZW50LCBiaW5kYWJsZX0gZnJvbSAnYXVyZWxpYS1mcmFtZXdvcmsnO1xuXG5AY3VzdG9tRWxlbWVudCggYCR7Y29uc3RhbnRzLmVsZW1lbnRQcmVmaXh9cmFpbGAgKVxuZXhwb3J0IGNsYXNzIFNlbWFudGljVUlSYWlsRWxlbWVudCBleHRlbmRzIFNlbWFudGljVUlFbGVtZW50IHt9XG5cbkBjdXN0b21BdHRyaWJ1dGUoIGAke2NvbnN0YW50cy5hdHRyaWJ1dGVQcmVmaXh9cmFpbGAgKVxuZXhwb3J0IGNsYXNzIFNlbWFudGljVUlSYWlsQXR0cmlidXRlIGV4dGVuZHMgU2VtYW50aWNVSUF0dHJpYnV0ZSB7XG5cblx0QGJpbmRhYmxlRW51bSggJ2xlZnQnLCAncmlnaHQnICkgc2lkZSA9ICdsZWZ0JztcblxufVxuXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

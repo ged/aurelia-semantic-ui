@@ -6,13 +6,17 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {inject, customAttribute, children, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {customAttribute, customElement, children} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}grid` )
+export class SemanticUIGridElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}grid` )
-export class UIGridAttribute extends UIAttribute {
+export class SemanticUIGridAttribute extends SemanticUIAttribute {
 
 	@children( '.column' ) columns;
+	@children( '.row' ) rows;
 
 }
 

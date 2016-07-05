@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableEnum, bindableToggle} from '../ui-attribute';
-import {customAttribute} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableEnum, bindableToggle} from '../ui-base';
+import {customAttribute, customElement} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}label` )
+export class SemanticUILabelElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}label` )
-export class UILabelAttribute extends UIAttribute {
+export class SemanticUILabelAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_COLORS ) color;
 	@bindableEnum( ...constants.VALID_SIZES ) size;
@@ -18,8 +21,11 @@ export class UILabelAttribute extends UIAttribute {
 }
 
 
+@customElement( `${constants.elementPrefix}labels` )
+export class SemanticUILabelsElement extends SemanticUIElement {}
+
 @customAttribute( `${constants.attributePrefix}labels` )
-export class UILabelsAttribute extends UIAttribute {
+export class SemanticUILabelsAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_COLORS ) color;
 	@bindableEnum( ...constants.VALID_SIZES ) size;

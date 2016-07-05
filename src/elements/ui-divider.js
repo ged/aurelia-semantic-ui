@@ -6,10 +6,13 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute} from '../ui-attribute';
-import {customAttribute} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {customAttribute, customElement} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}divider` )
+export class SemanticUIDividerElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}divider` )
-export class UIDividerAttribute extends UIAttribute {
+export class SemanticUIDividerAttribute extends SemanticUIAttribute {
 }
 

@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableEnum} from '../ui-attribute';
-import {customAttribute} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableEnum} from '../ui-base';
+import {customAttribute, customElement} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}header` )
+export class SemanticUIHeaderElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}header` )
-export class UIHeaderAttribute extends UIAttribute {
+export class SemanticUIHeaderAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 	@bindableEnum( ...constants.VALID_COLORS ) color;

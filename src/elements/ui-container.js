@@ -6,10 +6,13 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute} from '../ui-attribute';
-import {customAttribute} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {customAttribute, customElement} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}container` )
+export class SemanticUIContainerElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}container` )
-export class UIContainerAttribute extends UIAttribute {
+export class SemanticUIContainerAttribute extends SemanticUIAttribute {
 }
 

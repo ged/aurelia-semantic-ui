@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {inject, customAttribute, bindable, bindingMode} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {inject, customAttribute, customElement, bindable, bindingMode} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}dropdown` )
+export class SemanticUIDropdownElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}dropdown` )
-export class UIDropdownAttribute extends UIAttribute {
+export class SemanticUIDropdownAttribute extends SemanticUIAttribute {
 
 	@bindable({ defaultBindingMode: bindingMode.twoWay }) selection;
 	@bindableToggle loading = false;

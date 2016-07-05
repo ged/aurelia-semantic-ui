@@ -6,12 +6,24 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {customAttribute, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {customElement, customAttribute, bindable} from 'aurelia-framework';
+
+
+@customElement( `${constants.elementPrefix}icon` )
+export class SemanticUIIconElement extends SemanticUIElement {
+
+	@bindable name = "help circle";
+	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableToggle disabled;
+	@bindableToggle loading;
+
+}
 
 
 @customAttribute( `${constants.attributePrefix}icon` )
-export class UIIconAttribute extends UIAttribute {
+export class SemanticUIIconAttribute extends SemanticUIAttribute {
 
 	@bindable name = "help circle";
 	@bindableEnum( ...constants.VALID_SIZES ) size;
@@ -36,10 +48,15 @@ export class UIIconAttribute extends UIAttribute {
 }
 
 
-@customAttribute( `${constants.attributePrefix}icons` )
-export class UIIconsAttribute extends UIAttribute {
-
+@customElement( `${constants.elementPrefix}icons` )
+export class SemanticUIIconsElement extends SemanticUIElement {
 	@bindableEnum( ...constants.VALID_SIZES ) size;
+}
 
+
+
+@customAttribute( `${constants.attributePrefix}icons` )
+export class SemanticUIIconsAttribute extends SemanticUIAttribute {
+	@bindableEnum( ...constants.VALID_SIZES ) size;
 }
 

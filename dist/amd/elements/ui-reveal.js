@@ -1,4 +1,4 @@
-define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], function (exports, _constants, _uiAttribute, _aureliaFramework) {
+define(['exports', '../constants', '../ui-base', 'aurelia-framework'], function (exports, _constants, _uiBase, _aureliaFramework) {
 	/* -*- javascript -*- */
 	"use strict";
 
@@ -9,7 +9,7 @@ define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], func
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.UIRevealHiddenAttribute = exports.UIRevealVisibleAttribute = exports.UIRevealAttribute = undefined;
+	exports.SemanticUIRevealHiddenAttribute = exports.SemanticUIRevealVisibleAttribute = exports.SemanticUIRevealAttribute = exports.SemanticUIRevealElement = undefined;
 
 	function _initDefineProp(target, property, descriptor, context) {
 		if (!descriptor) return;
@@ -54,34 +54,35 @@ define(['exports', '../constants', '../ui-attribute', 'aurelia-framework'], func
 		throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 	}
 
-	var _dec, _class, _desc, _value, _class2, _descriptor, _dec2, _class4, _dec3, _class5;
+	var _dec, _class, _dec2, _class2, _desc, _value, _class3, _descriptor, _dec3, _class5, _dec4, _class6;
 
-	let UIRevealAttribute = exports.UIRevealAttribute = (_dec = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }reveal`), _dec(_class = (_class2 = class UIRevealAttribute extends _uiAttribute.UIAttribute {
+	let SemanticUIRevealElement = exports.SemanticUIRevealElement = (_dec = (0, _aureliaFramework.customElement)(`${ _constants.constants.elementPrefix }reveal`), _dec(_class = class SemanticUIRevealElement extends _uiBase.SemanticUIElement {}) || _class);
+	let SemanticUIRevealAttribute = exports.SemanticUIRevealAttribute = (_dec2 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }reveal`), _dec2(_class2 = (_class3 = class SemanticUIRevealAttribute extends _uiBase.SemanticUIAttribute {
 		constructor(...args) {
 			var _temp;
 
 			return _temp = super(...args), _initDefineProp(this, 'active', _descriptor, this), _temp;
 		}
 
-	}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'active', [_uiAttribute.bindableToggle], {
+	}, (_descriptor = _applyDecoratedDescriptor(_class3.prototype, 'active', [_uiBase.bindableToggle], {
 		enumerable: true,
 		initializer: null
-	})), _class2)) || _class);
-	let UIRevealVisibleAttribute = exports.UIRevealVisibleAttribute = (_dec2 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }reveal-visible`), _dec2(_class4 = class UIRevealVisibleAttribute extends _uiAttribute.UIAttribute {
+	})), _class3)) || _class2);
+	let SemanticUIRevealVisibleAttribute = exports.SemanticUIRevealVisibleAttribute = (_dec3 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }reveal-visible`), _dec3(_class5 = class SemanticUIRevealVisibleAttribute extends _uiBase.SemanticUIAttribute {
 
 		bind() {
 			// No super
 			this.element.classList.add('visible', 'content');
 		}
 
-	}) || _class4);
-	let UIRevealHiddenAttribute = exports.UIRevealHiddenAttribute = (_dec3 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }reveal-hidden`), _dec3(_class5 = class UIRevealHiddenAttribute extends _uiAttribute.UIAttribute {
+	}) || _class5);
+	let SemanticUIRevealHiddenAttribute = exports.SemanticUIRevealHiddenAttribute = (_dec4 = (0, _aureliaFramework.customAttribute)(`${ _constants.constants.attributePrefix }reveal-hidden`), _dec4(_class6 = class SemanticUIRevealHiddenAttribute extends _uiBase.SemanticUIAttribute {
 
 		bind() {
 			// No super
 			this.element.classList.add('hidden', 'content');
 		}
 
-	}) || _class5);
+	}) || _class6);
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVsZW1lbnRzL3VpLXJldmVhbC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7QUFDQTs7QUFFQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0tBU2EsaUIsV0FBQSxpQixXQURaLHVDQUFrQixJQUFFLHFCQUFVLGVBQWdCLFNBQTlDLEMsMkJBQ00sTUFBTSxpQkFBTixrQ0FBNEM7QUFBQTtBQUFBOztBQUFBO0FBQUE7O0FBQUEsRTs7OztLQVF0Qyx3QixXQUFBLHdCLFlBRFosdUNBQWtCLElBQUUscUJBQVUsZUFBZ0IsaUJBQTlDLEMsa0JBQ00sTUFBTSx3QkFBTixrQ0FBbUQ7O0FBRXpELFNBQU87QUFDTjtBQUNBLFFBQUssT0FBTCxDQUFhLFNBQWIsQ0FBdUIsR0FBdkIsQ0FBNEIsU0FBNUIsRUFBdUMsU0FBdkM7QUFDQTs7QUFMd0QsRTtLQVU3Qyx1QixXQUFBLHVCLFlBRFosdUNBQWtCLElBQUUscUJBQVUsZUFBZ0IsZ0JBQTlDLEMsa0JBQ00sTUFBTSx1QkFBTixrQ0FBa0Q7O0FBRXhELFNBQU87QUFDTjtBQUNBLFFBQUssT0FBTCxDQUFhLFNBQWIsQ0FBdUIsR0FBdkIsQ0FBNEIsUUFBNUIsRUFBc0MsU0FBdEM7QUFDQTs7QUFMdUQsRSIsImZpbGUiOiJlbGVtZW50cy91aS1yZXZlYWwuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvKiAtKi0gamF2YXNjcmlwdCAtKi0gKi9cblwidXNlIHN0cmljdFwiO1xuXG4vKipcbiAqIENvbnRlbnQgUmV2ZWFsIC0gaHR0cDovL3NlbWFudGljLXVpLmNvbS9lbGVtZW50cy9yZXZlYWwuaHRtbFxuICovXG5cbmltcG9ydCB7Y29uc3RhbnRzfSBmcm9tICcuLi9jb25zdGFudHMnO1xuaW1wb3J0IHtVSUF0dHJpYnV0ZSwgYmluZGFibGVUb2dnbGV9IGZyb20gJy4uL3VpLWF0dHJpYnV0ZSc7XG5pbXBvcnQge2N1c3RvbUF0dHJpYnV0ZSwgYmluZGFibGV9IGZyb20gJ2F1cmVsaWEtZnJhbWV3b3JrJztcblxuQGN1c3RvbUF0dHJpYnV0ZSggYCR7Y29uc3RhbnRzLmF0dHJpYnV0ZVByZWZpeH1yZXZlYWxgIClcbmV4cG9ydCBjbGFzcyBVSVJldmVhbEF0dHJpYnV0ZSBleHRlbmRzIFVJQXR0cmlidXRlIHtcblxuXHRAYmluZGFibGVUb2dnbGUgYWN0aXZlO1xuXG59XG5cblxuQGN1c3RvbUF0dHJpYnV0ZSggYCR7Y29uc3RhbnRzLmF0dHJpYnV0ZVByZWZpeH1yZXZlYWwtdmlzaWJsZWAgKVxuZXhwb3J0IGNsYXNzIFVJUmV2ZWFsVmlzaWJsZUF0dHJpYnV0ZSBleHRlbmRzIFVJQXR0cmlidXRlIHtcblxuXHRiaW5kKCkge1xuXHRcdC8vIE5vIHN1cGVyXG5cdFx0dGhpcy5lbGVtZW50LmNsYXNzTGlzdC5hZGQoICd2aXNpYmxlJywgJ2NvbnRlbnQnICk7XG5cdH1cblxufVxuXG5AY3VzdG9tQXR0cmlidXRlKCBgJHtjb25zdGFudHMuYXR0cmlidXRlUHJlZml4fXJldmVhbC1oaWRkZW5gIClcbmV4cG9ydCBjbGFzcyBVSVJldmVhbEhpZGRlbkF0dHJpYnV0ZSBleHRlbmRzIFVJQXR0cmlidXRlIHtcblxuXHRiaW5kKCkge1xuXHRcdC8vIE5vIHN1cGVyXG5cdFx0dGhpcy5lbGVtZW50LmNsYXNzTGlzdC5hZGQoICdoaWRkZW4nLCAnY29udGVudCcgKTtcblx0fVxuXG59XG5cblxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVsZW1lbnRzL3VpLXJldmVhbC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7QUFDQTs7QUFFQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0tBU2EsdUIsV0FBQSx1QixXQURaLHFDQUFnQixJQUFFLHFCQUFVLGFBQWMsU0FBMUMsQyxnQkFDTSxNQUFNLHVCQUFOLG1DQUF3RCxFO0tBR2xELHlCLFdBQUEseUIsWUFEWix1Q0FBa0IsSUFBRSxxQkFBVSxlQUFnQixTQUE5QyxDLDZCQUNNLE1BQU0seUJBQU4scUNBQTREO0FBQUE7QUFBQTs7QUFBQTtBQUFBOztBQUFBLEU7Ozs7S0FRdEQsZ0MsV0FBQSxnQyxZQURaLHVDQUFrQixJQUFFLHFCQUFVLGVBQWdCLGlCQUE5QyxDLGtCQUNNLE1BQU0sZ0NBQU4scUNBQW1FOztBQUV6RSxTQUFPO0FBQ047QUFDQSxRQUFLLE9BQUwsQ0FBYSxTQUFiLENBQXVCLEdBQXZCLENBQTRCLFNBQTVCLEVBQXVDLFNBQXZDO0FBQ0E7O0FBTHdFLEU7S0FVN0QsK0IsV0FBQSwrQixZQURaLHVDQUFrQixJQUFFLHFCQUFVLGVBQWdCLGdCQUE5QyxDLGtCQUNNLE1BQU0sK0JBQU4scUNBQWtFOztBQUV4RSxTQUFPO0FBQ047QUFDQSxRQUFLLE9BQUwsQ0FBYSxTQUFiLENBQXVCLEdBQXZCLENBQTRCLFFBQTVCLEVBQXNDLFNBQXRDO0FBQ0E7O0FBTHVFLEUiLCJmaWxlIjoiZWxlbWVudHMvdWktcmV2ZWFsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLyogLSotIGphdmFzY3JpcHQgLSotICovXG5cInVzZSBzdHJpY3RcIjtcblxuLyoqXG4gKiBDb250ZW50IFJldmVhbCAtIGh0dHA6Ly9zZW1hbnRpYy11aS5jb20vZWxlbWVudHMvcmV2ZWFsLmh0bWxcbiAqL1xuXG5pbXBvcnQge2NvbnN0YW50c30gZnJvbSAnLi4vY29uc3RhbnRzJztcbmltcG9ydCB7U2VtYW50aWNVSUVsZW1lbnQsIFNlbWFudGljVUlBdHRyaWJ1dGUsIGJpbmRhYmxlVG9nZ2xlfSBmcm9tICcuLi91aS1iYXNlJztcbmltcG9ydCB7Y3VzdG9tQXR0cmlidXRlLCBjdXN0b21FbGVtZW50LCBiaW5kYWJsZX0gZnJvbSAnYXVyZWxpYS1mcmFtZXdvcmsnO1xuXG5AY3VzdG9tRWxlbWVudCggYCR7Y29uc3RhbnRzLmVsZW1lbnRQcmVmaXh9cmV2ZWFsYCApXG5leHBvcnQgY2xhc3MgU2VtYW50aWNVSVJldmVhbEVsZW1lbnQgZXh0ZW5kcyBTZW1hbnRpY1VJRWxlbWVudCB7fVxuXG5AY3VzdG9tQXR0cmlidXRlKCBgJHtjb25zdGFudHMuYXR0cmlidXRlUHJlZml4fXJldmVhbGAgKVxuZXhwb3J0IGNsYXNzIFNlbWFudGljVUlSZXZlYWxBdHRyaWJ1dGUgZXh0ZW5kcyBTZW1hbnRpY1VJQXR0cmlidXRlIHtcblxuXHRAYmluZGFibGVUb2dnbGUgYWN0aXZlO1xuXG59XG5cblxuQGN1c3RvbUF0dHJpYnV0ZSggYCR7Y29uc3RhbnRzLmF0dHJpYnV0ZVByZWZpeH1yZXZlYWwtdmlzaWJsZWAgKVxuZXhwb3J0IGNsYXNzIFNlbWFudGljVUlSZXZlYWxWaXNpYmxlQXR0cmlidXRlIGV4dGVuZHMgU2VtYW50aWNVSUF0dHJpYnV0ZSB7XG5cblx0YmluZCgpIHtcblx0XHQvLyBObyBzdXBlclxuXHRcdHRoaXMuZWxlbWVudC5jbGFzc0xpc3QuYWRkKCAndmlzaWJsZScsICdjb250ZW50JyApO1xuXHR9XG5cbn1cblxuQGN1c3RvbUF0dHJpYnV0ZSggYCR7Y29uc3RhbnRzLmF0dHJpYnV0ZVByZWZpeH1yZXZlYWwtaGlkZGVuYCApXG5leHBvcnQgY2xhc3MgU2VtYW50aWNVSVJldmVhbEhpZGRlbkF0dHJpYnV0ZSBleHRlbmRzIFNlbWFudGljVUlBdHRyaWJ1dGUge1xuXG5cdGJpbmQoKSB7XG5cdFx0Ly8gTm8gc3VwZXJcblx0XHR0aGlzLmVsZW1lbnQuY2xhc3NMaXN0LmFkZCggJ2hpZGRlbicsICdjb250ZW50JyApO1xuXHR9XG5cbn1cblxuXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

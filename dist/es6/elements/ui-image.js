@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableEnum, bindableToggle} from '../ui-attribute';
-import {customAttribute} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableEnum, bindableToggle} from '../ui-base';
+import {customAttribute, customElement} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}image` )
+export class SemanticUIImageElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}image` )
-export class UIImageAttribute extends UIAttribute {
+export class SemanticUIImageAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 	@bindableToggle hidden = false;
@@ -19,8 +22,11 @@ export class UIImageAttribute extends UIAttribute {
 }
 
 
+@customElement( `${constants.elementPrefix}images` )
+export class SemanticUIImagesElement extends SemanticUIElement {}
+
 @customAttribute( `${constants.attributePrefix}images` )
-export class UIImagesAttribute extends UIAttribute {
+export class SemanticUIImagesAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 

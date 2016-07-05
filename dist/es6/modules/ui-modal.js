@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {bindable, customAttribute} from 'aurelia-framework';
-import {UIAttribute} from '../ui-attribute';
+import {bindable, customAttribute, customElement} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+
+@customElement( `${constants.elementPrefix}modal` )
+export class SemanticUIModalElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}modal` )
-export class UIModalAttribute extends UIAttribute {
+export class SemanticUIModalAttribute extends SemanticUIAttribute {
 
 	@bindable shown = false;
 

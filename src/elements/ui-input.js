@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableEnum, bindableToggle} from '../ui-attribute';
-import {customAttribute} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute, bindableEnum, bindableToggle} from '../ui-base';
+import {customAttribute, customElement} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}input` )
+export class SemanticUIInputElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}input` )
-export class UIInputAttribute extends UIAttribute {
+export class SemanticUIInputAttribute extends SemanticUIAttribute {
 
 	@bindableToggle focus = false;
 	@bindableToggle loading = false;

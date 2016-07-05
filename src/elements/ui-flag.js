@@ -6,11 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute} from '../ui-attribute';
-import {customAttribute, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {customAttribute, customElement, bindable} from 'aurelia-framework';
+
+@customElement( `${constants.elementPrefix}flag` )
+export class SemanticUIFlagElement extends SemanticUIElement {}
 
 @customAttribute( `${constants.attributePrefix}flag` )
-export class UIFlagAttribute extends UIAttribute {
+export class SemanticUIFlagAttribute extends SemanticUIAttribute {
 
     @bindable country;
 
