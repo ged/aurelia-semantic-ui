@@ -1,0 +1,11 @@
+{
+	"plugins": [
+		"transform-es2015-modules-amd",
+		"transform-decorators-legacy",
+		"transform-class-properties"
+	],
+	"presets": [
+		"stage-1"
+	]
+}
+

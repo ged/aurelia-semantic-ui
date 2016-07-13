@@ -6,15 +6,17 @@
  */
 
 import {constants} from '../constants';
-import {UIAttribute, bindableToggle, bindableEnum} from '../ui-attribute';
-import {inject, customAttribute, children, bindable} from 'aurelia-framework';
+import {UIAttribute} from '../ui-attribute';
+import {customAttribute, bindable} from 'aurelia-framework';
 
 @customAttribute( `${constants.attributePrefix}search` )
 export class UISearchAttribute extends UIAttribute {
 
+	@bindable options = {};
+
 	attached() {
 		this.logger.debug( "Activating search on ", this.element );
-		$( this.element ).search();
+		$( this.element ).search( this.options );
 	}
 
 }

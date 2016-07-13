@@ -43,6 +43,7 @@ export function configure(config) {
 		'./modules/ui-search',
 		'./modules/ui-sidebar',
 		'./views/ui-card',
+		'./views/ui-feed',
 		'./views/ui-statistic'
 	);
 }

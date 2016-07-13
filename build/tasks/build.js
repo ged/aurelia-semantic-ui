@@ -5,17 +5,6 @@ var to5 = require('gulp-babel');
 var sourcemaps = require('gulp-sourcemaps');
 var paths = require('../paths');
 
-var babelOptions = {
-	plugins: [
-		"transform-es2015-modules-amd",
-		"transform-decorators-legacy",
-		"transform-class-properties"
-	],
-	presets: [
-		"stage-2"
-	]
-};
-
 gulp.task('build-html-es6', function () {
 	return gulp.src(paths.html).
 		pipe(gulp.dest(paths.output + 'es6'));
@@ -28,7 +17,8 @@ gulp.task('build-css-es6', function () {
 
 gulp.task('build-es6', function () {
 	return gulp.src(paths.source).
-	pipe(gulp.dest(paths.output + 'es6'));
+		pipe(debug({title: 'build-es6'})).
+		pipe(gulp.dest(paths.output + 'es6'));
 });
 
 gulp.task('build-html-amd', function () {
@@ -43,8 +33,9 @@ gulp.task('build-css-amd', function () {
 
 gulp.task('build-amd', function () {
 	return gulp.src(paths.source).
+		pipe(debug({title: 'build-amd'})).
 		pipe(sourcemaps.init()).
-		pipe(to5(babelOptions)).
+		pipe(to5()).
 		pipe(sourcemaps.write()).
 		pipe(gulp.dest(paths.output + 'amd'));
 });

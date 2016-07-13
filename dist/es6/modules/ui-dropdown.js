@@ -55,7 +55,7 @@ export class UIDropdownAttribute extends UIAttribute {
 
 
     attached() {
-		this.logger.debug( "Activating dropdown for ", this.element );
+		this.logger.debug( "Activating dropdown for ", this.element, " with options: ", this.options );
         $( this.element ).dropdown( this.options );
     }
 
