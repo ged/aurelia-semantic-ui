@@ -6,14 +6,13 @@
  */
 
 import {constants} from '../constants';
-import {customAttribute} from 'aurelia-framework';
-import {UIAttribute, bindableToggle} from '../ui-attribute';
+import {bindable, customAttribute} from 'aurelia-framework';
+import {UIAttribute} from '../ui-attribute';
 
 @customAttribute( `${constants.attributePrefix}modal` )
 export class UIModalAttribute extends UIAttribute {
 
-	@bindableToggle active = false;
-
+	@bindable shown = false;
 
 
 	attached() {
@@ -21,7 +20,8 @@ export class UIModalAttribute extends UIAttribute {
 	}
 
 
-	activeChanged( newValue ) {
+	shownChanged( newValue, oldValue ) {
+		this.logger.debug( "Shown attribute changed to: ", newValue );
 		if ( newValue ) {
 			this.show();
 		} else {
@@ -37,6 +37,26 @@ export class UIModalAttribute extends UIAttribute {
 
 	hide() {
 		$( this.element ).modal( 'hide' );
+	}
+
+
+	onShow( callback ) {
+		$( this.element ).modal({ onShow: callback });
+	}
+	onVisible( callback ) {
+		$( this.element ).modal({ onVisible: callback });
+	}
+	onHide( callback ) {
+		$( this.element ).modal({ onHide: callback });
+	}
+	onHidden( callback ) {
+		$( this.element ).modal({ onHidden: callback });
+	}
+	onApprove( callback ) {
+		$( this.element ).modal({ onApprove: callback });
+	}
+	onDeny( callback ) {
+		$( this.element ).modal({ onDeny: callback });
 	}
 
 }

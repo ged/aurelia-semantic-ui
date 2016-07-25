@@ -17,6 +17,8 @@ export class UIPopupAttribute extends UIAttribute {
 	@bindable html = null;
 	@bindable variation = null;
 	@bindable selector = null;
+	@bindable position = null;
+	@bindable transition = null;
 
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 	@bindableToggle inline = false;
@@ -47,6 +49,16 @@ export class UIPopupAttribute extends UIAttribute {
 		this.configure();
 	}
 
+	positionChanged( newValue, oldValue ) {
+		this.logger.debug( `Position changed to: ${this.position}` );
+		this.configure();
+	}
+
+	transitionChanged( newValue, oldValue ) {
+		this.logger.debug( `Transition changed to: ${this.transition}` );
+		this.configure();
+	}
+
     attached() {
 		this.logger.debug( "Activating popup for ", this.element );
 		let popupEl = null;
@@ -70,6 +82,7 @@ export class UIPopupAttribute extends UIAttribute {
 
     }
 
+
 	makeVariation() {
 		let value = '';
 
@@ -79,15 +92,19 @@ export class UIPopupAttribute extends UIAttribute {
 		return value.trim();
 	}
 
+
 	configure() {
 		let options = {};
 
 		if ( this.title ) { options.title = this.title }
 		if ( this.content ) { options.content = this.content }
 		if ( this.html ) { options.html = this.html }
+		if ( this.position ) { options.position = this.position }
+		if ( this.transition ) { options.transition = this.transition }
 
 		options.variation = this.makeVariation();
 
+		this.logger.debug( "Configuring popup with options: ", options );
 		$( this.element ).popup( options );
 	}
 

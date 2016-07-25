@@ -10,7 +10,7 @@ import 'semantic-ui';
 import 'semantic-ui/semantic.css!';
 
 
-export var VERSION = '0.0.1-alpha.5';
+export var VERSION = '0.0.1-alpha.6';
 
 // Aurelia plugin hook
 export function configure(config) {
@@ -37,9 +37,11 @@ export function configure(config) {
 		'./elements/ui-segment',
 		'./elements/ui-step',
 		'./modules/ui-accordion',
+		'./modules/ui-dimmer',
 		'./modules/ui-dropdown',
 		'./modules/ui-modal',
 		'./modules/ui-popup',
+		'./modules/ui-progress',
 		'./modules/ui-search',
 		'./modules/ui-sidebar',
 		'./views/ui-card',
