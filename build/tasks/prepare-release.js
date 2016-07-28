@@ -1,8 +1,7 @@
+var paths = require('../paths');
+
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
-var paths = require('../paths');
-var changelog = require('gulp-conventional-changelog');
-var fs = require('fs');
 var bump = require('gulp-bump');
 var args = require('../args');
 
