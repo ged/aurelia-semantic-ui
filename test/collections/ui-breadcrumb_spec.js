@@ -3,21 +3,22 @@
 
 import {StageComponent} from 'aurelia-testing';
 import {bootstrap} from 'aurelia-bootstrapper';
+import {LogManager} from 'aurelia-framework';
+import {ConsoleAppender} from 'aurelia-logging-console';
 
 
 describe('UIBreadcrumbAttribute', () => {
 	let component;
 
+	beforeAll(() => {
+		let appender = new ConsoleAppender();
+		LogManager.addAppender( appender );
+		LogManager.setLevel( 'debug' );
+	});
+
 	beforeEach(() => {
 		component = StageComponent.
-			withResources('src/collections/ui-breadcrumb').
-			inView(`
-				<div ui-breadcrumb>
-					<a ui-breadcrumb-section>One</a>
-					<a ui-breadcrumb-section>Two</a>
-					<a ui-breadcrumb-section="active: true">Three</a>
-				</div>
-			`);
+			withResources('src/collections/ui-breadcrumb');
 	});
 
 	afterEach(() => {
@@ -27,62 +28,82 @@ describe('UIBreadcrumbAttribute', () => {
 
 
 	it( 'adds semantic classes when bound', done => {
-		component.create( bootstrap ).then( () => {
-			expect( component.element.classList ).toContain( 'ui', 'breadcrumb' );
-		}).
-		then( done );
+		component.
+			inView(`
+				<div ui-breadcrumb>
+					<a ui-breadcrumb-section>One</a>
+					<a ui-breadcrumb-section>Two</a>
+					<a ui-breadcrumb-section="active: true">Three</a>
+				</div>
+			`).
+			boundTo({}).
+			create( bootstrap ).then( () => {
+				let sections = component.element.querySelectorAll( 'a' );
+				let section;
+
+				console.debug( "Sections are: ", sections );
+				expect( component.element.classList ).toContain( 'ui', 'breadcrumb' );
+				for( section of sections ) {
+					expect( section.classList ).toContain( 'section' );
+				}
+				expect( sections[2].classList ).toContain( 'active' )
+			}).
+			then( done );
 	});
 
-	//
-	// it( 'adds a size class when one is set', done => {
-	// 	uiBreadcrumb = templatingEngine.
-	// 		createViewModelForUnitTest( UIBreadcrumbAttribute, {size: 'big'} );
-	// 	spyOn( element.classList, 'add' ).and.callThrough();
-	//
-	// 	uiBreadcrumb.bind();
-	// 	jasmine.clock().tick(1);
-	//
-	// 	expect( element.classList.add.calls.count() ).toEqual( 2 );
-	// 	expect( element.classList.add.calls.allArgs() ).toContain(['ui', 'breadcrumb']);
-	// 	expect( element.classList.add.calls.allArgs() ).toContain(['big']);
-	//
-	// 	done();
-	// });
-	//
-	// it( 'auto-generates text dividers if the divider is set', done => {
-	// 	uiBreadcrumb = templatingEngine.
-	// 		createViewModelForUnitTest( UIBreadcrumbAttribute, {divider: '/'} );
-	// 	// TODO: Is there a way to have the @children do this instead?
-	// 	uiBreadcrumb.sections = element.querySelectorAll( '[ui-breadcrumb-section]' );
-	//
-	// 	spyOn( element, 'insertBefore' ).and.callThrough();
-	// 	uiBreadcrumb.bind();
-	// 	jasmine.clock().tick(1);
-	//
-	// 	expect( element.insertBefore.calls.count() ).toEqual( 2 );
-	// 	expect(
-	// 		element.insertBefore
-	// 	).toHaveBeenCalledWith( jasmine.any(HTMLSpanElement), jasmine.any(HTMLDivElement) );
-	//
-	// 	done();
-	// });
-	//
-	// it( 'auto-generates icon dividers if the divider is set to an icon', done => {
-	// 	uiBreadcrumb = templatingEngine.
-	// 		createViewModelForUnitTest( UIBreadcrumbAttribute, {divider: 'right angle icon'} );
-	// 	// TODO: Is there a way to have the @children do this instead?
-	// 	uiBreadcrumb.sections = element.querySelectorAll( '[ui-breadcrumb-section]' );
-	//
-	// 	spyOn( element, 'insertBefore' ).and.callThrough();
-	// 	uiBreadcrumb.bind();
-	// 	jasmine.clock().tick(1);
-	//
-	// 	expect( element.insertBefore.calls.count() ).toEqual( 2 );
-	// 	expect(
-	// 		element.insertBefore
-	// 	).toHaveBeenCalledWith( jasmine.any(HTMLElement), jasmine.any(HTMLElement) );
-	//
-	// 	done();
-	// });
+
+	it( 'adds a size class when one is set', done => {
+		component.
+			inView(`
+				<div ui-breadcrumb="size: huge">
+					<a ui-breadcrumb-section>One</a>
+					<a ui-breadcrumb-section>Two</a>
+					<a ui-breadcrumb-section="active: true">Three</a>
+				</div>
+			`).
+			boundTo({}).
+			create( bootstrap ).then( () => {
+				expect( component.element.classList ).toContain( 'ui', 'huge', 'breadcrumb' );
+			}).
+			then( done );
+	});
+
+
+	it( 'auto-generates text dividers if the divider is set', done => {
+		component.
+			inView(`
+				<div ui-breadcrumb="divider: /">
+					<a ui-breadcrumb-section>One</a>
+					<a ui-breadcrumb-section>Two</a>
+					<a ui-breadcrumb-section="active: true">Three</a>
+				</div>
+			`).
+			boundTo({}).
+			create( bootstrap ).then( () => {
+				console.log( "Element is: ", component.element );
+				let dividers = component.element.querySelectorAll( 'span.divider' );
+				expect( dividers.length ).toEqual( 2 );
+			}).
+			then( done );
+	});
+
+
+	it( 'auto-generates icon dividers if the divider is set to an icon', done => {
+		component.
+			inView(`
+				<div ui-breadcrumb="divider: right angle icon">
+					<a ui-breadcrumb-section>One</a>
+					<a ui-breadcrumb-section>Two</a>
+					<a ui-breadcrumb-section="active: true">Three</a>
+				</div>
+			`).
+			boundTo({}).
+			create( bootstrap ).then( () => {
+				console.log( "Element is: ", component.element );
+				let dividers = component.element.querySelectorAll( 'i.icon' );
+				expect( dividers.length ).toEqual( 2 );
+			}).
+			then( done );
+	});
 
 });

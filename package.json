@@ -40,6 +40,8 @@
     "dependencies": {
       "aurelia-bootstrapper": "^1.0.0",
       "aurelia-framework": "^1.0.1",
+      "aurelia-logging": "^1.0.0",
+      "aurelia-logging-console": "^1.0.0",
       "aurelia-polyfills": "^1.0.0",
       "aurelia-testing": "^1.0.0-beta.2.0.0",
       "css": "github:systemjs/plugin-css@^0.1.25",

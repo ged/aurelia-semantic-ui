@@ -15,6 +15,8 @@ System.config({
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0",
     "aurelia-framework": "npm:aurelia-framework@1.0.1",
+    "aurelia-logging": "npm:aurelia-logging@1.0.0",
+    "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0",
     "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0",
     "aurelia-testing": "npm:aurelia-testing@1.0.0-beta.2.0.0",
     "babel": "npm:babel-core@5.8.38",

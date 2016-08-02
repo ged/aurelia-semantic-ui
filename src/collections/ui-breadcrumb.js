@@ -17,10 +17,16 @@ export class UIBreadcrumbAttribute extends UIAttribute {
 	@children( '[ui-breadcrumb-section]' ) sections;
 
 
-	bind() {
-		super.bind();
+	bind( ...args ) {
+		this.logger.debug( "Bound!" );
+		return super.bind( ...args );
+	}
+
+	attached( ...args ) {
+		this.logger.debug( "Attached!" );
 
 		if ( this.divider ) {
+			console.log( "Divider is: ", this.divider );
 			let dividerNode = null;
 
 			// Icon divider (<i>)
@@ -40,6 +46,13 @@ export class UIBreadcrumbAttribute extends UIAttribute {
 				dividerNode.appendChild( content );
 			}
 
+			// Have to do this for testing, as the StageComponent apparently doesn't
+			// populate @children attributes
+			if ( !this.sections ) {
+				this.sections = this.element.querySelectorAll( '[ui-breadcrumb-section]' );
+			}
+
+			this.logger.debug( "Adding divider to sections: ", this.sections );
 			for ( let i in this.sections ) {
 				if ( i > 0 ) {
 					let section = this.sections[ i ];
@@ -47,6 +60,8 @@ export class UIBreadcrumbAttribute extends UIAttribute {
 				}
 			}
 		}
+
+		this.logger.debug( "Done with attached()." );
 	}
 
 }
