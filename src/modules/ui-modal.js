@@ -40,6 +40,11 @@ export class UIModalAttribute extends UIAttribute {
 	}
 
 
+	refresh() {
+		$( this.element ).modal( 'refresh' );
+	}
+
+
 	onShow( callback ) {
 		$( this.element ).modal({ onShow: callback });
 	}
