@@ -19,10 +19,10 @@ export class UIProgressAttribute extends UIAttribute {
 
 	@bindable label;
 	@bindable barLabel;
-
+	@bindable options = {};
 
 	attached() {
-		$( this.element ).progress();
+		$( this.element ).progress( this.options );
 	}
 
 
@@ -46,7 +46,11 @@ export class UIProgressAttribute extends UIAttribute {
 
 	activeChanged( newValue, oldValue ) {
 		this.logger.debug( `Setting active to ${newValue}` );
-		$( this.element ).progress( 'set active', newValue );
+		if ( newValue ) {
+			$( this.element ).progress( 'set active' );
+		} else {
+			$( this.element ).progress( 'remove active' );
+		}
 	}
 
 
