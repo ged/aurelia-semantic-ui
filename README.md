@@ -94,11 +94,11 @@ In your Aurelia project install the plugin via `jspm` with following command
 
     jspm install npm:aurelia-semantic-ui
 
-Make sure you use [manual bootstrapping](http://aurelia.io/docs#startup-and-configuration). In order to do so open your `index.html` and locate the element with the attribute aurelia-app. Change it to look like this:
+Make sure you use [manual bootstrapping](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/app-configuration-and-startup/4). In order to do so open your `index.html` and locate the element with the attribute aurelia-app. Change it to look like this:
 
     <body aurelia-app="main">
 
-Create (if you haven't already) a file `main.js` in your `src` folder as described in the [Boostrapping Aurelia](http://aurelia.io/docs.html#/aurelia/framework/1.0.0-beta.1.1.4/doc/article/app-configuration-and-startup) section of the Aurelia documentation. Add this before you call `aurelia.start()` to install the plugin in your app:
+Create (if you haven't already) a file `main.js` in your `src` folder as described in the [Boostrapping Aurelia](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/app-configuration-and-startup/1) section of the Aurelia documentation. Add this before you call `aurelia.start()` to install the plugin in your app:
 
     aurelia.use.plugin( 'aurelia-semantic-ui' );
 
