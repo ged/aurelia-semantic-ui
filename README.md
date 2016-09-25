@@ -2,15 +2,16 @@
 
 [![Join the chat at https://gitter.im/ged/aurelia-semantic-ui](https://badges.gitter.im/ged/aurelia-semantic-ui.svg)](https://gitter.im/ged/aurelia-semantic-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It contains custom attributes for some of the [Semantic UI](http://semantic-ui.com/) widgets.
+This plugin is for the [Aurelia](http://www.aurelia.io/) platform. It contains custom elements and attributes for some of the [Semantic UI](http://semantic-ui.com/) widgets.
 
 It isn't really even alpha quality right now, as I'm still figuring out how half of this stuff works, so don't depend on anything quite yet.
 
 The major "to do" list:
 
+* Flesh out the custom elements. I started this before the new projection system (slots), and I couldn't figure out how to implement custom elements with the old one so the custom elements are only half-implemented currently. The templates, for example, are mostly just placeholders.
 * TESTING. I have done very little, as I wasn't even sure this would be useful or implemented in a way that made sense. Now that I've used it in anger, though, I need get tests implemented ASAP.
 * Documentation via [the demo app](http://ged.github.io/aurelia-semantic-ui/demo.html) seems to be working well, but I've spent more time on layout and organization than content so far, so I need to catch up with the code so I can keep them in parity.
-* Finish making custom attributes for the rest of the Semantic widgets.
+* Finish making custom elements/attributes for the rest of the Semantic widgets.
 * Figure out conventions for hooking up the Modules and Behaviors further into Aurelia. I haven't really used them enough to have a feel for what they might look like aside from calling `$( this.element ).dropdown();` from `attached()` or whatever.
 
 ## Progress
