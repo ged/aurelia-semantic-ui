@@ -5,6 +5,7 @@ import {StageComponent} from 'aurelia-testing';
 import {bootstrap} from 'aurelia-bootstrapper';
 import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
+import {customMatchers} from '../helpers';
 
 
 describe('ui-form', () => {
@@ -12,6 +13,7 @@ describe('ui-form', () => {
 
 	beforeAll(() => {
 		logger = LogManager.getLogger( 'ui-form-spec');
+		jasmine.addMatchers( customMatchers );
 	});
 
 	beforeEach(() => {
@@ -38,7 +40,7 @@ describe('ui-form', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'ui', 'form' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'form' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -55,7 +57,7 @@ describe('ui-form', () => {
 					isLoading: true
 				}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'ui', 'loading', 'form' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'loading', 'form' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -80,7 +82,7 @@ describe('ui-form', () => {
 					let form = component.element.querySelector( 'form' );
 
 					expect( form.nodeType ).toEqual( 1 );
-					expect( form.classList ).toContain( 'ui', 'loading', 'form' );
+					expect( form ).toHaveCssClasses( 'ui', 'loading', 'form' );
 				}).
 				then( done ).
 				catch( done.fail );

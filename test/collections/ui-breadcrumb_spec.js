@@ -5,13 +5,14 @@ import {StageComponent} from 'aurelia-testing';
 import {bootstrap} from 'aurelia-bootstrapper';
 import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
-
+import {customMatchers} from '../helpers';
 
 describe('ui-breadcrumb', () => {
 	let component, logger;
 
 	beforeAll(() => {
 		logger = LogManager.getLogger( 'ui-breadcrumb-spec');
+		jasmine.addMatchers( customMatchers );
 	});
 
 	beforeEach(() => {
@@ -44,11 +45,11 @@ describe('ui-breadcrumb', () => {
 					let sections = component.element.querySelectorAll( 'a' );
 					let section;
 
-					expect( component.element.classList ).toContain( 'ui', 'breadcrumb' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'breadcrumb' );
 					for( section of sections ) {
-						expect( section.classList ).toContain( 'section' );
+						expect( section ).toHaveCssClasses( 'section' );
 					}
-					expect( sections[2].classList ).toContain( 'active' )
+					expect( sections[2] ).toHaveCssClasses( 'active' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -66,7 +67,7 @@ describe('ui-breadcrumb', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'ui', 'huge', 'breadcrumb' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'huge', 'breadcrumb' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -129,7 +130,7 @@ describe('ui-breadcrumb', () => {
 					let div = component.element.querySelector( 'div' );
 
 					expect( div.nodeType ).toEqual( 1 );
-					expect( div.classList ).toContain( 'ui', 'huge', 'breadcrumb' );
+					expect( div ).toHaveCssClasses( 'ui', 'huge', 'breadcrumb' );
 				}).
 				then( done ).
 				catch( done.fail );

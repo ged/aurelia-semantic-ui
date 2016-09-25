@@ -5,16 +5,14 @@ import {StageComponent} from 'aurelia-testing';
 import {bootstrap} from 'aurelia-bootstrapper';
 import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
+import {customMatchers} from '../helpers';
 
 
 describe('ui-icon', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		// let appender = new ConsoleAppender();
-		// LogManager.addAppender( appender );
-		// LogManager.setLevel( 'warn' );
-		//
+		jasmine.addMatchers( customMatchers );
 		logger = LogManager.getLogger( 'ui-icon-spec');
 	});
 
@@ -36,7 +34,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'cloud', 'icon' );
+					expect( component.element ).toHaveCssClasses( 'cloud', 'icon' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -50,7 +48,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'help', 'circle', 'icon' );
+					expect( component.element ).toHaveCssClasses( 'help', 'circle', 'icon' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -64,7 +62,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'huge', 'cloud', 'icon' );
+					expect( component.element ).toHaveCssClasses( 'huge', 'cloud', 'icon' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -78,7 +76,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'red', 'user', 'icon' );
+					expect( component.element ).toHaveCssClasses( 'red', 'user', 'icon' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -92,7 +90,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'disabled', 'icon' );
+					expect( component.element ).toHaveCssClasses( 'disabled', 'icon' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -115,7 +113,7 @@ describe('ui-icon', () => {
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
-					expect( icon.classList ).toContain( 'cloud' );
+					expect( icon ).toHaveCssClasses( 'cloud' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -133,7 +131,7 @@ describe('ui-icon', () => {
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
-					expect( icon.classList ).toContain( 'circular', 'inverted', 'users' );
+					expect( icon ).toHaveCssClasses( 'circular', 'inverted', 'users' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -151,7 +149,7 @@ describe('ui-icon', () => {
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
-					expect( icon.classList ).toContain( 'help', 'circle' );
+					expect( icon ).toHaveCssClasses( 'help', 'circle' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -169,7 +167,7 @@ describe('ui-icon', () => {
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
-					expect( icon.classList ).toContain( 'huge' );
+					expect( icon ).toHaveCssClasses( 'huge' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -187,7 +185,7 @@ describe('ui-icon', () => {
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
-					expect( icon.classList ).toContain( 'red' );
+					expect( icon ).toHaveCssClasses( 'red' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -202,11 +200,10 @@ describe('ui-icon', () => {
 				boundTo({}).
 				create( bootstrap ).then( () => {
 					let icon = component.element.querySelector( 'i.icon' );
-					console.debug( component.element );
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
-					expect( icon.classList ).toContain( 'disabled' );
+					expect( icon ).toHaveCssClasses( 'disabled' );
 				}).
 				then( done ).
 				catch( done.fail );
