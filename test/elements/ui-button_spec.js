@@ -5,16 +5,14 @@ import {StageComponent} from 'aurelia-testing';
 import {bootstrap} from 'aurelia-bootstrapper';
 import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
+import {customMatchers} from '../helpers';
 
 
 describe('ui-button', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		// let appender = new ConsoleAppender();
-		// LogManager.addAppender( appender );
-		// LogManager.setLevel( 'warn' );
-		//
+		jasmine.addMatchers( customMatchers );
 		logger = LogManager.getLogger( 'ui-button-spec');
 	});
 
@@ -40,7 +38,7 @@ describe('ui-button', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'ui', 'button' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'button' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -54,7 +52,7 @@ describe('ui-button', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'ui', 'huge', 'button' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'huge', 'button' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -68,7 +66,7 @@ describe('ui-button', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'ui', 'red', 'button' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'red', 'button' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -82,7 +80,7 @@ describe('ui-button', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					expect( component.element.classList ).toContain( 'ui', 'disabled', 'button' );
+					expect( component.element ).toHaveCssClasses( 'ui', 'disabled', 'button' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -98,7 +96,7 @@ describe('ui-button', () => {
 				create( bootstrap ).then( () => {
 					let icon = component.element.querySelector( 'i.icon' );
 					expect( icon ).toBeDefined();
-					expect( icon.classList ).toContain( 'ui', 'check', 'icon' )
+					expect( icon ).toHaveCssClasses( 'ui', 'check', 'icon' )
 				}).
 				then( done ).
 				catch( done.fail );
@@ -120,7 +118,7 @@ describe('ui-button', () => {
 
 					expect( button ).toBeDefined();
 					expect( button.nodeType ).toEqual( 1 );
-					expect( button.classList ).toContain( 'ui', 'huge', 'button' );
+					expect( button ).toHaveCssClasses( 'ui', 'huge', 'button' );
 					expect( button.innerText ).toContain( 'Do All The Things!' );
 				}).
 				then( done ).
@@ -139,7 +137,7 @@ describe('ui-button', () => {
 
 					expect( button ).toBeDefined();
 					expect( button.nodeType ).toEqual( 1 );
-					expect( button.classList ).toContain( 'ui', 'red', 'button' );
+					expect( button ).toHaveCssClasses( 'ui', 'red', 'button' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -157,7 +155,7 @@ describe('ui-button', () => {
 
 					expect( button ).toBeDefined();
 					expect( button.nodeType ).toEqual( 1 );
-					expect( button.classList ).toContain( 'ui', 'disabled', 'button' );
+					expect( button ).toHaveCssClasses( 'ui', 'disabled', 'button' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -174,7 +172,7 @@ describe('ui-button', () => {
 					let icon = component.element.querySelector( 'i.icon' );
 
 					expect( icon ).not.toBeNull();
-					expect( icon.classList ).toContain( 'check', 'icon' )
+					expect( icon ).toHaveCssClasses( 'check', 'icon' )
 				}).
 				then( done ).
 				catch( done.fail );
@@ -189,7 +187,95 @@ describe('ui-button', () => {
 				boundTo({}).
 				create( bootstrap ).then( () => {
 					let button = component.element.querySelector( 'button' );
-					expect( button.classList ).toContain( 'basic' );
+					expect( button ).toHaveCssClasses( 'basic' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'can be a primary button', done => {
+			component.
+				inView(`
+					<ui-button primary>Submit!</ui-button>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let button = component.element.querySelector( 'button' );
+					expect( button ).toHaveCssClasses( 'primary' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'can be a secondary button', done => {
+			component.
+				inView(`
+					<ui-button secondary>Cancel</ui-button>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let button = component.element.querySelector( 'button' );
+					expect( button ).toHaveCssClasses( 'secondary' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'can be animated', done => {
+			component.
+				inView(`
+					<ui-button animated>
+					  <div class="visible content">Next</div>
+					  <div class="hidden content">
+					    <i class="right arrow icon"></i>
+					  </div>
+					</ui-button>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let button = component.element.querySelector( 'button' );
+					expect( button ).toHaveCssClasses( 'animated' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'can be animated vertically', done => {
+			component.
+				inView(`
+					<ui-button animated="vertical">
+						<div class="hidden content">Shop</div>
+						<div class="visible content">
+							<i class="shop icon"></i>
+						</div>
+					</ui-button>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let button = component.element.querySelector( 'button' );
+					expect( button ).toHaveCssClasses( 'animated', 'vertical' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'can be animated with a fade-in effect', done => {
+			component.
+				inView(`
+					<ui-button animated="fade">
+						<div class="visible content">Sign-up for a Pro account</div>
+						<div class="hidden content">$12.99 a month</div>
+					</ui-button>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let button = component.element.querySelector( 'button' );
+					expect( button ).toHaveCssClasses( 'animated', 'fade' );
 				}).
 				then( done ).
 				catch( done.fail );

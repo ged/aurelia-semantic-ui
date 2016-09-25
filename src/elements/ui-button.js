@@ -14,10 +14,33 @@ export class SemanticUIButtonElement extends SemanticUIElement {
 
 	@bindable icon;
 	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( ...constants.VALID_SIZES ) size;
 	@bindableToggle disabled;
 	@bindableToggle primary;
 	@bindableToggle secondary;
 	@bindableToggle basic;
+	@bindable animated;
+
+
+
+	bind( ...args ) {
+		this.setAnimatedClasses( this.animated );
+	}
+
+
+	animatedChanged( oldValue, newValue ) {
+		this.setAnimatedClasses( newValue );
+	}
+
+
+	setAnimatedClasses( animated ) {
+		if ( animated !== null && animated !== false ) {
+			this.addCssClasses( 'animated' );
+			if ( animated !== '' ) {
+				this.addCssClasses( animated );
+			}
+		}
+	}
 
 }
 
@@ -27,6 +50,7 @@ export class SemanticUIButtonAttribute extends SemanticUIAttribute {
 
 	@bindable icon;
 	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( ...constants.VALID_SIZES ) size;
 	@bindableToggle disabled;
 
 	@child( 'i.ui.icon' ) iconElement;
