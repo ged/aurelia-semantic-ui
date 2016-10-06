@@ -12,7 +12,7 @@ import {inject, customAttribute, customElement, children, bindable, LogManager} 
 
 function addDividerNodes( element, divider ) {
 	let dividerNode = null;
-	let sections = element.querySelectorAll( '[ui-breadcrumb-section]' );
+	let sections = element.querySelectorAll( `[${constants.attributePrefix}breadcrumb-section]` );
 
 	if ( sections.length === 0 ) {
 		return;

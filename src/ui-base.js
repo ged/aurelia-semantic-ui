@@ -24,7 +24,8 @@ export class SemanticUIElement {
 
 
 	created( owningView, myView ) {
-		this.innerElement = this.element.querySelector( ':first-child' );
+		this.logger.debug( "myView: ", myView );
+		this.innerElement = this.getSemanticElement( this.element );
 	}
 
 
@@ -37,6 +38,23 @@ export class SemanticUIElement {
 	removeCssClasses( ...cssClasses ) {
 		this.logger.debug( `Removing CSS classes: ${cssClasses} from inner element: ${this.innerElement}` );
 		this.innerElement.classList.remove( ...cssClasses );
+	}
+
+
+	getSemanticElement( parentEl ) {
+		// Containerless elements get passed a comment anchor element
+		if ( parentEl.nodeType === 8 ) {
+			return parentEl.previousElementSibling;
+		}
+
+		else if ( parentEl.nodeType === 1 ) {
+			return parentEl.firstElementChild;
+		}
+
+		else {
+			console.error( "Can't find the semantic element of: ", parentEl );
+			throw new Error( `Can't find the semantic element of: ${parentEl}` );
+		}
 	}
 
 }

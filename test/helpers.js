@@ -21,10 +21,12 @@ export var customMatchers = {
 				};
 
 				if ( result.pass ) {
-					result.message = `Expected ${element} to have CSS classes: ${classes.join(',')}`;
+					result.message =
+						`Expected ${element} not to have CSS classes: ${classes.join(', ')}\n` +
+						`but it had: ${element.classList}`;
 				} else {
 					result.message =
-						`Expected ${element} to have CSS classes: ${classes.join(',')}\n` +
+						`Expected ${element} to have CSS classes: ${classes.join(', ')}\n` +
 						`but it was missing: ${missing.join(', ')}`;
 				}
 
