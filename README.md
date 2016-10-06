@@ -42,7 +42,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 
 ### Elements
 
-- [ ] Button
+- [x] Button
 - [ ] Container
 - [ ] Divider
 - [ ] Flag

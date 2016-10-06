@@ -7,7 +7,15 @@
 
 import {constants} from '../constants';
 import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {customAttribute, customElement, inject, child, bindable} from 'aurelia-framework';
+import {
+	customAttribute,
+	customElement,
+	inject,
+	child,
+	containerless,
+	bindable
+} from 'aurelia-framework';
+
 
 @customElement( `${constants.elementPrefix}button` )
 export class SemanticUIButtonElement extends SemanticUIElement {
@@ -20,16 +28,22 @@ export class SemanticUIButtonElement extends SemanticUIElement {
 	@bindableToggle secondary;
 	@bindableToggle basic;
 	@bindable animated;
-
+	@bindable labeled;
 
 
 	bind( ...args ) {
 		this.setAnimatedClasses( this.animated );
+		this.setLabeledClasses( this.labeled );
 	}
 
 
 	animatedChanged( oldValue, newValue ) {
 		this.setAnimatedClasses( newValue );
+	}
+
+
+	labeledChanged( oldValue, newValue ) {
+		this.setLabeledClasses( newValue );
 	}
 
 
@@ -39,6 +53,17 @@ export class SemanticUIButtonElement extends SemanticUIElement {
 			if ( animated !== '' ) {
 				this.addCssClasses( animated );
 			}
+		}
+	}
+
+	setLabeledClasses( labeled ) {
+		if ( labeled !== null && labeled !== false ) {
+			if ( labeled === 'left' || (labeled !== 'right' && this.icon) ) {
+				this.addCssClasses( 'left' );
+			} else {
+				this.addCssClasses( 'right' );
+			}
+			this.addCssClasses( 'labeled' );
 		}
 	}
 

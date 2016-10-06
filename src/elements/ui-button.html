@@ -1,8 +1,7 @@
 <template role="button">
-	<require from="./ui-icon"></require>
-	
-	<button class="ui ${icon ? 'icon' : ''} button">
-		<ui-icon if.bind="icon" name.bind="icon"></ui-icon>
+	<require from="./ui-button.css"></require>
+	<div class="ui ${icon ? 'icon' : ''} button">
+		<i if.bind="icon" class="icon ${icon}"></i>
 		<slot></slot>
-	</button>
+	</div>
 </template>

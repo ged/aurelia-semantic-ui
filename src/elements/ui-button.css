@@ -1,0 +1,71 @@
+/* Fixes for labeled buttons when using a custom element for the inner button/label */
+
+.ui.labeled.button > ui-button > .button {
+  margin: 0px;
+}
+.ui.labeled.button > ui-label > .label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 0px 0px -1px !important;
+  padding: '';
+  font-size: 1em;
+  border-color: rgba(34, 36, 38, 0.15);
+}
+
+/* Tag */
+.ui.labeled.button > ui-label > .tag.label:before {
+  width: 1.85em;
+  height: 1.85em;
+}
+
+/* Right */
+.ui.labeled.button:not([class*="left labeled"]) > ui-button > .button {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.ui.labeled.button:not([class*="left labeled"]) > ui-label > .label {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+/* Left Side */
+.ui[class*="left labeled"].button > ui-button > .button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.ui[class*="left labeled"].button > ui-label > .label {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+/* Fixes for custom-element icons inside buttons */
+
+.ui.button > ui-icon > .icon:not(.button) {
+  height: 0.85714286em;
+  opacity: 0.8;
+  margin: 0em 0.42857143em 0em -0.21428571em;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+  vertical-align: '';
+  color: '';
+}
+.ui.button:not(.icon) > ui-icon > .icon:not(.button) {
+  margin: 0em 0.42857143em 0em -0.21428571em;
+}
+.ui.button:not(.icon) > ui-icon > .right.icon:not(.button) {
+  margin: 0em -0.21428571em 0em 0.42857143em;
+}
+
+.ui.icon.buttons .button > ui-icon > .icon,
+.ui.icon.button > ui-icon > .icon {
+  opacity: 0.9;
+  margin: 0em;
+  vertical-align: top;
+}
