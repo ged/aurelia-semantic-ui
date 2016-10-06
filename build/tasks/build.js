@@ -67,3 +67,18 @@ gulp.task('build', function(callback) {
 	);
 });
 
+gulp.task('build-all-formats', function(callback) {
+	return runSequence(
+		'clean',
+		[
+			'build-html',
+			'build-css',
+			'build-es2015',
+			'build-commonjs',
+			'build-amd',
+			'build-system'
+		],
+		callback
+	);
+});
+
