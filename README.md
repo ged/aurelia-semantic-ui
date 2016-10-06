@@ -33,46 +33,46 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 
 ### Collections
 
-- [-] Breadcrumb
-- [-] Form
-- [-] Grid
-- [-] Menu
-- [-] Message
-- [-] Table
+- [x] Breadcrumb
+- [ ] Form
+- [ ] Grid
+- [ ] Menu
+- [ ] Message
+- [ ] Table
 
 ### Elements
 
-- [-] Button
-- [-] Container
-- [-] Divider
-- [-] Flag
-- [-] Header
-- [-] Icon
-- [-] Image
-- [-] Input
-- [-] Label
-- [-] List
-- [-] Loader
-- [-] Rail
-- [-] Reveal
-- [-] Segment
-- [-] Step
+- [ ] Button
+- [ ] Container
+- [ ] Divider
+- [ ] Flag
+- [ ] Header
+- [ ] Icon
+- [ ] Image
+- [ ] Input
+- [ ] Label
+- [ ] List
+- [ ] Loader
+- [ ] Rail
+- [ ] Reveal
+- [ ] Segment
+- [ ] Step
 
 ### Modules
 
-- [-] Accordion
+- [ ] Accordion
 - [ ] Checkbox
 - [ ] Dimmer
-- [-] Dropdown
+- [ ] Dropdown
 - [ ] Embed
-- [-] Modal
+- [ ] Modal
 - [ ] Nag
-- [-] Popup
+- [ ] Popup
 - [ ] Progress
 - [ ] Rating
-- [-] Search
+- [ ] Search
 - [ ] Shape
-- [-] Sidebar
+- [ ] Sidebar
 - [ ] Sticky
 - [ ] Tab
 - [ ] Transition
@@ -80,11 +80,11 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 ### Views
 
 - [ ] Ad
-- [-] Card
+- [ ] Card
 - [ ] Comment
-- [-] Feed
+- [ ] Feed
 - [ ] Item
-- [-] Statistic
+- [ ] Statistic
 
 
 ## Installing
