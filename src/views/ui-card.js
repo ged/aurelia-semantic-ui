@@ -17,3 +17,11 @@ export class SemanticUICardAttribute extends SemanticUIAttribute {
 }
 
 
+@customElement( `${constants.elementPrefix}cards` )
+export class SemanticUICardsElement extends SemanticUIElement {}
+
+@customAttribute( `${constants.attributePrefix}cards` )
+export class SemanticUICardsAttribute extends SemanticUIAttribute {
+}
+
+
