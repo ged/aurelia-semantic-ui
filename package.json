@@ -84,6 +84,7 @@
   },
   "peerDepedencies": {
     "aurelia-framework": "^1.0.0",
-    "semantic-ui": "^2.2"
+    "semantic-ui": "^2.2",
+    "jquery": "^3.1"
   }
 }

@@ -6,6 +6,7 @@
  * - Michael Granger <ged@FaerieMUD.org>
  */
 
+import 'jquery';
 import 'semantic-ui';
 
 
