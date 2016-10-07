@@ -1,1 +1,6 @@
 exclude = {$exclude,dist,node_modules,jspm_packages}
+
+[ source.js ]
+softTabs = false
+indentSize = 4
+
