@@ -9,7 +9,7 @@ module.exports = function(config) {
 			loadFiles: ['test/helpers.js', 'src/**/*.js', 'test/**/*.js']
 		},
 		files: [
-			'src/**/*.html', 'test/**/*.html'
+			'src/**/*.html', 'src/**/*.css', 'test/**/*.html'
 		],
 		exclude: [],
 		preprocessors: {
@@ -31,7 +31,11 @@ module.exports = function(config) {
 		logLevel: config.LOG_INFO,
 		// logLevel: config.LOG_DEBUG,
 		autoWatch: true,
-		browsers: ['Chrome', 'Safari', 'Firefox'],
+		browsers: [
+			'Chrome',
+			'Safari',
+			'Firefox'
+		],
 		singleRun: false
 	});
 };
