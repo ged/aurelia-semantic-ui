@@ -9,7 +9,6 @@ export function uiElement( component ) {
 	let metadata = { component };
 
 	return function( target, name, descriptor ) {
-		console.debug( `Adding metadata for ${component} to ${target}` );
 		Reflect.defineProperty( target, constants.metadataProperty, {value: metadata} );
 		return customElementFn( target, name, descriptor );
 	};
@@ -22,7 +21,6 @@ export function uiAttribute( component, defaultBindingMode=null ) {
 	let metadata = { component };
 
 	return function( target, name, descriptor ) {
-		console.debug( `Adding metadata for ${component} to ${target}` );
 		Reflect.defineProperty( target, constants.metadataProperty, {value: metadata} );
 		return customAttributeFn( target, name, descriptor );
 	};
@@ -33,7 +31,6 @@ export function bindableEnum( ...validValues ) {
 	// console.debug( "Bindable enum decorator called with: ", validValues );
 	return function( target, name, descriptor ) {
 		let changedMethodName = `${name}Changed`;
-		// console.debug( "Setting up a ", changedMethodName, " method on ", target );
 		target[ changedMethodName ] = function( newValue, oldValue ) {
 			this.logger.debug( `Changing ${name} to ${newValue} from ${oldValue}` );
 
@@ -68,7 +65,6 @@ export function bindableToggle( target, name, descriptor ) {
 
 	let originalBind = target.bind;
 	target.bind = function( ...args ) {
-		this.logger.debug( `Bound for ${name} toggle-able attribute: '${this[name]}'.` );
 		if ( originalBind ) {
 			Reflect.apply( originalBind, this, args );
 		}
