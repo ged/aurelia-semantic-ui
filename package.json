@@ -87,5 +87,54 @@
     "aurelia-framework": "^1.0.0",
     "semantic-ui": "^2.2",
     "jquery": "^3.1"
+  },
+  "aurelia": {
+    "usedBy": [],
+    "documentation": {
+      "links": [
+        {
+          "rel": "license",
+          "mediaType": "text/plain",
+          "title": "The MIT License (MIT)",
+          "href": "LICENSE"
+        }
+      ]
+    },
+    "build": {
+      "resources": [
+        "aurelia-semantic-ui/src/collections/ui-breadcrumb",
+        "aurelia-semantic-ui/src/collections/ui-form",
+        "aurelia-semantic-ui/src/collections/ui-grid",
+        "aurelia-semantic-ui/src/collections/ui-menu",
+        "aurelia-semantic-ui/src/collections/ui-message",
+        "aurelia-semantic-ui/src/collections/ui-table",
+        "aurelia-semantic-ui/src/elements/ui-button",
+        "aurelia-semantic-ui/src/elements/ui-container",
+        "aurelia-semantic-ui/src/elements/ui-divider",
+        "aurelia-semantic-ui/src/elements/ui-flag",
+        "aurelia-semantic-ui/src/elements/ui-header",
+        "aurelia-semantic-ui/src/elements/ui-icon",
+        "aurelia-semantic-ui/src/elements/ui-image",
+        "aurelia-semantic-ui/src/elements/ui-input",
+        "aurelia-semantic-ui/src/elements/ui-label",
+        "aurelia-semantic-ui/src/elements/ui-list",
+        "aurelia-semantic-ui/src/elements/ui-loader",
+        "aurelia-semantic-ui/src/elements/ui-rail",
+        "aurelia-semantic-ui/src/elements/ui-reveal",
+        "aurelia-semantic-ui/src/elements/ui-segment",
+        "aurelia-semantic-ui/src/elements/ui-step",
+        "aurelia-semantic-ui/src/modules/ui-accordion",
+        "aurelia-semantic-ui/src/modules/ui-dimmer",
+        "aurelia-semantic-ui/src/modules/ui-dropdown",
+        "aurelia-semantic-ui/src/modules/ui-modal",
+        "aurelia-semantic-ui/src/modules/ui-popup",
+        "aurelia-semantic-ui/src/modules/ui-progress",
+        "aurelia-semantic-ui/src/modules/ui-search",
+        "aurelia-semantic-ui/src/modules/ui-sidebar",
+        "aurelia-semantic-ui/src/views/ui-card",
+        "aurelia-semantic-ui/src/views/ui-feed",
+        "aurelia-semantic-ui/src/views/ui-statistic"
+      ]
+    }
   }
 }
