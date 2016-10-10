@@ -6,8 +6,9 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {inject, customAttribute, customElement, children, bindable, LogManager} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
+import {inject, children, bindable} from 'aurelia-framework';
 
 
 function addDividerNodes( element, divider ) {
@@ -42,7 +43,7 @@ function addDividerNodes( element, divider ) {
 }
 
 
-@customElement( `${constants.elementPrefix}breadcrumb` )
+@uiElement( 'breadcrumb' )
 export class SemanticUIBreadcrumbElement extends SemanticUIElement {
 	@bindable divider;
 	@bindableEnum(constants.VALID_SIZES) size;
@@ -62,7 +63,7 @@ export class SemanticUIBreadcrumbElement extends SemanticUIElement {
 }
 
 
-@customAttribute( `${constants.attributePrefix}breadcrumb` )
+@uiAttribute( 'breadcrumb' )
 export class SemanticUIBreadcrumbAttribute extends SemanticUIAttribute {
 
 	@bindable divider;
@@ -86,7 +87,7 @@ export class SemanticUIBreadcrumbAttribute extends SemanticUIAttribute {
 /**
  * ui-breadcrumb-section
  */
-@customAttribute( `${constants.attributePrefix}breadcrumb-section` )
+@uiAttribute( 'breadcrumb-section' )
 export class SemanticUIBreadcrumbSection extends SemanticUIAttribute {
 
 	@bindableToggle active = false;
@@ -102,7 +103,7 @@ export class SemanticUIBreadcrumbSection extends SemanticUIAttribute {
 /**
  * ui-breadcrumb-divider
  */
-@customAttribute( `${constants.attributePrefix}breadcrumb-divider` )
+@uiAttribute( 'breadcrumb-divider' )
 export class SemanticUIBreadcrumbDivider extends SemanticUIAttribute {
 
 	bind() {

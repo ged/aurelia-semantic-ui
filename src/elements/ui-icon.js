@@ -6,11 +6,12 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {customElement, customAttribute, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
+import {bindable} from 'aurelia-framework';
 
 
-@customElement( `${constants.elementPrefix}icon` )
+@uiElement( 'icon' )
 export class SemanticUIIconElement extends SemanticUIElement {
 
 	@bindable name = "help circle";
@@ -22,7 +23,7 @@ export class SemanticUIIconElement extends SemanticUIElement {
 }
 
 
-@customAttribute( `${constants.attributePrefix}icon` )
+@uiAttribute( 'icon' )
 export class SemanticUIIconAttribute extends SemanticUIAttribute {
 
 	@bindable name = "help circle";
@@ -48,14 +49,14 @@ export class SemanticUIIconAttribute extends SemanticUIAttribute {
 }
 
 
-@customElement( `${constants.elementPrefix}icons` )
+@uiElement( 'icons' )
 export class SemanticUIIconsElement extends SemanticUIElement {
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 }
 
 
 
-@customAttribute( `${constants.attributePrefix}icons` )
+@uiAttribute( 'icons' )
 export class SemanticUIIconsAttribute extends SemanticUIAttribute {
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 }

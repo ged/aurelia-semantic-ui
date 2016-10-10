@@ -92,3 +92,72 @@ describe('ui-form', () => {
 
 
 });
+
+describe('ui-checbox', () => {
+	let component, logger;
+
+	beforeAll(() => {
+		logger = LogManager.getLogger( 'ui-checkbox-spec');
+		jasmine.addMatchers( customMatchers );
+	});
+
+	beforeEach(() => {
+		component = StageComponent.
+			withResources('src/collections/ui-form');
+	});
+
+	afterEach(() => {
+		try {
+			component.dispose();
+		} catch(e) {
+			logger.debug( "Error disposing the StageComponent" );
+		}
+	});
+
+
+	describe( 'as a custom attribute', () => {
+
+		it( 'adds semantic classes when bound', done => {
+			component.
+				inView(`
+					<div ui-checkbox></div>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'checkbox' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+	});
+
+
+	describe( 'as a custom element', () => {
+
+		it( 'can bind to the checked status of the hidden element', done => {
+			component.
+				inView(`
+					<ui-checkbox checked.bind="isChecked">
+					</ui-checkbox>
+				`).
+				boundTo({
+					isChecked: true
+				}).
+				create( bootstrap ).then( () => {
+					let checkbox = component.element.querySelector( 'div' ),
+						input = checkbox.querySelector( 'input' );
+
+					expect( checkbox.nodeType ).toEqual( 1 );
+					expect( checkbox ).toHaveCssClasses( 'ui', 'checkbox' );
+
+					expect( input.value ).toEqual( '1' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+	});
+
+
+});

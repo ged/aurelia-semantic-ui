@@ -6,10 +6,11 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {customAttribute, customElement, children} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
+import {children} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}form` )
+@uiElement( 'form' )
 export class SemanticUIFormElement extends SemanticUIElement {
 
 	@bindableToggle loading = false;
@@ -21,7 +22,7 @@ export class SemanticUIFormElement extends SemanticUIElement {
 
 }
 
-@customAttribute( `${constants.attributePrefix}form` )
+@uiAttribute( 'form' )
 export class SemanticUIFormAttribute extends SemanticUIAttribute {
 
 	@bindableToggle loading = false;
@@ -34,14 +35,19 @@ export class SemanticUIFormAttribute extends SemanticUIAttribute {
 }
 
 
-@customElement( `${constants.elementPrefix}checkbox` )
-export class SemanticUICheckboxElement extends SemanticUIElement {}
+@uiElement( 'checkbox' )
+export class SemanticUICheckboxElement extends SemanticUIElement {
 
-@customAttribute( `${constants.attributePrefix}checkbox` )
+	attached() {
+		$( this.element ).checkbox();
+	}
+
+}
+
+@uiAttribute( 'checkbox' )
 export class SemanticUICheckboxAttribute extends SemanticUIAttribute {
 
 	attached() {
-		this.logger.debug( "Activating a ui-checkbox" );
 		$( this.element ).checkbox();
 	}
 

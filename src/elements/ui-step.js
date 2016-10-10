@@ -6,13 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 import {customAttribute, customElement} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}step` )
+@uiElement( 'step' )
 export class SemanticUIStepElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}step` )
+@uiAttribute( 'step' )
 export class SemanticUIStepAttribute extends SemanticUIAttribute {
 
 	@bindableToggle active = false;
@@ -29,10 +30,10 @@ export class SemanticUIStepAttribute extends SemanticUIAttribute {
 }
 
 
-@customElement( `${constants.elementPrefix}steps` )
+@uiElement( 'steps' )
 export class SemanticUIStepsElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}steps` )
+@uiAttribute( 'steps' )
 export class SemanticUIStepsAttribute extends SemanticUIAttribute {
 }
 

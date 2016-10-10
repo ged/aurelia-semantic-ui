@@ -6,13 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableEnum} from '../ui-base';
-import {customAttribute, customElement, bindable} from 'aurelia-framework';
+import {uiElement, uiAttribute, bindableEnum} from '../decorators';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {bindable} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}rail` )
+@uiElement( 'rail' )
 export class SemanticUIRailElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}rail` )
+@uiAttribute( 'rail' )
 export class SemanticUIRailAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( 'left', 'right' ) side = 'left';

@@ -6,13 +6,15 @@
  */
 
 import {constants} from '../constants';
+import {uiElement, uiAttribute, bindableEnum} from '../decorators';
 import {bindable, customAttribute, customElement} from 'aurelia-framework';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 
-@customElement( `${constants.elementPrefix}progress` )
+
+@uiElement( 'progress' )
 export class SemanticUIProgressElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}progress` )
+@uiAttribute( 'progress' )
 export class SemanticUIProgressAttribute extends SemanticUIAttribute {
 
 	@bindable total;

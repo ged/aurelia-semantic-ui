@@ -6,13 +6,16 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle} from '../ui-base';
-import {customAttribute, customElement, bindable} from 'aurelia-framework';
+import {uiElement, uiAttribute, bindableToggle} from '../decorators';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {bindable} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}reveal` )
+
+@uiElement( 'reveal' )
 export class SemanticUIRevealElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}reveal` )
+
+@uiAttribute( 'reveal' )
 export class SemanticUIRevealAttribute extends SemanticUIAttribute {
 
 	@bindableToggle active;
@@ -20,7 +23,7 @@ export class SemanticUIRevealAttribute extends SemanticUIAttribute {
 }
 
 
-@customAttribute( `${constants.attributePrefix}reveal-visible` )
+@uiAttribute( 'reveal-visible' )
 export class SemanticUIRevealVisibleAttribute extends SemanticUIAttribute {
 
 	bind() {
@@ -30,7 +33,8 @@ export class SemanticUIRevealVisibleAttribute extends SemanticUIAttribute {
 
 }
 
-@customAttribute( `${constants.attributePrefix}reveal-hidden` )
+
+@uiAttribute( 'reveal-hidden' )
 export class SemanticUIRevealHiddenAttribute extends SemanticUIAttribute {
 
 	bind() {

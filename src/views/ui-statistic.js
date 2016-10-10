@@ -6,23 +6,27 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableEnum} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum} from '../decorators';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {customAttribute, customElement} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}statistic` )
+
+@uiElement( 'statistic' )
 export class SemanticUIStatisticElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}statistic` )
+
+@uiAttribute( 'statistic' )
 export class SemanticUIStatisticAttribute extends SemanticUIAttribute {
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 	@bindableEnum( ...constants.VALID_COLORS ) color;
 }
 
 
-@customElement( `${constants.elementPrefix}statistics` )
+@uiElement( 'statistics' )
 export class SemanticUIStatisticsElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}statistics` )
+
+@uiAttribute( 'statistics' )
 export class SemanticUIStatisticsAttribute extends SemanticUIAttribute {
 	@bindableEnum( ...constants.VALID_SIZES ) size;
 	@bindableEnum( ...constants.VALID_COLORS ) color;

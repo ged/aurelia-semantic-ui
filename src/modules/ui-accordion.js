@@ -6,13 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {customAttribute, customElement} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 
-@customElement( `${constants.elementPrefix}accordion` )
+
+@uiElement( 'accordion' )
 export class SemanticUIAccordionElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}accordion` )
+@uiAttribute( 'accordion' )
 export class SemanticUIAccordionAttribute extends SemanticUIAttribute {
 
     attached() {

@@ -6,14 +6,16 @@
  */
 
 import {constants} from '../constants';
-import {customAttribute, customElement, bindable} from 'aurelia-framework';
+import {uiElement, uiAttribute} from '../decorators';
+import {bindable} from 'aurelia-framework';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 
 
-@customElement( `${constants.elementPrefix}sidebar` )
+@uiElement( 'sidebar' )
 export class SemanticUISidebarElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}sidebar` )
+
+@uiAttribute( 'sidebar' )
 export class SemanticUISidebarAttribute extends SemanticUIAttribute {
 
 	@bindable context;

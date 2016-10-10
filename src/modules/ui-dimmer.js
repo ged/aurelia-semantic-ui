@@ -6,13 +6,15 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {customAttribute, customElement, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute} from '../decorators';
+import {bindable} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}dimmer` )
+
+@uiElement( 'dimmer' )
 export class SemanticUIDimmerElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}dimmer` )
+@uiAttribute( 'dimmer' )
 export class SemanticUIDimmerAttribute extends SemanticUIAttribute {
 
 	@bindable active = false;

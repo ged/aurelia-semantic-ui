@@ -6,13 +6,13 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableEnum, bindableToggle} from '../ui-base';
-import {customAttribute, customElement} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum} from '../decorators';
 
-@customElement( `${constants.elementPrefix}label` )
+@uiElement( 'label' )
 export class SemanticUILabelElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}label` )
+@uiAttribute( 'label' )
 export class SemanticUILabelAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_COLORS ) color;
@@ -21,10 +21,10 @@ export class SemanticUILabelAttribute extends SemanticUIAttribute {
 }
 
 
-@customElement( `${constants.elementPrefix}labels` )
+@uiElement( 'labels' )
 export class SemanticUILabelsElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}labels` )
+@uiAttribute( 'labels' )
 export class SemanticUILabelsAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_COLORS ) color;

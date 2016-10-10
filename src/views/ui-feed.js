@@ -6,13 +6,15 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableEnum} from '../ui-base';
-import {customAttribute, customElement} from 'aurelia-framework';
+import {uiElement, uiAttribute, bindableEnum} from '../decorators';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 
-@customElement( `${constants.elementPrefix}feed` )
+
+@uiElement( 'feed' )
 export class SemanticUIFeedElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}feed` )
+
+@uiAttribute( 'feed' )
 export class SemanticUIFeedAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( ...constants.VALID_SIZES ) size;

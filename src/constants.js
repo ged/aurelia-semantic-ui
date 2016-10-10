@@ -4,6 +4,7 @@
 export const constants = {
 	attributePrefix: 'ui-',
 	elementPrefix: 'ui-',
+	metadataProperty: '__uiMetadata__',
 	VALID_SIZES: [
 		'mini',
 		'tiny',

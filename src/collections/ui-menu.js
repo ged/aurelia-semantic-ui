@@ -6,13 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {inject, customAttribute, customElement, children, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
+import {children, bindable} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}menu` )
+@uiElement( 'menu' )
 export class SemanticUIMenuElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}menu` )
+@uiAttribute( 'menu' )
 export class SemanticUIMenuAttribute extends SemanticUIAttribute {
 
 	@bindable router;
@@ -45,10 +46,10 @@ export class SemanticUIMenuAttribute extends SemanticUIAttribute {
 /**
  * ui-menu-item
  */
-@customElement( `${constants.elementPrefix}menu-item` )
+@uiElement( 'menu-item' )
 export class SemanticUIMenuItemElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}menu-item` )
+@uiAttribute( 'menu-item' )
 export class SemanticUIMenuItemAttribute extends SemanticUIAttribute {
 
 	@bindableToggle active = false;

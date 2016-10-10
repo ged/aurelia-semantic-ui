@@ -4,3 +4,7 @@ exclude = {$exclude,dist,node_modules,jspm_packages}
 softTabs = false
 indentSize = 4
 
+[ text.html ]
+softTabs = false
+indentSize = 2
+

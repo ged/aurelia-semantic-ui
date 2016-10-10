@@ -6,13 +6,14 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {inject, child, customAttribute, customElement, children, bindable} from 'aurelia-framework';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
+import {child, bindable} from 'aurelia-framework';
 
-@customElement( `${constants.elementPrefix}message` )
+@uiElement( 'message' )
 export class SemanticUIMessageElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}message` )
+@uiAttribute( 'message' )
 export class SemanticUIMessageAttribute extends SemanticUIAttribute {
 
 	@bindable icon;

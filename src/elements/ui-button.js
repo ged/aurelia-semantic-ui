@@ -6,18 +6,12 @@
  */
 
 import {constants} from '../constants';
-import {SemanticUIElement, SemanticUIAttribute, bindableToggle, bindableEnum} from '../ui-base';
-import {
-	customAttribute,
-	customElement,
-	inject,
-	child,
-	containerless,
-	bindable
-} from 'aurelia-framework';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
+import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
+import {bindable, child} from 'aurelia-framework';
 
 
-@customElement( `${constants.elementPrefix}button` )
+@uiElement( 'button' )
 export class SemanticUIButtonElement extends SemanticUIElement {
 
 	@bindable icon;
@@ -70,7 +64,7 @@ export class SemanticUIButtonElement extends SemanticUIElement {
 }
 
 
-@customAttribute( `${constants.attributePrefix}button` )
+@uiAttribute( 'button' )
 export class SemanticUIButtonAttribute extends SemanticUIAttribute {
 
 	@bindable icon;
@@ -114,10 +108,10 @@ export class SemanticUIButtonAttribute extends SemanticUIAttribute {
 }
 
 
-@customElement( `${constants.elementPrefix}buttons` )
+@uiElement( 'buttons' )
 export class SemanticUIButtonsElement extends SemanticUIElement {}
 
-@customAttribute( `${constants.attributePrefix}buttons` )
+@uiAttribute( 'buttons' )
 export class SemanticUIButtonsAttribute extends SemanticUIAttribute {
 }
 
