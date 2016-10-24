@@ -124,6 +124,7 @@
         "aurelia-semantic-ui/src/elements/ui-segment",
         "aurelia-semantic-ui/src/elements/ui-step",
         "aurelia-semantic-ui/src/modules/ui-accordion",
+        "aurelia-semantic-ui/src/modules/ui-checkbox",
         "aurelia-semantic-ui/src/modules/ui-dimmer",
         "aurelia-semantic-ui/src/modules/ui-dropdown",
         "aurelia-semantic-ui/src/modules/ui-modal",

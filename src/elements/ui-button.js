@@ -77,6 +77,7 @@ export class SemanticUIButtonAttribute extends SemanticUIAttribute {
 
 	bind( ...args ) {
 		super.bind( ...args );
+		// :TODO: Should this just be a bindableToggle? 
 		if ( this.icon ) {
 			this.logger.debug( `Adding 'icon' to the list of classes.` );
 			this.element.classList.add('icon');

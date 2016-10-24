@@ -11,13 +11,25 @@ import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorator
 import {child, bindable} from 'aurelia-framework';
 
 @uiElement( 'message' )
-export class SemanticUIMessageElement extends SemanticUIElement {}
+export class SemanticUIMessageElement extends SemanticUIElement {
+
+	@bindable icon;
+
+	@bindableToggle success;
+	@bindableToggle error;
+	@bindableToggle warning;
+
+}
 
 @uiAttribute( 'message' )
 export class SemanticUIMessageAttribute extends SemanticUIAttribute {
 
 	@bindable icon;
 	@child( 'i.ui.icon' ) iconElement;
+
+	@bindableToggle success;
+	@bindableToggle error;
+	@bindableToggle warning;
 
 
 	bind( ...args ) {

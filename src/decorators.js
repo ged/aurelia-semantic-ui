@@ -58,7 +58,6 @@ export function bindableToggle( target, name, descriptor ) {
 	let changedMethodName = `${name}Changed`;
 	// console.debug( "Setting up a ", changedMethodName, " method on ", target );
 	target[ changedMethodName ] = function( newValue ) {
-		this.logger.debug( `Toggling ${name} to ${newValue ? 'on' : 'off'}.` );
 		if ( newValue ) { this.addCssClasses(name); }
 		else { this.removeCssClasses(name); }
 	};
@@ -68,6 +67,8 @@ export function bindableToggle( target, name, descriptor ) {
 		if ( originalBind ) {
 			Reflect.apply( originalBind, this, args );
 		}
+		// Treat an empty-string value as true for boolean attributes
+		// (e.g., <ui-form inverted>)
 		if ( this[name] !== null && this[name] !== false ) {
 			this.addCssClasses( name );
 		}

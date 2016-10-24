@@ -36,6 +36,7 @@ export * from './elements/ui-segment';
 export * from './elements/ui-step';
 
 export * from './modules/ui-accordion';
+export * from './modules/ui-checkbox';
 export * from './modules/ui-dimmer';
 export * from './modules/ui-dropdown';
 export * from './modules/ui-modal';
@@ -73,6 +74,7 @@ export function configure(config) {
 		'./elements/ui-segment',
 		'./elements/ui-step',
 		'./modules/ui-accordion',
+		'./modules/ui-checkbox',
 		'./modules/ui-dimmer',
 		'./modules/ui-dropdown',
 		'./modules/ui-modal',
