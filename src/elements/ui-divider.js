@@ -6,13 +6,28 @@
  */
 
 import {constants} from '../constants';
-import {uiElement, uiAttribute} from '../decorators';
+import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 
 @uiElement( 'divider' )
-export class SemanticUIDividerElement extends SemanticUIElement {}
+export class SemanticUIDividerElement extends SemanticUIElement {
+
+	@bindableToggle clearing = false;
+	@bindableToggle fitted = false;
+	@bindableToggle hidden = false;
+	@bindableToggle inverted = false;
+	@bindableToggle section = false;
+
+}
 
 @uiAttribute( 'divider' )
 export class SemanticUIDividerAttribute extends SemanticUIAttribute {
+
+	@bindableToggle clearing = false;
+	@bindableToggle fitted = false;
+	@bindableToggle hidden = false;
+	@bindableToggle inverted = false;
+	@bindableToggle section = false;
+
 }
 
