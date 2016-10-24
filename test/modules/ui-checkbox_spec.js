@@ -7,8 +7,9 @@ import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
 import {customMatchers} from '../helpers';
 
+var counter = 0;
 
-xdescribe('ui-checkbox', () => {
+describe('ui-checkbox', () => {
 	let component, logger;
 
 	beforeAll(() => {
@@ -41,7 +42,6 @@ xdescribe('ui-checkbox', () => {
 					isChecked: true
 				}).
 				create( bootstrap ).then( () => {
-					console.debug( component.element );
 					let input = component.element.querySelector( 'input.hidden' );
 
 					expect( input ).toBeHtmlTag( 'input' );
@@ -56,11 +56,10 @@ xdescribe('ui-checkbox', () => {
 
 	describe( 'as a custom element', () => {
 
-
 		it( 'defaults to unchecked', done => {
 			component.
 				inView(`
-					<ui-checkbox>Forcefield enabled</ui-checkbox>
+					<form><ui-checkbox>Forcefield enabled</ui-checkbox></form>
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
@@ -70,50 +69,37 @@ xdescribe('ui-checkbox', () => {
 					expect( checkbox.nodeType ).toEqual( 1 );
 					expect( checkbox ).toHaveCssClasses( 'ui', 'checkbox' );
 
-					expect( input.checked ).toEqual( false );
+					expect( component.viewModel.checked ).toEqual( false );
 				}).
 				then( done ).
 				catch( done.fail );
 		});
 
 
-		it( 'can be set to checked', done => {
+		xit( 'can default to checked', done => {
 			component.
 				inView(`
-					<ui-checkbox checked="true">Forcefield enabled</ui-checkbox>
+					<form><ui-checkbox checked>Forcefield enabled</ui-checkbox></form>
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let checkbox = component.element.querySelector( 'div' ),
-						input = checkbox.querySelector( 'input' );
-
-					expect( checkbox.nodeType ).toEqual( 1 );
-					expect( checkbox ).toHaveCssClasses( 'ui', 'checkbox' );
-
-					expect( input.checked ).toEqual( true );
+					expect( component.viewModel.checked ).toEqual( true );
 				}).
 				then( done ).
 				catch( done.fail );
 		});
 
 
-		it( 'can bind to the checked status of the hidden element', done => {
+		xit( 'can bind to the checked status', done => {
 			component.
 				inView(`
-					<ui-checkbox checked.bind="isChecked">Gravity enabled</ui-checkbox>
+					<form><ui-checkbox checked.bind="isChecked">Gravity enabled</ui-checkbox></form>
 				`).
 				boundTo({
 					isChecked: true
 				}).
 				create( bootstrap ).then( () => {
-					let checkbox = component.element.querySelector( 'div' ),
-						input = checkbox.querySelector( 'input' );
-
-					console.debug( checkbox );
-					expect( checkbox.nodeType ).toEqual( 1 );
-					expect( checkbox ).toHaveCssClasses( 'ui', 'checkbox' );
-
-					expect( input.checked ).toEqual( true );
+					expect( component.viewModel.checked ).toEqual( true );
 				}).
 				then( done ).
 				catch( done.fail );
