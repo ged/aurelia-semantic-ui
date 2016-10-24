@@ -33,5 +33,34 @@ export var customMatchers = {
 				return result;
 			}
 		};
+	},
+
+	toBeHtmlTag: function( util, customEqualityTesters ) {
+		return {
+			compare: function( element, expectedTagName=null ) {
+				let isHtmlNode, isExpectedTagType;
+
+				if ( !element || !element.nodeType ) {
+					isHtmlNode = false;
+				} else {
+					isHtmlNode = (element.nodeType === 1);
+					isExpectedTagType = ( !expectedTagName || element.tagName === expectedTagName );
+				}
+
+				let result = {
+					pass: isHtmlNode && isExpectedTagType
+				};
+
+				let expectation = expectedTagName ? `a "${expectedTagName}" tag` : "an HTML tag";
+				if ( result.pass ) {
+					result.message = `Expected ${element} not to be ${expectation}.`;
+				} else {
+					result.message = `Expected ${element} to be ${expectation}.`;
+				}
+
+				return result;
+			}
+		};
 	}
 };
+
