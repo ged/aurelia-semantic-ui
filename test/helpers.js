@@ -44,7 +44,10 @@ export var customMatchers = {
 					isHtmlNode = false;
 				} else {
 					isHtmlNode = (element.nodeType === 1);
-					isExpectedTagType = ( !expectedTagName || element.tagName === expectedTagName );
+					isExpectedTagType = (
+						!expectedTagName ||
+						element.tagName === expectedTagName.toUpperCase()
+					);
 				}
 
 				let result = {
