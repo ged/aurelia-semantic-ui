@@ -34,7 +34,7 @@ module.exports = function(config) {
 		browsers: [
 			'Chrome',
 			'Safari',
-			'Firefox'
+			// 'Firefox'
 		],
 		singleRun: false
 	});
