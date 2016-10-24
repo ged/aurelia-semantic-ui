@@ -15,8 +15,8 @@ import {bindable, child} from 'aurelia-framework';
 export class SemanticUIButtonElement extends SemanticUIElement {
 
 	@bindable icon;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
 	@bindableToggle disabled;
 	@bindableToggle primary;
 	@bindableToggle secondary;
@@ -68,8 +68,8 @@ export class SemanticUIButtonElement extends SemanticUIElement {
 export class SemanticUIButtonAttribute extends SemanticUIAttribute {
 
 	@bindable icon;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
 	@bindableToggle disabled;
 
 	@child( 'i.ui.icon' ) iconElement;

@@ -29,6 +29,15 @@ export const constants = {
 		'brown',
 		'grey',
 		'black'
+	],
+	VALID_ALIGNMENTS: [
+		'left',
+		'right',
+		'center'
+	],
+	VALID_FLOATS: [
+		'left',
+		'right'
 	]
 };
 

@@ -15,8 +15,8 @@ export class SemanticUILabelElement extends SemanticUIElement {}
 @uiAttribute( 'label' )
 export class SemanticUILabelAttribute extends SemanticUIAttribute {
 
-	@bindableEnum( ...constants.VALID_COLORS ) color;
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
 
 }
 
@@ -27,7 +27,7 @@ export class SemanticUILabelsElement extends SemanticUIElement {}
 @uiAttribute( 'labels' )
 export class SemanticUILabelsAttribute extends SemanticUIAttribute {
 
-	@bindableEnum( ...constants.VALID_COLORS ) color;
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
 
 }

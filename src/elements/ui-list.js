@@ -15,7 +15,7 @@ export class SemanticUIListElement extends SemanticUIElement {}
 @uiAttribute( 'list' )
 export class SemanticUIListAttribute extends SemanticUIAttribute {
 
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 
 }
 

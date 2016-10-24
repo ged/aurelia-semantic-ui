@@ -15,7 +15,7 @@ export class SemanticUIImageElement extends SemanticUIElement {}
 @uiAttribute( 'image' )
 export class SemanticUIImageAttribute extends SemanticUIAttribute {
 
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 	@bindableToggle hidden = false;
 	@bindableToggle disabled = false;
 
@@ -28,6 +28,6 @@ export class SemanticUIImagesElement extends SemanticUIElement {}
 @uiAttribute( 'images' )
 export class SemanticUIImagesAttribute extends SemanticUIAttribute {
 
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 
 }

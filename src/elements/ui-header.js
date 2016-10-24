@@ -16,8 +16,8 @@ export class SemanticUIHeaderElement extends SemanticUIElement {}
 @uiAttribute( 'header' )
 export class SemanticUIHeaderAttribute extends SemanticUIAttribute {
 
-	@bindableEnum( ...constants.VALID_SIZES ) size;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 
 }
 

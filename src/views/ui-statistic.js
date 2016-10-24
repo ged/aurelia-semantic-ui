@@ -17,8 +17,8 @@ export class SemanticUIStatisticElement extends SemanticUIElement {}
 
 @uiAttribute( 'statistic' )
 export class SemanticUIStatisticAttribute extends SemanticUIAttribute {
-	@bindableEnum( ...constants.VALID_SIZES ) size;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 }
 
 
@@ -28,8 +28,8 @@ export class SemanticUIStatisticsElement extends SemanticUIElement {}
 
 @uiAttribute( 'statistics' )
 export class SemanticUIStatisticsAttribute extends SemanticUIAttribute {
-	@bindableEnum( ...constants.VALID_SIZES ) size;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 }
 
 

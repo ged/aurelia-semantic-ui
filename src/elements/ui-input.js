@@ -20,7 +20,7 @@ export class SemanticUIInputAttribute extends SemanticUIAttribute {
 	@bindableToggle disabled = false;
 	@bindableToggle error = null;
 
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 
 }
 

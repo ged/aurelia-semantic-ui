@@ -26,7 +26,7 @@ export class SemanticUIPopupAttribute extends SemanticUIAttribute {
 	@bindable position = null;
 	@bindable transition = null;
 
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 	@bindableToggle inline = false;
 
 

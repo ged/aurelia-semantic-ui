@@ -15,8 +15,8 @@ import {bindable} from 'aurelia-framework';
 export class SemanticUIIconElement extends SemanticUIElement {
 
 	@bindable name = "help circle";
-	@bindableEnum( ...constants.VALID_SIZES ) size;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 	@bindableToggle disabled;
 	@bindableToggle loading;
 
@@ -27,8 +27,8 @@ export class SemanticUIIconElement extends SemanticUIElement {
 export class SemanticUIIconAttribute extends SemanticUIAttribute {
 
 	@bindable name = "help circle";
-	@bindableEnum( ...constants.VALID_SIZES ) size;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 	@bindableToggle disabled;
 	@bindableToggle loading;
 
@@ -51,13 +51,13 @@ export class SemanticUIIconAttribute extends SemanticUIAttribute {
 
 @uiElement( 'icons' )
 export class SemanticUIIconsElement extends SemanticUIElement {
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 }
 
 
 
 @uiAttribute( 'icons' )
 export class SemanticUIIconsAttribute extends SemanticUIAttribute {
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 }
 

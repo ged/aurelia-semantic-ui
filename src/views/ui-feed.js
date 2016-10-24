@@ -17,7 +17,7 @@ export class SemanticUIFeedElement extends SemanticUIElement {}
 @uiAttribute( 'feed' )
 export class SemanticUIFeedAttribute extends SemanticUIAttribute {
 
-	@bindableEnum( ...constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_SIZES ) size;
 
 }
 

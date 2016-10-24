@@ -19,7 +19,7 @@ export class SemanticUIStepAttribute extends SemanticUIAttribute {
 	@bindableToggle active = false;
 	@bindableToggle disabled = false;
 	@bindableToggle completed = false;
-	@bindableEnum( ...constants.VALID_COLORS ) color;
+	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 
 
 	bind( ...args ) {
