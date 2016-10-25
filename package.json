@@ -132,9 +132,11 @@
         "aurelia-semantic-ui/src/modules/ui-progress",
         "aurelia-semantic-ui/src/modules/ui-search",
         "aurelia-semantic-ui/src/modules/ui-sidebar",
+        "aurelia-semantic-ui/src/plugins/ui-calendar",
         "aurelia-semantic-ui/src/views/ui-card",
         "aurelia-semantic-ui/src/views/ui-feed",
-        "aurelia-semantic-ui/src/views/ui-statistic"
+        "aurelia-semantic-ui/src/views/ui-statistic",
+        "aurelia-semantic-ui/src/resources/libraries/calendar"
       ]
     }
   }

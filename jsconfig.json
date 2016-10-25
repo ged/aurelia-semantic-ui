@@ -1,7 +1,7 @@
 {
-    "compilerOptions": {
-        "experimentalDecorators": true,
-        "target": "es6"
-    },
-    "files": ["src/**/*.js"]
+	"compilerOptions": {
+		"experimentalDecorators": true,
+		"target": "es6"
+	},
+	"files": ["src/**/*.js"]
 }

@@ -86,5 +86,10 @@ export function configure(config) {
 		'./views/ui-feed',
 		'./views/ui-statistic'
 	);
+
+	// TODO: Make these optional somehow
+	config.globalResources(
+		'./plugins/ui-calendar'
+	);
 }
 
