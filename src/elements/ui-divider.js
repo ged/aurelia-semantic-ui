@@ -12,6 +12,7 @@ import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 @uiElement( 'divider' )
 export class SemanticUIDividerElement extends SemanticUIElement {
 
+	@bindableToggle vertical = false;
 	@bindableToggle clearing = false;
 	@bindableToggle fitted = false;
 	@bindableToggle hidden = false;
@@ -23,6 +24,7 @@ export class SemanticUIDividerElement extends SemanticUIElement {
 @uiAttribute( 'divider' )
 export class SemanticUIDividerAttribute extends SemanticUIAttribute {
 
+	@bindableToggle vertical = false;
 	@bindableToggle clearing = false;
 	@bindableToggle fitted = false;
 	@bindableToggle hidden = false;

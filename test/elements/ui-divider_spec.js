@@ -31,7 +31,7 @@ describe('ui-divider', () => {
 
 	describe( 'as a custom element', () => {
 
-		it( 'adds an inverted class when one is set', done => {
+		it( 'adds an inverted class when it is set', done => {
 			component.
 				inView(`
 					<ui-divider inverted></ui-divider>
@@ -46,7 +46,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a hidden class when one is set', done => {
+		it( 'adds a hidden class when it is set', done => {
 			component.
 				inView(`
 					<ui-divider hidden></ui-divider>
@@ -61,7 +61,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a fitted class when one is set', done => {
+		it( 'adds a fitted class when it is set', done => {
 			component.
 				inView(`
 					<ui-divider fitted></ui-divider>
@@ -76,7 +76,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a section class when one is set', done => {
+		it( 'adds a section class when it is set', done => {
 			component.
 				inView(`
 					<ui-divider section></ui-divider>
@@ -91,7 +91,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a clearing class when one is set', done => {
+		it( 'adds a clearing class when it is set', done => {
 			component.
 				inView(`
 					<ui-divider clearing></ui-divider>
@@ -105,12 +105,27 @@ describe('ui-divider', () => {
 				catch( done.fail );
 		});
 
+
+		it( 'adds a vertical class when it is set', done => {
+			component.
+				inView(`
+					<ui-divider vertical></ui-divider>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let divider = component.element.firstElementChild;
+					expect( divider ).toHaveCssClasses( 'ui', 'vertical', 'divider' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
 	});
 
 
 	describe( 'as a custom attribute', () => {
 
-		it( 'adds an inverted class when one is set', done => {
+		it( 'adds an inverted class when it is set', done => {
 			component.
 				inView(`
 					<div ui-divider="inverted: true"></div>
@@ -124,7 +139,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a hidden class when one is set', done => {
+		it( 'adds a hidden class when it is set', done => {
 			component.
 				inView(`
 					<div ui-divider="hidden: true"></div>
@@ -138,7 +153,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a fitted class when one is set', done => {
+		it( 'adds a fitted class when it is set', done => {
 			component.
 				inView(`
 					<div ui-divider="fitted: true"></div>
@@ -152,7 +167,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a section class when one is set', done => {
+		it( 'adds a section class when it is set', done => {
 			component.
 				inView(`
 					<div ui-divider="section: true"></div>
@@ -166,7 +181,7 @@ describe('ui-divider', () => {
 		});
 
 
-		it( 'adds a clearing class when one is set', done => {
+		it( 'adds a clearing class when it is set', done => {
 			component.
 				inView(`
 					<div ui-divider="clearing: true"></div>
@@ -174,6 +189,20 @@ describe('ui-divider', () => {
 				boundTo({}).
 				create( bootstrap ).then( () => {
 					expect( component.element ).toHaveCssClasses( 'ui', 'clearing', 'divider' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds a vertical class when it is set', done => {
+			component.
+				inView(`
+					<div ui-divider="vertical: true"></div>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'vertical', 'divider' );
 				}).
 				then( done ).
 				catch( done.fail );
