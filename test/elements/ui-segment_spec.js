@@ -46,6 +46,21 @@ describe('ui-segment', () => {
 		});
 
 
+		it( 'adds a basic class when one is set', done => {
+			component.
+				inView(`
+					<ui-segment basic></ui-segment>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let segment = component.element.firstElementChild;
+					expect( segment ).toHaveCssClasses( 'ui', 'basic', 'segment' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
 		it( 'adds a disabled class when one is set', done => {
 			component.
 				inView(`
@@ -238,6 +253,20 @@ describe('ui-segment', () => {
 				boundTo({}).
 				create( bootstrap ).then( () => {
 					expect( component.element ).toHaveCssClasses( 'ui', 'loading', 'segment' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds a basic class when one is set', done => {
+			component.
+				inView(`
+					<div ui-segment="basic: true"></div>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'basic', 'segment' );
 				}).
 				then( done ).
 				catch( done.fail );

@@ -17,6 +17,7 @@ export class SemanticUISegmentElement extends SemanticUIElement {
 	@bindableToggle disabled = false;
 
 	@bindableToggle inverted = false;
+	@bindableToggle basic = false;
 	@bindableToggle padded = false;
 	@bindableToggle compact = false;
 	@bindableToggle secondary = false;
@@ -37,6 +38,7 @@ export class SemanticUISegmentAttribute extends SemanticUIAttribute {
 	@bindableToggle disabled = false;
 
 	@bindableToggle inverted = false;
+	@bindableToggle basic = false;
 	@bindableToggle padded = false;
 	@bindableToggle compact = false;
 	@bindableToggle secondary = false;

@@ -11,7 +11,9 @@ import {uiElement, uiAttribute, bindableToggle} from '../decorators';
 import {inject, bindable, bindingMode} from 'aurelia-framework';
 
 @uiElement( 'dropdown' )
-export class SemanticUIDropdownElement extends SemanticUIElement {}
+export class SemanticUIDropdownElement extends SemanticUIElement {
+	@bindableToggle selection;
+}
 
 @uiAttribute( 'dropdown' )
 export class SemanticUIDropdownAttribute extends SemanticUIAttribute {
