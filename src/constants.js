@@ -38,6 +38,12 @@ export const constants = {
 	VALID_FLOATS: [
 		'left',
 		'right'
+	],
+	VALID_SIDES: [
+		'left',
+		'right',
+		'top',
+		'bottom'
 	]
 };
 

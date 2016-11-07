@@ -11,13 +11,28 @@ import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorator
 import {children, bindable} from 'aurelia-framework';
 
 @uiElement( 'menu' )
-export class SemanticUIMenuElement extends SemanticUIElement {}
+export class SemanticUIMenuElement extends SemanticUIElement {
+
+	@bindableToggle inverted = false;
+	@bindableToggle vertical = false;
+	@bindableEnum( constants.SIDES ) fixed = null;
+	@bindableEnum( constants.SIDES, {cssClass: 'attached'} ) attach = null;
+
+	@bindable router;
+	@children( '.item' ) items;
+
+}
 
 @uiAttribute( 'menu' )
 export class SemanticUIMenuAttribute extends SemanticUIAttribute {
 
+	@bindableToggle inverted = false;
+	@bindableToggle vertical = false;
+	@bindableEnum( constants.SIDES ) fixed = null;
+	@bindableEnum( constants.SIDES, {cssClass: 'attached'} ) attach = null;
+
 	@bindable router;
-	@children( '[ui-menu-item]' ) items;
+	@children( '.item' ) items;
 
 
 	isSubmenu() {

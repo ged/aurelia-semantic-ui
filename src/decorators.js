@@ -29,6 +29,7 @@ export function uiAttribute( component, defaultBindingMode=null ) {
 
 const DEFAULT_ENUM_OPTIONS = {
 	includeName: true,
+	cssClass: null
 };
 
 export function bindableEnum( validValues, options={} ) {
@@ -60,7 +61,8 @@ export function bindableEnum( validValues, options={} ) {
 			if ( this[name] ) {
 				this.addCssClasses( this[name] );
 				if ( options.includeName ) {
-					this.addCssClasses( name );
+					let cssClass = options.cssClass || name;
+					this.addCssClasses( cssClass );
 				}
 			}
 		};
