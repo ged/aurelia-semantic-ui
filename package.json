@@ -102,6 +102,7 @@
     },
     "build": {
       "resources": [
+        "aurelia-semantic-ui/src/behaviors/ui-visibility",
         "aurelia-semantic-ui/src/collections/ui-breadcrumb",
         "aurelia-semantic-ui/src/collections/ui-form",
         "aurelia-semantic-ui/src/collections/ui-grid",
@@ -132,6 +133,7 @@
         "aurelia-semantic-ui/src/modules/ui-progress",
         "aurelia-semantic-ui/src/modules/ui-search",
         "aurelia-semantic-ui/src/modules/ui-sidebar",
+        "aurelia-semantic-ui/src/modules/ui-sticky",
         "aurelia-semantic-ui/src/views/ui-card",
         "aurelia-semantic-ui/src/views/ui-feed",
         "aurelia-semantic-ui/src/views/ui-statistic"

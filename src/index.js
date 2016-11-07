@@ -12,6 +12,8 @@ import 'semantic-ui';
 
 export var VERSION = '0.0.1-alpha.12';
 
+export * from './behaviors/ui-visibility';
+
 export * from './collections/ui-breadcrumb';
 export * from './collections/ui-form';
 export * from './collections/ui-grid';
@@ -44,6 +46,7 @@ export * from './modules/ui-popup';
 export * from './modules/ui-progress';
 export * from './modules/ui-search';
 export * from './modules/ui-sidebar';
+export * from './modules/ui-sticky';
 
 export * from './views/ui-card';
 export * from './views/ui-feed';
@@ -52,6 +55,7 @@ export * from './views/ui-statistic';
 // Aurelia plugin hook
 export function configure(config) {
 	config.globalResources(
+		'./behaviors/ui-visibility',
 		'./collections/ui-breadcrumb',
 		'./collections/ui-form',
 		'./collections/ui-grid',
@@ -82,6 +86,7 @@ export function configure(config) {
 		'./modules/ui-progress',
 		'./modules/ui-search',
 		'./modules/ui-sidebar',
+		'./modules/ui-sticky',
 		'./views/ui-card',
 		'./views/ui-feed',
 		'./views/ui-statistic'
