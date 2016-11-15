@@ -137,7 +137,7 @@ export class SemanticUIAttribute {
 	}
 
 
-	bind() {
+	bind( ...args ) {
 		let componentName = this.component;
 		let cssClasses = componentName.split( /-/ ).filter( cssClass => cssClass !== 'ui' );
 		this.addCssClasses( 'ui', ...cssClasses );
