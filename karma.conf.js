@@ -33,7 +33,7 @@ module.exports = function(config) {
 		autoWatch: true,
 		browsers: [
 			'Chrome',
-			'Safari',
+			// 'Safari',
 			// 'Firefox'
 		],
 		singleRun: false
