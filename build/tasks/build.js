@@ -61,7 +61,7 @@ gulp.task('build', function(callback) {
 			// 'build-es2015',
 			// 'build-commonjs',
 			'build-amd',
-			'build-system'
+			// 'build-system'
 		],
 		callback
 	);
