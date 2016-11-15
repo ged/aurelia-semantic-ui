@@ -100,7 +100,7 @@ export class SemanticUIVisibilityAttribute extends SemanticUIAttribute {
 
 	unbind() {
 		this.callbackScope = null;
-		super.unbind();
+		if ( super.unbind ) super.unbind();
 	}
 
 
