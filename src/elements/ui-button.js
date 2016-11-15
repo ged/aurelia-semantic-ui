@@ -31,12 +31,12 @@ export class SemanticUIButtonElement extends SemanticUIElement {
 	}
 
 
-	animatedChanged( oldValue, newValue ) {
+	animatedChanged( newValue, oldValue ) {
 		this.setAnimatedClasses( newValue );
 	}
 
 
-	labeledChanged( oldValue, newValue ) {
+	labeledChanged( newValue, oldValue ) {
 		this.setLabeledClasses( newValue );
 	}
 
