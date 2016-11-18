@@ -16,7 +16,7 @@ The major "to do" list:
 
 ## Progress
 
-The plan is to provide implementations for all of the Collections, Elements, Modules, and Views, and any of the Behaviors that make sense to use in the context of an Aurelia app. 
+The plan is to provide implementations for all of the Collections, Elements, Modules, and Views, and any of the Behaviors and plugins that make sense to use in the context of an Aurelia app. 
 
 *Legend*
 
@@ -29,62 +29,66 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 
 - [?] Form Validation (will this be easier to use than `aurelia-validation` when it's done?)
 - [?] API (consider omitting)
-- [ ] Visibility (`ui-on-top-visible`, `ui-on-top-passed`, etc.)
+- [-] Visibility (`ui-on-top-visible`, `ui-on-top-passed`, etc.)
 
 ### Collections
 
 - [x] Breadcrumb
-- [ ] Form
-- [ ] Grid
-- [ ] Menu
-- [ ] Message
-- [ ] Table
+- [x] Form
+- [-] Grid
+- [-] Menu
+- [-] Message
+- [-] Table
 
 ### Elements
 
 - [x] Button
-- [ ] Container
-- [ ] Divider
-- [ ] Flag
-- [ ] Header
-- [ ] Icon
-- [ ] Image
-- [ ] Input
-- [ ] Label
-- [ ] List
-- [ ] Loader
-- [ ] Rail
-- [ ] Reveal
-- [ ] Segment
-- [ ] Step
+- [x] Container
+- [x] Divider
+- [x] Flag
+- [-] Header
+- [x] Icon
+- [-] Image
+- [-] Input
+- [-] Label
+- [-] List
+- [-] Loader
+- [-] Rail
+- [-] Reveal
+- [-] Segment
+- [-] Step
 
 ### Modules
 
-- [ ] Accordion
-- [ ] Checkbox
-- [ ] Dimmer
-- [ ] Dropdown
+- [-] Accordion
+- [-] Checkbox
+- [-] Dimmer
+- [-] Dropdown
 - [ ] Embed
-- [ ] Modal
+- [-] Modal
 - [ ] Nag
-- [ ] Popup
-- [ ] Progress
+- [-] Popup
+- [-] Progress
 - [ ] Rating
-- [ ] Search
+- [-] Search
 - [ ] Shape
-- [ ] Sidebar
-- [ ] Sticky
+- [-] Sidebar
+- [-] Sticky
 - [ ] Tab
 - [ ] Transition
 
 ### Views
 
 - [ ] Ad
-- [ ] Card
+- [-] Card
 - [ ] Comment
-- [ ] Feed
+- [-] Feed
 - [ ] Item
-- [ ] Statistic
+- [-] Statistic
+
+### Plugins
+
+- [ ] Calendar
 
 
 ## Installing
