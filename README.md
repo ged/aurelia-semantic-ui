@@ -9,10 +9,11 @@ It isn't really even alpha quality right now, as I'm still figuring out how half
 The major "to do" list:
 
 * Flesh out the custom elements. I started this before the new projection system (slots), and I couldn't figure out how to implement custom elements with the old one so the custom elements are only half-implemented currently. The templates, for example, are mostly just placeholders.
-* TESTING. I have done very little, as I wasn't even sure this would be useful or implemented in a way that made sense. Now that I've used it in anger, though, I need get tests implemented ASAP.
+* TESTING. I have been keeping tests in line with the implementation of the components, so it's a pretty good indication of what's been implemented beyond just the basic custom elements/attributes.
 * Documentation via [the demo app](http://ged.github.io/aurelia-semantic-ui/demo.html) seems to be working well, but I've spent more time on layout and organization than content so far, so I need to catch up with the code so I can keep them in parity.
 * Finish making custom elements/attributes for the rest of the Semantic widgets.
-* Figure out conventions for hooking up the Modules and Behaviors further into Aurelia. I haven't really used them enough to have a feel for what they might look like aside from calling `$( this.element ).dropdown();` from `attached()` or whatever.
+* Resolve some binding problems with the Modules and Behaviors. 
+* Figure out a convention for binding attributes that have the same as methods of components (e.g., `attached`). I'm currently thinking that I'll prefix them (`ui-attached`/`uiAttached`).
 
 ## Progress
 
@@ -110,14 +111,14 @@ Create (if you haven't already) a file `main.js` in your `src` folder as describ
 
 If you wish to test to see if the plugin is being installed correctly, you can add the following markup as a sample:
 
-    <div ui-card class="centered">
+    <ui-card centered>
       <div class="image">
         <img src="/images/avatar2/large/elyse.png">
       </div>
       <div class="content">
         <a class="header">Elyse</a>
       </div>
-    </div>
+    </ui-card>
 
 
 
