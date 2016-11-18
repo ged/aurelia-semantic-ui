@@ -44,7 +44,9 @@
       "aurelia-logging-console": "^1.0.0",
       "aurelia-polyfills": "^1.0.0",
       "aurelia-testing": "^1.0.0-beta.2.0.0",
-      "jquery": "^3.1.1"
+      "css": "github:systemjs/plugin-css@^0.1.32",
+      "jquery": "^3.1.1",
+      "semantic-ui": "github:Semantic-Org/Semantic-UI@^2.2.6"
     },
     "devDependencies": {
       "babel": "babel-core@^5.8.24",
