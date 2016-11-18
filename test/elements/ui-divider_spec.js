@@ -120,6 +120,21 @@ describe('ui-divider', () => {
 				catch( done.fail );
 		});
 
+
+		it( 'adds a horizontal class when it is set', done => {
+			component.
+				inView(`
+					<ui-divider horizontal></ui-divider>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let divider = component.element.firstElementChild;
+					expect( divider ).toHaveCssClasses( 'ui', 'horizontal', 'divider' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
 	});
 
 
@@ -203,6 +218,20 @@ describe('ui-divider', () => {
 				boundTo({}).
 				create( bootstrap ).then( () => {
 					expect( component.element ).toHaveCssClasses( 'ui', 'vertical', 'divider' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds a horizontal class when it is set', done => {
+			component.
+				inView(`
+					<div ui-divider="horizontal: true"></div>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'horizontal', 'divider' );
 				}).
 				then( done ).
 				catch( done.fail );
