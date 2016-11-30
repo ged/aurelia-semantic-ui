@@ -130,21 +130,6 @@ describe('ui-form', () => {
 		});
 
 
-		it( 'adds equal-width classes when it is set', done => {
-			component.
-				inView(`
-					<div ui-form="equal-width: true">
-					</div>
-				`).
-				boundTo().
-				create( bootstrap ).then( () => {
-					expect( component.element ).toHaveCssClasses( 'ui', 'equal', 'width', 'form' );
-				}).
-				then( done ).
-				catch( done.fail );
-		});
-
-
 	});
 
 
@@ -247,23 +232,6 @@ describe('ui-form', () => {
 				catch( done.fail );
 		});
 
-
-		it( 'adds an `equal width` class when it is set', done => {
-			component.
-				inView(`
-					<ui-form equal-width>
-					</ui-form>
-				`).
-				boundTo({}).
-				create( bootstrap ).then( () => {
-					let form = component.element.querySelector( 'form' );
-
-					expect( form.nodeType ).toEqual( 1 );
-					expect( form ).toHaveCssClasses( 'ui', 'equal', 'width', 'form' );
-				}).
-				then( done ).
-				catch( done.fail );
-		});
 
 	});
 

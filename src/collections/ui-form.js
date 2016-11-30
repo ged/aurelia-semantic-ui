@@ -18,7 +18,6 @@ export class SemanticUIFormElement extends SemanticUIElement {
 	@bindableToggle success = null;
 	@bindableToggle warning = null;
 	@bindableToggle inverted = false;
-	@bindableToggle equalWidth = false;
 
 	@bindableEnum(constants.VALID_SIZES) size;
 
@@ -34,7 +33,6 @@ export class SemanticUIFormAttribute extends SemanticUIAttribute {
 	@bindableToggle success = null;
 	@bindableToggle warning = null;
 	@bindableToggle inverted = false;
-	@bindableToggle equalWidth = false;
 
 	@bindableEnum(constants.VALID_SIZES) size;
 
