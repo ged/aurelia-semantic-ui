@@ -46,10 +46,12 @@ export function bindableEnum( validValues, options={} ) {
 			this.addCssClasses( newValue );
 
 			if ( options.includeName ) {
-				if ( newValue ) {
-					this.addCssClasses( name );
+				let cssClass = options.cssClass || name;
+
+				if ( newValue || newValue === '' ) {
+					this.addCssClasses( cssClass );
 				} else {
-					this.removeCssClases( name );
+					this.removeCssClases( cssClass );
 				}
 			}
 		};
@@ -59,7 +61,7 @@ export function bindableEnum( validValues, options={} ) {
 			if ( originalBind ) {
 				Reflect.apply( originalBind, this, args );
 			}
-			if ( this[name] ) {
+			if ( this[name] || this[name] === '' ) {
 				this.addCssClasses( this[name] );
 				if ( options.includeName ) {
 					let cssClass = options.cssClass || name;
