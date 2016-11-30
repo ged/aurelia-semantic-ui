@@ -91,10 +91,10 @@ describe('ui-segment', () => {
 		});
 
 
-		xit( 'adds a attached class when one is set', done => {
+		it( 'adds a attached class when one is set', done => {
 			component.
 				inView(`
-					<ui-segment attached></ui-segment>
+					<ui-segment attach></ui-segment>
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
@@ -301,14 +301,28 @@ describe('ui-segment', () => {
 		});
 
 
-		xit( 'adds a attached class when one is set', done => {
+		it( 'adds a attached class when attach is set', done => {
 			component.
 				inView(`
-					<div ui-segment="attached: true"></div>
+					<div ui-segment="attach: true"></div>
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
 					expect( component.element ).toHaveCssClasses( 'ui', 'attached', 'segment' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds a attached class and a side when attach is set to a side', done => {
+			component.
+				inView(`
+					<div ui-segment="attach: top"></div>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'top', 'attached', 'segment' );
 				}).
 				then( done ).
 				catch( done.fail );

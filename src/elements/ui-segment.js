@@ -28,6 +28,7 @@ export class SemanticUISegmentElement extends SemanticUIElement {
 	@bindableEnum( constants.VALID_FLOATS ) floated;
 	@bindableEnum( constants.VALID_ALIGNMENTS ) aligned;
 	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
+	@bindableEnum( constants.VALID_SIDES, {cssClass: 'attached'} ) attach;
 
 }
 
@@ -49,12 +50,14 @@ export class SemanticUISegmentAttribute extends SemanticUIAttribute {
 	@bindableEnum( constants.VALID_FLOATS ) floated;
 	@bindableEnum( constants.VALID_ALIGNMENTS ) aligned;
 	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
+	@bindableEnum( constants.VALID_SIDES, {cssClass: 'attached'} ) attach;
 
 }
 
 
 @uiElement( 'segments' )
-export class SemanticUISegmentsElement extends SemanticUIElement {}
+export class SemanticUISegmentsElement extends SemanticUIElement {
+}
 
 @uiAttribute( 'segments' )
 export class SemanticUISegmentsAttribute extends SemanticUIAttribute {
