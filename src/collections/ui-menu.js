@@ -15,6 +15,8 @@ export class SemanticUIMenuElement extends SemanticUIElement {
 
 	@bindableToggle inverted = false;
 	@bindableToggle vertical = false;
+	@bindableToggle secondary = false;
+	@bindableToggle pointing = false;
 	@bindableEnum( constants.SIDES ) fixed = null;
 	@bindableEnum( constants.SIDES, {cssClass: 'attached'} ) attach = null;
 
@@ -28,6 +30,8 @@ export class SemanticUIMenuAttribute extends SemanticUIAttribute {
 
 	@bindableToggle inverted = false;
 	@bindableToggle vertical = false;
+	@bindableToggle secondary = false;
+	@bindableToggle pointing = false;
 	@bindableEnum( constants.SIDES ) fixed = null;
 	@bindableEnum( constants.SIDES, {cssClass: 'attached'} ) attach = null;
 

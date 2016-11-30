@@ -77,6 +77,36 @@ describe('ui-menu', () => {
 		});
 
 
+		it( 'adds secondary classes when it is set', done => {
+			component.
+				inView(`
+					<div ui-menu="secondary: true">
+					</div>
+				`).
+				boundTo().
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'secondary', 'menu' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds pointing classes when it is set', done => {
+			component.
+				inView(`
+					<div ui-menu="pointing: true">
+					</div>
+				`).
+				boundTo().
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'pointing', 'menu' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
 		it( 'adds a fixed class when one is set', done => {
 			component.
 				inView(`
@@ -92,7 +122,22 @@ describe('ui-menu', () => {
 		});
 
 
-		it( 'adds an attached class when one is set', done => {
+		it( 'adds an attached class when attach is set', done => {
+			component.
+				inView(`
+					<div ui-menu="attach: true">
+					</div>
+				`).
+				boundTo().
+				create( bootstrap ).then( () => {
+					expect( component.element ).toHaveCssClasses( 'ui', 'attached', 'menu' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds an attached class and a side when attach is set to a side', done => {
 			component.
 				inView(`
 					<div ui-menu="attach: top">
@@ -149,6 +194,46 @@ describe('ui-menu', () => {
 		});
 
 
+		it( 'adds a secondary class when it is set', done => {
+			component.
+				inView(`
+					<ui-menu secondary.bind="portraitMode">
+					</ui-menu>
+				`).
+				boundTo({
+					portraitMode: true
+				}).
+				create( bootstrap ).then( () => {
+					let menu = component.element.firstElementChild;
+
+					expect( menu ).toBeHtmlTag( 'div' );
+					expect( menu ).toHaveCssClasses( 'ui', 'secondary', 'menu' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds a pointing class when it is set', done => {
+			component.
+				inView(`
+					<ui-menu pointing.bind="portraitMode">
+					</ui-menu>
+				`).
+				boundTo({
+					portraitMode: true
+				}).
+				create( bootstrap ).then( () => {
+					let menu = component.element.firstElementChild;
+
+					expect( menu ).toBeHtmlTag( 'div' );
+					expect( menu ).toHaveCssClasses( 'ui', 'pointing', 'menu' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
 		it( 'adds a fixed class when one is set', done => {
 			component.
 				inView(`
@@ -167,7 +252,25 @@ describe('ui-menu', () => {
 		});
 
 
-		it( 'adds an attached class when one is set', done => {
+		it( 'adds an attached class when attach is set', done => {
+			component.
+				inView(`
+					<ui-menu attach>
+					</ui-menu>
+				`).
+				boundTo({}).
+				create( bootstrap ).then( () => {
+					let menu = component.element.firstElementChild;
+
+					expect( menu ).toBeHtmlTag( 'div' );
+					expect( menu ).toHaveCssClasses( 'ui', 'attached', 'menu' );
+				}).
+				then( done ).
+				catch( done.fail );
+		});
+
+
+		it( 'adds an attached class when attach is set to a side', done => {
 			component.
 				inView(`
 					<ui-menu attach="bottom">
