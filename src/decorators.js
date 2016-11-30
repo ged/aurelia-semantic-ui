@@ -32,6 +32,7 @@ const DEFAULT_ENUM_OPTIONS = {
 	cssClass: null
 };
 
+
 export function bindableEnum( validValues, options={} ) {
 	options = Object.assign( {}, DEFAULT_ENUM_OPTIONS, options );
 
@@ -73,9 +74,8 @@ export function bindableEnum( validValues, options={} ) {
 
 
 export function bindableToggle( target, name, descriptor ) {
-	// console.debug( "Bindable toggle decorator called with args: ", target, name, descriptor );
 	let changedMethodName = `${name}Changed`;
-	// console.debug( "Setting up a ", changedMethodName, " method on ", target );
+
 	target[ changedMethodName ] = function( newValue ) {
 		if ( newValue ) { this.addCssClasses(name); }
 		else { this.removeCssClasses(name); }
