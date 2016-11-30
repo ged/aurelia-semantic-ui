@@ -12,23 +12,25 @@ function dashify( string ) {
 
 function splitIntoClasses( name ) {
 	let dashified = dashify( name );
-	return dashified.split( /[ \-]/ );
+	return dashified.split( /[ ]+/ );
 }
 
 
 /**
  * Expand all of the values in {cssClasses} so that `'equalWidth'`, `'equal width'`, and 
- * `'equal-width'` all result in `['equal', 'width']`. 
+ * `'equal-width'` all result in `['equal', 'width']`. Also removes classes prefixed with
+ * 'au-' to avoid messing with Aurelia's classes.
  * @return {Array[String]} the flattened list of CSS classes.
  */
 export function expandCssClasses( ...cssClasses ) {
-	let normalized = cssClasses.map( (cl) => {
-		if ( Array.isArray(cl) ) {
-			return expandCssClasses( ...cl );
-		} else {
-			return splitIntoClasses( cl );
-		}
-	});
+	let normalized = cssClasses.
+		map( (cl) => {
+			if ( Array.isArray(cl) ) {
+				return expandCssClasses( ...cl );
+			} else {
+				return splitIntoClasses( cl );
+			}
+		});
 	let flattened = [].concat.apply( [], normalized );
 
 	return flattened;
@@ -43,7 +45,6 @@ export class SemanticUIElement {
 
 	element;
 	semanticElement;
-
 
 	/**
 	 * Get the component name set by the uiElement() decorator on the class.
@@ -62,6 +63,7 @@ export class SemanticUIElement {
 
 	created( owningView, myView ) {
 		this.semanticElement = this.getSemanticElement( this.element );
+		this.addCssClasses( this.element.classList );
 	}
 
 
@@ -69,8 +71,11 @@ export class SemanticUIElement {
 	 * Add one or more {cssClasses} to the Semantic UI element.
 	 */
 	addCssClasses( ...cssClasses ) {
-		let expandedClasses = expandCssClasses( cssClasses );
-		this.semanticElement.classList.add( ...expandedClasses );
+		let expandedClasses = expandCssClasses( cssClasses ).
+			filter( (cl) => cl !== '' && !cl.startsWith('au-') );
+		if ( expandedClasses.length ) {
+			this.semanticElement.classList.add( ...expandedClasses );
+		}
 	}
 
 
@@ -78,8 +83,11 @@ export class SemanticUIElement {
 	 * Remove one or more {cssClasses} from the Semantic UI element.
 	 */
 	removeCssClasses( ...cssClasses ) {
-		let expandedClasses = expandCssClasses( cssClasses );
-		this.semanticElement.classList.remove( ...expandedClasses );
+		let expandedClasses = expandCssClasses( cssClasses ).
+			filter( (cl) => cl !== '' && !cl.startsWith('au-') );
+		if ( expandedClasses.length ) {
+			this.semanticElement.classList.remove( ...expandedClasses );
+		}
 	}
 
 
