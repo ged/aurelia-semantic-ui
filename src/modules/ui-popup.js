@@ -5,7 +5,7 @@
  * Popup - http://semantic-ui.com/modules/popup.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 import {inject, bindable, bindingMode} from 'aurelia-framework';

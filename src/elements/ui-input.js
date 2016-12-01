@@ -5,7 +5,7 @@
  * Input - http://semantic-ui.com/elements/input.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableToggle, bindableEnum} from '../decorators';
 

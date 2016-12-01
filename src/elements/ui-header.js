@@ -5,7 +5,7 @@
  * Content Header - http://semantic-ui.com/elements/header.html#content-headers
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {uiElement, uiAttribute, bindableEnum} from '../decorators';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 

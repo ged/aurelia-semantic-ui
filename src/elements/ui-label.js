@@ -5,7 +5,7 @@
  * Label - http://semantic-ui.com/elements/label.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum} from '../decorators';
 

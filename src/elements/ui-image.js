@@ -5,7 +5,7 @@
  * Image - http://semantic-ui.com/elements/image.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 

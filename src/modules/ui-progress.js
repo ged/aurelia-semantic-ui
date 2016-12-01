@@ -5,7 +5,7 @@
  * Progress - http://semantic-ui.com/modules/progress.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {uiElement, uiAttribute, bindableEnum} from '../decorators';
 import {bindable, customAttribute, customElement} from 'aurelia-framework';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';

@@ -5,7 +5,7 @@
  * Content Reveal - http://semantic-ui.com/elements/reveal.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {uiElement, uiAttribute, bindableToggle} from '../decorators';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {bindable} from 'aurelia-framework';

@@ -5,7 +5,7 @@
  * Segment - http://semantic-ui.com/elements/segment.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 import {customAttribute, customElement} from 'aurelia-framework';

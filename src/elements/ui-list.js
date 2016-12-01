@@ -5,7 +5,7 @@
  * List - http://semantic-ui.com/elements/list.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {uiElement, uiAttribute, bindableEnum} from '../decorators';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 

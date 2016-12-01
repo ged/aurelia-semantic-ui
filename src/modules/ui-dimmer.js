@@ -5,7 +5,7 @@
  * Dimmer - http://semantic-ui.com/modules/dimmer.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute} from '../decorators';
 import {bindable} from 'aurelia-framework';

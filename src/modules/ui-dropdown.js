@@ -5,7 +5,7 @@
  * Dropdown - http://semantic-ui.com/modules/dropdown.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableToggle} from '../decorators';
 import {inject, bindable, bindingMode} from 'aurelia-framework';

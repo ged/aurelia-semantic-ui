@@ -5,7 +5,7 @@
  * Modal - http://semantic-ui.com/modules/modal.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {bindable} from 'aurelia-framework';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum} from '../decorators';

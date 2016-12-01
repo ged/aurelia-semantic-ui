@@ -5,7 +5,7 @@
  * Message - http://semantic-ui.com/collections/message.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 import {child, bindable} from 'aurelia-framework';

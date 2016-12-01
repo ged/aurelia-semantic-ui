@@ -5,7 +5,7 @@
  * Visibility - http://semantic-ui.com/behaviors/visibility.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {uiAttribute, bindableToggle} from '../decorators';
 import {bindable} from 'aurelia-framework';
 import {SemanticUIAttribute} from '../ui-base';

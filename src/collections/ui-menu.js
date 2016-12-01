@@ -5,7 +5,7 @@
  * Menu - http://semantic-ui.com/collections/menu.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 import {children, bindable} from 'aurelia-framework';

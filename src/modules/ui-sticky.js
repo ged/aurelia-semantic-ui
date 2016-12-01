@@ -5,7 +5,7 @@
  * Sticky - http://semantic-ui.com/modules/sticky.html
  */
 
-import {constants} from '../constants';
+import * as constants from '../constants';
 import {uiElement, uiAttribute, bindableToggle} from '../decorators';
 import {bindable} from 'aurelia-framework';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
