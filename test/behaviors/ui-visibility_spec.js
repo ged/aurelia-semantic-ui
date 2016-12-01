@@ -13,7 +13,7 @@ describe('ui-visibility', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		logger = LogManager.getLogger( 'ui-visibility-spec');
+		logger = LogManager.getLogger( 'ui-visibility-spec' );
 		jasmine.addMatchers( customMatchers );
 	});
 

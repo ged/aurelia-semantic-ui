@@ -13,7 +13,7 @@ describe('ui-sticky', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		logger = LogManager.getLogger( 'ui-sticky-spec');
+		logger = LogManager.getLogger( 'ui-sticky-spec' );
 		jasmine.addMatchers( customMatchers );
 	});
 

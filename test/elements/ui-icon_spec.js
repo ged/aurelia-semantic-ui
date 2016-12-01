@@ -13,7 +13,7 @@ describe('ui-icon', () => {
 
 	beforeAll(() => {
 		jasmine.addMatchers( customMatchers );
-		logger = LogManager.getLogger( 'ui-icon-spec');
+		logger = LogManager.getLogger( 'ui-icon-spec' );
 	});
 
 	beforeEach(() => {

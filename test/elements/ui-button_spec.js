@@ -13,7 +13,7 @@ describe('ui-button', () => {
 
 	beforeAll(() => {
 		jasmine.addMatchers( customMatchers );
-		logger = LogManager.getLogger( 'ui-button-spec');
+		logger = LogManager.getLogger( 'ui-button-spec' );
 	});
 
 	beforeEach(() => {

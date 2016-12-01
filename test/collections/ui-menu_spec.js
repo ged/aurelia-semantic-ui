@@ -12,7 +12,7 @@ describe('ui-menu', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		logger = LogManager.getLogger( 'ui-menu-spec');
+		logger = LogManager.getLogger( 'ui-menu-spec' );
 		jasmine.addMatchers( customMatchers );
 	});
 

@@ -13,7 +13,7 @@ describe('ui-segment', () => {
 
 	beforeAll(() => {
 		jasmine.addMatchers( customMatchers );
-		logger = LogManager.getLogger( 'ui-segment-spec');
+		logger = LogManager.getLogger( 'ui-segment-spec' );
 	});
 
 	beforeEach(() => {

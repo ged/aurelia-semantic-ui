@@ -13,7 +13,7 @@ describe('ui-flag', () => {
 
 	beforeAll(() => {
 		jasmine.addMatchers( customMatchers );
-		logger = LogManager.getLogger( 'ui-flag-spec');
+		logger = LogManager.getLogger( 'ui-flag-spec' );
 	});
 
 	beforeEach(() => {

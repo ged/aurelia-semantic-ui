@@ -13,7 +13,7 @@ describe('ui-divider', () => {
 
 	beforeAll(() => {
 		jasmine.addMatchers( customMatchers );
-		logger = LogManager.getLogger( 'ui-divider-spec');
+		logger = LogManager.getLogger( 'ui-divider-spec' );
 	});
 
 	beforeEach(() => {

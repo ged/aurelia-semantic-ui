@@ -13,7 +13,7 @@ describe('ui-container', () => {
 
 	beforeAll(() => {
 		jasmine.addMatchers( customMatchers );
-		logger = LogManager.getLogger( 'ui-container-spec');
+		logger = LogManager.getLogger( 'ui-container-spec' );
 	});
 
 	beforeEach(() => {

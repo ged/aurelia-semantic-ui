@@ -12,7 +12,7 @@ describe('ui-form', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		logger = LogManager.getLogger( 'ui-form-spec');
+		logger = LogManager.getLogger( 'ui-form-spec' );
 		jasmine.addMatchers( customMatchers );
 	});
 

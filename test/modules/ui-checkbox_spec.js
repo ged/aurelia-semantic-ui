@@ -13,7 +13,7 @@ describe('ui-checkbox', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		logger = LogManager.getLogger( 'ui-checkbox-spec');
+		logger = LogManager.getLogger( 'ui-checkbox-spec' );
 		jasmine.addMatchers( customMatchers );
 	});
 

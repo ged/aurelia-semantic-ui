@@ -11,7 +11,7 @@ describe('ui-breadcrumb', () => {
 	let component, logger;
 
 	beforeAll(() => {
-		logger = LogManager.getLogger( 'ui-breadcrumb-spec');
+		logger = LogManager.getLogger( 'ui-breadcrumb-spec' );
 		jasmine.addMatchers( customMatchers );
 	});
 
