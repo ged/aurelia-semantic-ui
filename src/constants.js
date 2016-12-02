@@ -73,6 +73,19 @@ export const VALID_COLUMNS = [
 	"sixteen"
 ];
 
+export const VALID_DEVICES = [
+	"mobile",
+	"tablet",
+	"computer",
+];
+
+export const VALID_SCREEN_SIZES = [
+	"mobile",
+	"tablet",
+	"computer",
+	"large screen",
+	"widescreen"
+];
 
 export const constants = {
 	attributePrefix,
@@ -84,5 +97,7 @@ export const constants = {
 	VALID_FLOATS,
 	VALID_SIZES,
 	VALID_COLUMNS,
+	VALID_DEVICES,
+	VALID_SCREEN_SIZES
 };
 

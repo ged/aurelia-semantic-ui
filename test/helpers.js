@@ -2,6 +2,13 @@
 "use strict";
 
 import 'aurelia-polyfills';
+import {LogManager} from 'aurelia-framework';
+import {ConsoleAppender} from 'aurelia-logging-console';
+
+export function setupConsoleLogging() {
+	LogManager.addAppender( new ConsoleAppender() );
+	LogManager.setLevel( LogManager.logLevel.debug );
+}
 
 export var customMatchers = {
 	toHaveCssClasses: function( util, customEqualityTesters ) {

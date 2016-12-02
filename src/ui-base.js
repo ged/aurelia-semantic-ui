@@ -11,6 +11,7 @@ function dashify( string ) {
 }
 
 function splitIntoClasses( name ) {
+	if ( !name ) return [];
 	let dashified = dashify( name );
 	return dashified.split( /[ ]+/ );
 }
