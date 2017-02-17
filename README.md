@@ -28,17 +28,17 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 
 ### Behaviors
 
-- [?] Form Validation (will this be easier to use than `aurelia-validation` when it's done?)
 - [?] API (consider omitting)
-- [-] Visibility (`ui-on-top-visible`, `ui-on-top-passed`, etc.)
+- [?] Form Validation (will this be easier to use than `aurelia-validation` when it's done?)
+- [-] Visibility (`ui-visibility`)
 
 ### Collections
 
 - [x] Breadcrumb
 - [x] Form
-- [-] Grid
-- [-] Menu
-- [-] Message
+- [x] Grid
+- [x] Menu
+- [x] Message
 - [-] Table
 
 ### Elements
@@ -80,7 +80,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 
 ### Views
 
-- [ ] Ad
+- [ ] Advertisement
 - [-] Card
 - [ ] Comment
 - [-] Feed

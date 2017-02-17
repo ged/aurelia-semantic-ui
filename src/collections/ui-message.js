@@ -16,8 +16,14 @@ export class SemanticUIMessageElement extends SemanticUIElement {
 	@bindable icon;
 
 	@bindableToggle success;
+	@bindableToggle positive;
 	@bindableToggle error;
+	@bindableToggle negative;
 	@bindableToggle warning;
+	@bindableToggle info;
+
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS ) color;
 
 }
 
@@ -28,8 +34,14 @@ export class SemanticUIMessageAttribute extends SemanticUIAttribute {
 	@child( 'i.ui.icon' ) iconElement;
 
 	@bindableToggle success;
+	@bindableToggle positive;
 	@bindableToggle error;
+	@bindableToggle negative;
 	@bindableToggle warning;
+	@bindableToggle info;
+
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableEnum( constants.VALID_COLORS ) color;
 
 
 	bind( ...args ) {
