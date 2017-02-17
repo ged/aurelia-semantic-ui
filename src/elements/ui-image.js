@@ -10,24 +10,29 @@ import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorator
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 
 @uiElement( 'image' )
-export class SemanticUIImageElement extends SemanticUIElement {}
-
-@uiAttribute( 'image' )
-export class SemanticUIImageAttribute extends SemanticUIAttribute {
-
+export class SemanticUIImageElement extends SemanticUIElement {
 	@bindableEnum( constants.VALID_SIZES ) size;
 	@bindableToggle hidden = false;
 	@bindableToggle disabled = false;
+	@bindableToggle centered = false;
+}
 
+@uiAttribute( 'image' )
+export class SemanticUIImageAttribute extends SemanticUIAttribute {
+	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableToggle hidden = false;
+	@bindableToggle disabled = false;
+	@bindableToggle centered = false;
 }
 
 
 @uiElement( 'images' )
-export class SemanticUIImagesElement extends SemanticUIElement {}
+export class SemanticUIImagesElement extends SemanticUIElement {
+	@bindableEnum( constants.VALID_SIZES ) size;
+}
 
 @uiAttribute( 'images' )
 export class SemanticUIImagesAttribute extends SemanticUIAttribute {
-
 	@bindableEnum( constants.VALID_SIZES ) size;
-
 }
+

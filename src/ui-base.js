@@ -113,16 +113,16 @@ export class SemanticUIElement {
 	 * @return {Element} the element to add CSS classes to.
 	 */
 	getSemanticElement( parentEl ) {
-		this.logger.debug( "Fetching inner semantic element for parent element: ", parentEl );
+		// this.logger.debug( "Fetching inner semantic element for parent element: ", parentEl );
 
 		// Containerless elements get passed a comment anchor element
 		if ( parentEl.nodeType === 8 ) {
-			this.logger.debug( "  Containerless element; using previous sibling." );
+			// this.logger.debug( "  Containerless element; using previous sibling." );
 			return parentEl.previousElementSibling;
 		}
 
 		else if ( parentEl.nodeType === 1 ) {
-			this.logger.debug( "  HTML element; using first element child: ", parentEl.firstElementChild );
+			// this.logger.debug( "  HTML element; using first element child: ", parentEl.firstElementChild );
 			return parentEl.firstElementChild;
 		}
 

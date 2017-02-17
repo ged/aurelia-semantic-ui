@@ -71,6 +71,11 @@ export class SemanticUIButtonAttribute extends SemanticUIAttribute {
 	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 	@bindableEnum( constants.VALID_SIZES ) size;
 	@bindableToggle disabled;
+	@bindableToggle primary;
+	@bindableToggle secondary;
+	@bindableToggle basic;
+	@bindable animated;
+	@bindable labeled;
 
 	@child( 'i.ui.icon' ) iconElement;
 

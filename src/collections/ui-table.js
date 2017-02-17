@@ -10,7 +10,8 @@ import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
 
 @uiElement( 'table' )
-export class SemanticUITableElement extends SemanticUIElement {}
+export class SemanticUITableElement extends SemanticUIElement {
+}
 
 @uiAttribute( 'table' )
 export class SemanticUITableAttribute extends SemanticUIAttribute {
