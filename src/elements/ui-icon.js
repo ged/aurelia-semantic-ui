@@ -8,9 +8,10 @@
 import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableEnum, bindableToggle} from '../decorators';
-import {bindable} from 'aurelia-framework';
+import {bindable, containerless} from 'aurelia-framework';
 
 
+@containerless
 @uiElement( 'icon' )
 export class SemanticUIIconElement extends SemanticUIElement {
 
@@ -19,6 +20,7 @@ export class SemanticUIIconElement extends SemanticUIElement {
 	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 	@bindableToggle disabled;
 	@bindableToggle loading;
+	@bindableToggle inverted;
 
 }
 
@@ -31,6 +33,7 @@ export class SemanticUIIconAttribute extends SemanticUIAttribute {
 	@bindableEnum( constants.VALID_COLORS, {includeName: false} ) color;
 	@bindableToggle disabled;
 	@bindableToggle loading;
+	@bindableToggle inverted;
 
 
 	bind() {
@@ -52,6 +55,7 @@ export class SemanticUIIconAttribute extends SemanticUIAttribute {
 @uiElement( 'icons' )
 export class SemanticUIIconsElement extends SemanticUIElement {
 	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableToggle inverted;
 }
 
 
@@ -59,5 +63,6 @@ export class SemanticUIIconsElement extends SemanticUIElement {
 @uiAttribute( 'icons' )
 export class SemanticUIIconsAttribute extends SemanticUIAttribute {
 	@bindableEnum( constants.VALID_SIZES ) size;
+	@bindableToggle inverted;
 }
 

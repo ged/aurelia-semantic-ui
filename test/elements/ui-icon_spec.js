@@ -109,7 +109,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let icon = component.element.querySelector( 'i.icon' );
+					let icon = component.viewModel.semanticElement;
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
@@ -127,7 +127,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let icon = component.element.querySelector( 'i.icon' );
+					let icon = component.viewModel.semanticElement;
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
@@ -145,7 +145,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let icon = component.element.querySelector( 'i.icon' );
+					let icon = component.viewModel.semanticElement;
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
@@ -163,7 +163,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let icon = component.element.querySelector( 'i.icon' );
+					let icon = component.viewModel.semanticElement;
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
@@ -181,7 +181,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let icon = component.element.querySelector( 'i.icon' );
+					let icon = component.viewModel.semanticElement;
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
@@ -199,7 +199,7 @@ describe('ui-icon', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let icon = component.element.querySelector( 'i.icon' );
+					let icon = component.viewModel.semanticElement;
 
 					expect( icon ).toBeDefined();
 					expect( icon.nodeType ).toEqual( 1 );
