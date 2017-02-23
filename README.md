@@ -63,7 +63,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 
 - [-] Accordion
 - [-] Checkbox
-- [-] Dimmer
+- [x] Dimmer
 - [-] Dropdown
 - [ ] Embed
 - [-] Modal
