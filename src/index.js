@@ -10,7 +10,7 @@ import jQuery from 'jquery';
 import 'semantic-ui';
 
 
-export var VERSION = '0.0.1-alpha.12';
+export var VERSION = '0.0.1-alpha.13';
 
 export * from './behaviors/ui-visibility';
 
