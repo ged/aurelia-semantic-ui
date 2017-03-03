@@ -61,8 +61,10 @@
         "./modules/ui-sidebar",
         "./modules/ui-sticky",
         "./views/ui-card",
+        "./views/ui-cards.html",
         "./views/ui-feed",
-        "./views/ui-statistic"
+        "./views/ui-statistic",
+        "./views/ui-statistics.html"
       ]
     }
   },
