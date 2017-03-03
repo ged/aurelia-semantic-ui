@@ -25,6 +25,47 @@
     "custom",
     "elements"
   ],
+  "aurelia": {
+    "build": {
+      "resources": [
+        "./behaviors/ui-visibility",
+        "./collections/ui-breadcrumb",
+        "./collections/ui-form",
+        "./collections/ui-grid",
+        "./collections/ui-menu",
+        "./collections/ui-message",
+        "./collections/ui-table",
+        "./elements/ui-button",
+        "./elements/ui-container",
+        "./elements/ui-divider",
+        "./elements/ui-flag",
+        "./elements/ui-header",
+        "./elements/ui-icon",
+        "./elements/ui-image",
+        "./elements/ui-input",
+        "./elements/ui-label",
+        "./elements/ui-list",
+        "./elements/ui-loader",
+        "./elements/ui-rail",
+        "./elements/ui-reveal",
+        "./elements/ui-segment",
+        "./elements/ui-step",
+        "./modules/ui-accordion",
+        "./modules/ui-checkbox",
+        "./modules/ui-dimmer",
+        "./modules/ui-dropdown",
+        "./modules/ui-modal",
+        "./modules/ui-popup",
+        "./modules/ui-progress",
+        "./modules/ui-search",
+        "./modules/ui-sidebar",
+        "./modules/ui-sticky",
+        "./views/ui-card",
+        "./views/ui-feed",
+        "./views/ui-statistic"
+      ]
+    }
+  },
   "devDependencies": {
     "aurelia-tools": "^0.2.4",
     "babel-eslint": "^6.1.2",

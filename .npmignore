@@ -1,4 +1,17 @@
+build/
+doc/
 jspm_packages/
 semantic/
 src/
 test/
+.editorconfig
+.eslintrc
+.eslintrc.json
+.hgignore
+.hgsigs
+.hgtags
+.tm_properties
+gulpfile.js
+karma.conf.js
+semantic.json
+yarn.lock
