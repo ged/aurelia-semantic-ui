@@ -1,7 +1,8 @@
 /* -*- javascript -*- */
 "use strict";
 
-import 'aurelia-polyfills';
+import '../setup';
+
 import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
 
