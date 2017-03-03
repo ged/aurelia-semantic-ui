@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://bitbucket.org/ged/aurelia-semantic-ui/issues"
   },
+  "scripts": {
+    "postinstall": "jspm install -y"
+  },
   "homepage": "https://bitbucket.org/ged/aurelia-semantic-ui",
   "keywords": [
     "semanticui",
@@ -77,6 +80,8 @@
     }
   },
   "peerDependencies": {
+    "aurelia-framework": "^1.1.0",
+    "jquery": "^3.1.1",
     "semantic-ui": "^2.2.9"
   }
 }
