@@ -13,7 +13,8 @@
     "url": "https://bitbucket.org/ged/aurelia-semantic-ui/issues"
   },
   "scripts": {
-    "postinstall": "jspm install -y"
+    "pretest": "yarn run jspm install -y",
+    "test": "yarn run karma start karma.conf.js -- --single-run"
   },
   "homepage": "https://bitbucket.org/ged/aurelia-semantic-ui",
   "keywords": [
