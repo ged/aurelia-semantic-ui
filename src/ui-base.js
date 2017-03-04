@@ -206,14 +206,14 @@ export class SemanticUIAttribute {
 		) {
 			let container = el.au.controller.viewModel;
 			if ( container instanceof SemanticUIElement ) {
-				this.logger.debug( "Decorating another Semantic element: ", container );
+				// this.logger.debug( "Decorating another Semantic element: ", container );
 				let semEl = container.getSemanticElement( el );
-				this.logger.debug( "Other element's semantic element is: ", semEl );
+				// this.logger.debug( "Other element's semantic element is: ", semEl );
 				return semEl;
 			}
 			return el;
 		} else {
-			this.logger.debug( "Decorating a plain HTML element: ", el );
+			// this.logger.debug( "Decorating a plain HTML element: ", el );
 			return el;
 		}
 	}
