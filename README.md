@@ -52,7 +52,7 @@ The plan is to provide implementations for all of the Collections, Elements, Mod
 - [-] Image
 - [-] Input
 - [-] Label
-- [-] List
+- [x] List
 - [-] Loader
 - [-] Rail
 - [-] Reveal

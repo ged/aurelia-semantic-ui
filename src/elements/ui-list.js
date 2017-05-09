@@ -14,8 +14,17 @@ export class SemanticUIListElement extends SemanticUIElement {
 
 	@bindableEnum( constants.VALID_SIZES ) size;
 
-	@bindableToggle inverted = false;
+	@bindableToggle bulleted = false;
+	@bindableToggle ordered = false;
 	@bindableToggle link = false;
+
+	@bindableToggle horizontal = false;
+	@bindableToggle inverted = false;
+	@bindableToggle selection = false;
+	@bindableToggle animated = false;
+	@bindableToggle relaxed = false;
+	@bindableToggle divided = false;
+	@bindableToggle celled = false;
 
 }
 
@@ -24,8 +33,17 @@ export class SemanticUIListAttribute extends SemanticUIAttribute {
 
 	@bindableEnum( constants.VALID_SIZES ) size;
 
-	@bindableToggle inverted = false;
+	@bindableToggle bulleted = false;
+	@bindableToggle ordered = false;
 	@bindableToggle link = false;
+
+	@bindableToggle horizontal = false;
+	@bindableToggle inverted = false;
+	@bindableToggle selection = false;
+	@bindableToggle animated = false;
+	@bindableToggle relaxed = false;
+	@bindableToggle divided = false;
+	@bindableToggle celled = false;
 
 }
 
