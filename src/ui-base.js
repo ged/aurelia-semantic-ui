@@ -2,7 +2,7 @@
 "use strict";
 
 import {constants} from './constants';
-import {inject, LogManager} from 'aurelia-framework';
+import {inject, dynamicOptions, LogManager} from 'aurelia-framework';
 
 
 function dashify( string ) {
@@ -133,6 +133,7 @@ export class SemanticUIElement {
 	}
 
 }
+
 
 
 /**

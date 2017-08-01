@@ -27,6 +27,7 @@ export function uiAttribute( component, defaultBindingMode=null ) {
 }
 
 
+
 const DEFAULT_ENUM_OPTIONS = {
 	includeName: true,
 	cssClass: null
