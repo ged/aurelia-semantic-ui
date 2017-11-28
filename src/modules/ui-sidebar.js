@@ -36,6 +36,14 @@ export class SemanticUISidebarAttribute extends SemanticUIAttribute {
 	}
 
 
+	show() {
+		$( this.element ).sidebar( 'show' );
+	}
+
+	hide() {
+		$( this.element ).sidebar( 'hide' );
+	}
+
 	toggle() {
 		$( this.element ).sidebar( 'toggle' );
 	}
