@@ -26,6 +26,22 @@
     "elements"
   ],
   "aurelia": {
+    "usedBy": [],
+    "documentation": {
+      "links": [
+        {
+          "rel": "license",
+          "mediaType": "text/plain",
+          "title": "The MIT License (MIT)",
+          "href": "LICENSE.txt"
+        }
+      ]
+    },
+    "import": {
+      "tutorial": [
+        "1. in main.js add .plugin('aurelia-semantic-ui')"
+      ]
+    },
     "build": {
       "resources": [
         "./behaviors/ui-visibility",
@@ -108,7 +124,7 @@
     "main": "index",
     "format": "amd",
     "directories": {
-      "dist": "dist/amd"
+      "dist": "dist/commonjs"
     },
     "dependencies": {
       "aurelia-bootstrapper": "^2.1.0",
@@ -129,3 +145,5 @@
     "semantic-ui": "^2.2.9"
   }
 }
+
+

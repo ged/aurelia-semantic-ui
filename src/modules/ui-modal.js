@@ -128,6 +128,10 @@ export class SemanticUIModalAttribute extends SemanticUIAttribute {
 		return this;
 	}
 
+	refresh() {
+		$( this.element ).modal( 'refresh' );
+	}
+
 
 	// Aurelia custom attribute API
 
