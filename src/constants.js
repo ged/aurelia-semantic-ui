@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 export const DEFAULT_PREFIX   = 'ui-';
 

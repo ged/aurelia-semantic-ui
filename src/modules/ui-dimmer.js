@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Dimmer - http://semantic-ui.com/modules/dimmer.html

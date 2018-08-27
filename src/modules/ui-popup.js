@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Popup - http://semantic-ui.com/modules/popup.html

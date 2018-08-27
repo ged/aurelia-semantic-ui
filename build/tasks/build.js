@@ -4,6 +4,7 @@ let to5 = require('gulp-babel');
 let paths = require('../paths');
 let compilerOptions = require('../babel-options');
 let assign = Object.assign || require('object.assign');
+let semanticBuild = require('../../semantic/tasks/build');
 
 gulp.task('build-html', function() {
   return gulp.src(paths.html)
@@ -13,7 +14,7 @@ gulp.task('build-html', function() {
     .pipe(gulp.dest(paths.output + 'system'));
 });
 
-gulp.task('build-css', function() {
+gulp.task('build-app-css', function() {
   return gulp.src(paths.css)
     .pipe(gulp.dest(paths.output + 'es2015'))
     .pipe(gulp.dest(paths.output + 'commonjs'))
@@ -45,10 +46,12 @@ gulp.task('build-system', function() {
     .pipe(gulp.dest(paths.output + 'system'));
 });
 
+gulp.task('build-semantic', semanticBuild);
+
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-html', 'build-css', 'build-es2015', 'build-commonjs', 'build-amd', 'build-system'],
+    ['build-html', 'build-app-css', 'build-es2015', 'build-commonjs', 'build-amd', 'build-system'],
     callback
   );
 });

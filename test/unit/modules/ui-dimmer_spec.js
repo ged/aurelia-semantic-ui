@@ -89,9 +89,9 @@ describe('ui-dimmer', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let select = component.element;
+					let div = component.element;
 
-					expect( select ).toHaveCssClasses( 'ui', 'dimmer' );
+					expect( div ).toHaveCssClasses( 'ui', 'dimmer' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -105,9 +105,9 @@ describe('ui-dimmer', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let select = component.element;
+					let div = component.element;
 
-					expect( select ).toHaveCssClasses( 'ui', 'active', 'dimmer' );
+					expect( div ).toHaveCssClasses( 'ui', 'active', 'dimmer' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -121,9 +121,9 @@ describe('ui-dimmer', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let select = component.element;
+					let div = component.element;
 
-					expect( select ).toHaveCssClasses( 'ui', 'disabled', 'dimmer' );
+					expect( div ).toHaveCssClasses( 'ui', 'disabled', 'dimmer' );
 				}).
 				then( done ).
 				catch( done.fail );
@@ -137,9 +137,9 @@ describe('ui-dimmer', () => {
 				`).
 				boundTo({}).
 				create( bootstrap ).then( () => {
-					let select = component.element;
+					let div = component.element;
 
-					expect( select ).toHaveCssClasses( 'ui', 'inverted', 'dimmer' );
+					expect( div ).toHaveCssClasses( 'ui', 'inverted', 'dimmer' );
 				}).
 				then( done ).
 				catch( done.fail );

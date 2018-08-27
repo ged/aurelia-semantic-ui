@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Icon - http://semantic-ui.com/elements/icon.html#/definition

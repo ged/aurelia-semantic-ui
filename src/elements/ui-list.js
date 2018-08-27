@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * List - http://semantic-ui.com/elements/list.html

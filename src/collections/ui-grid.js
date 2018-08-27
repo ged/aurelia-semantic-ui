@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Grid - http://semantic-ui.com/collections/grid.html

@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Search - http://semantic-ui.com/modules/search.html

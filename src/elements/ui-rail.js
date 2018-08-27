@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Content Rail - http://semantic-ui.com/elements/rail.html

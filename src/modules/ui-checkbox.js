@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Checkbox - http://semantic-ui.com/modules/checkbox.html

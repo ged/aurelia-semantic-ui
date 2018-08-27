@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Divider - http://semantic-ui.com/elements/divider.html

@@ -13,10 +13,19 @@
     "url": "https://bitbucket.org/ged/aurelia-semantic-ui/issues"
   },
   "scripts": {
-    "pretest": "yarn run jspm install -y",
-    "test": "yarn run karma start karma.conf.js -- --single-run"
+    "test": "yarn run karma start karma.conf.js --single-run"
   },
   "homepage": "https://bitbucket.org/ged/aurelia-semantic-ui",
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-decorators-legacy"
+    ]
+  },
   "keywords": [
     "semanticui",
     "semantic",
@@ -80,27 +89,33 @@
         "./views/ui-cards.html",
         "./views/ui-feed",
         "./views/ui-statistic",
-        "./views/ui-statistics.html"
+        "./views/ui-statistics.html",
+        "./semantic/semantic.css"
       ]
     }
   },
   "devDependencies": {
+    "aurelia-bootstrapper": "^2.2.0",
+    "aurelia-loader-nodejs": "^1.0.1",
+    "aurelia-pal-nodejs": "^1.0.0-beta.3.3.0",
+    "aurelia-testing": "^1.0.0-beta.4.0.0",
     "aurelia-tools": "^0.2.4",
     "babel-eslint": "^6.1.2",
     "babel-plugin-syntax-flow": "^6.8.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-es2015-modules-amd": "^6.8.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.11.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-es2015-modules-systemjs": "^6.11.6",
     "babel-plugin-transform-flow-strip-types": "^6.8.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-es2015-loose": "^7.0.0",
-    "babel-preset-stage-1": "^6.5.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
     "conventional-changelog": "1.1.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-bump": "^2.2.0",
+    "gulp-babel": "^6.1.3",
+    "gulp-bump": "^2.9.0",
     "gulp-eslint": "^3.0.1",
     "gulp-yuidoc": "^0.1.2",
     "isparta": "^4.0.0",
@@ -109,41 +124,23 @@
     "jspm": "^0.16.52",
     "karma": "^1.1.2",
     "karma-babel-preprocessor": "^6.0.1",
-    "karma-chrome-launcher": "^1.0.1",
+    "karma-chrome-launcher": "^2.2",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.0.2",
     "karma-jspm": "2.2.0",
     "object.assign": "^4.0.4",
+    "puppeteer": "^1.4.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
+    "semantic-ui": "^2.3",
     "vinyl-paths": "^2.1.0",
     "yargs": "^4.8.1"
   },
-  "jspm": {
-    "registry": "npm",
-    "main": "index",
-    "format": "amd",
-    "directories": {
-      "dist": "dist/commonjs"
-    },
-    "dependencies": {
-      "aurelia-bootstrapper": "^2.1.0",
-      "aurelia-framework": "^1.1.0",
-      "aurelia-logging-console": "^1.0.0",
-      "aurelia-pal-browser": "^1.1.0",
-      "aurelia-testing": "^1.0.0-beta.2.0.1",
-      "jquery": "^3.1.1",
-      "semantic-ui": "github:Semantic-Org/Semantic-UI@^2.2.9"
-    },
-    "devDependencies": {
-      "aurelia-polyfills": "^1.0.0-beta.1.1.0"
-    }
-  },
   "peerDependencies": {
     "aurelia-framework": "^1.1.0",
-    "jquery": "^3.1.1",
-    "semantic-ui": "^2.2.9"
+    "jquery": "^3.1.1"
+  },
+  "dependencies": {
+    "npm": "^6.0.0"
   }
 }
-
-

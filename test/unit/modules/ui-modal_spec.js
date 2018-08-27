@@ -38,20 +38,8 @@ describe('ui-modal', () => {
 	});
 
 
-	fdescribe( 'as a custom attribute', () => {
+	describe( 'as a custom attribute', () => {
 
-		it( "can be made detachable", done => {
-			component.
-				inView(`
-				<div ui-modal></div>
-				`).
-				boundTo({}).
-				create( bootstrap ).then( () => {
-					expect( component.element ).toHaveCssClasses( 'ui', 'detachable', 'modal' );
-				}).
-				then( done ).
-				catch( done.fail );
-		});
 
 	});
 

@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Statistic - http://semantic-ui.com/views/statistic.html

@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Menu - http://semantic-ui.com/collections/menu.html

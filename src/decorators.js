@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 import {constants} from './constants';
 import {bindable, customAttribute, customElement} from 'aurelia-framework';

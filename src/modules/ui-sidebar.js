@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Sidebar - http://semantic-ui.com/modules/sidebar.html

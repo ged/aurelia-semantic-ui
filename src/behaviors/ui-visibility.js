@@ -1,12 +1,10 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Visibility - http://semantic-ui.com/behaviors/visibility.html
  */
 
-import * as constants from '../constants';
-import {uiAttribute, bindableToggle} from '../decorators';
+import {uiAttribute} from '../decorators';
 import {bindable} from 'aurelia-framework';
 import {SemanticUIAttribute} from '../ui-base';
 
@@ -60,7 +58,6 @@ export class SemanticUIVisibilityAttribute extends SemanticUIAttribute {
 
 	get options() {
 		let opts = Object.assign( {}, this.visibilityCallbacks );
-
 		opts.type = this.visibilityType;
 
 		this.logger.debug( "Visibility options are: ", opts );
@@ -72,6 +69,7 @@ export class SemanticUIVisibilityAttribute extends SemanticUIAttribute {
 		if ( this.type ) return this.type;
 		return (this.element.tagName === 'IMG') ? 'image' : false;
 	}
+
 
 	get visibilityCallbacks() {
 		let callbacks = {};
@@ -93,6 +91,7 @@ export class SemanticUIVisibilityAttribute extends SemanticUIAttribute {
 
 
 	bind( context, override ) {
+		this.logger.debug( "Bound!" );
 		super.bind( context, override );
 		this.callbackScope = context;
 	}
@@ -105,6 +104,7 @@ export class SemanticUIVisibilityAttribute extends SemanticUIAttribute {
 
 
 	attached() {
+		this.logger.debug( "Attached!" );
 		$( this.semanticElement ).visibility( this.options );
 	}
 

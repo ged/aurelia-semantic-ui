@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Loader - http://semantic-ui.com/elements/loader.html

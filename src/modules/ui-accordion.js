@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Accordion - http://semantic-ui.com/modules/accordion.html

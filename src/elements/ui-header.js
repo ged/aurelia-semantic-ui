@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Content Header - http://semantic-ui.com/elements/header.html#content-headers

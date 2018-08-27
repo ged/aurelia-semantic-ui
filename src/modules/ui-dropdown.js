@@ -1,14 +1,12 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Dropdown - http://semantic-ui.com/modules/dropdown.html
  */
 
-import * as constants from '../constants';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
 import {uiElement, uiAttribute, bindableToggle} from '../decorators';
-import {inject, bindable, bindingMode} from 'aurelia-framework';
+import {bindable, bindingMode} from 'aurelia-framework';
 
 @uiElement( 'dropdown' )
 export class SemanticUIDropdownElement extends SemanticUIElement {
@@ -34,7 +32,9 @@ export class SemanticUIDropdownAttribute extends SemanticUIAttribute {
 			this.logger.debug( "Selection set to: ", name );
 			this.element.classList.add( 'selection' );
 
-			if ( this.element.tagName !== 'select' ) {
+			this.logger.debug( "Tag name set to: ", this.element.tagName );
+
+			if ( this.element.tagName !== 'SELECT' ) {
 				this.logger.debug( "Non-select dropdown." );
 
 				// TODO: This doesn't work yet; it injects the hidden field, but the binding
@@ -47,7 +47,7 @@ export class SemanticUIDropdownAttribute extends SemanticUIAttribute {
 					input.type = 'hidden';
 					input.name = name;
 
-					let binding = document.createAttribute( "value.bind" );
+					let binding = document.createAttribute( "model.bind" );
 					binding.value = name;
 					input.setAttributeNode( binding );
 
@@ -60,10 +60,10 @@ export class SemanticUIDropdownAttribute extends SemanticUIAttribute {
 	}
 
 
-    attached() {
+	attached() {
 		this.logger.debug( "Activating dropdown for ", this.element, " with options: ", this.options );
-        $( this.element ).dropdown( this.options );
-    }
+		$( this.element ).dropdown( this.options );
+	}
 
 }
 

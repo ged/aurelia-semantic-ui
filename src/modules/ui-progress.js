@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Progress - http://semantic-ui.com/modules/progress.html

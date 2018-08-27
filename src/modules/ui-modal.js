@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Modal - http://semantic-ui.com/modules/modal.html
@@ -8,7 +7,7 @@
 import * as constants from '../constants';
 import {bindable} from 'aurelia-framework';
 import {SemanticUIElement, SemanticUIAttribute} from '../ui-base';
-import {uiElement, uiAttribute, bindableEnum} from '../decorators';
+import {uiElement, uiAttribute, bindableToggle} from '../decorators';
 
 const MODAL_SETTINGS = {
 	detachable: true,
@@ -22,7 +21,7 @@ const MODAL_SETTINGS = {
 	dimmerSettings: { closable: false, useCSS: true },
 	transition: 'scale',
 	duration: 400,
-	queue: false,
+	queue: false
 };
 
 const MODAL_CALLBACKS = [
@@ -41,20 +40,21 @@ export class SemanticUIModalElement extends SemanticUIElement {}
 @uiAttribute('modal')
 export class SemanticUIModalAttribute extends SemanticUIAttribute {
 
-	@bindable shown             = false;
+	@bindableToggle shown             = false;
 
-	@bindable detachable        = true;
-	@bindable autoFocus         = true;
-	@bindable observeChanges    = false;
-	@bindable allowMultiple     = false;
-	@bindable keyboardShortcuts = true;
+	@bindableToggle detachable        = true;
+	@bindableToggle autoFocus         = true;
+	@bindableToggle observeChanges    = false;
+	@bindableToggle allowMultiple     = false;
+	@bindableToggle keyboardShortcuts = true;
+	@bindableToggle closable          = true;
+	@bindableToggle queue             = false;
+
 	@bindable offset            = 0;
 	@bindable context           = 'body';
-	@bindable closable          = true;
 	@bindable dimmerSettings    = { closable: false, useCSS: true };
 	@bindable transition        = 'scale';
 	@bindable duration          = 400;
-	@bindable queue             = false;
 
 	@bindable onShow    = null;
 	@bindable onVisible = null;
@@ -77,15 +77,15 @@ export class SemanticUIModalAttribute extends SemanticUIAttribute {
 			dimmerSettings: this.dimmerSettings,
 			transition: this.transition,
 			duration: this.duration,
-			queue: this.queue,
+			queue: this.queue
 		};
 
-		if ( this.onShow ) { settings.onShow = this.onShow }
-		if ( this.onVisible ) { settings.onVisible = this.onVisible }
-		if ( this.onHide ) { settings.onHide = this.onHide }
-		if ( this.onHidden ) { settings.onHidden = this.onHidden }
-		if ( this.onApprove ) { settings.onApprove = this.onApprove }
-		if ( this.onDeny ) { settings.onDeny = this.onDeny }
+		if ( this.onShow ) { settings.onShow = this.onShow; }
+		if ( this.onVisible ) { settings.onVisible = this.onVisible; }
+		if ( this.onHide ) { settings.onHide = this.onHide; }
+		if ( this.onHidden ) { settings.onHidden = this.onHidden; }
+		if ( this.onApprove ) { settings.onApprove = this.onApprove; }
+		if ( this.onDeny ) { settings.onDeny = this.onDeny; }
 
 		return settings;
 	}
@@ -135,8 +135,11 @@ export class SemanticUIModalAttribute extends SemanticUIAttribute {
 
 	// Aurelia custom attribute API
 
-	attached() {
+	attached( ...args ) {
 		this.configure();
+		if ( super.attached ) {
+			return super.attached( ...args );
+		}
 	}
 
 

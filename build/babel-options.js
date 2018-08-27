@@ -12,7 +12,7 @@ exports.base = function() {
     comments: false,
     compact: false,
     code:true,
-    presets: [ 'es2015-loose', 'stage-1'],
+    presets: [ 'env', 'stage-1'],
     plugins: [
       'syntax-flow',
       'transform-decorators-legacy',

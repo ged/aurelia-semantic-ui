@@ -6,11 +6,53 @@
  * - Michael Granger <ged@FaerieMUD.org>
  */
 
-import jQuery from 'jquery';
-import 'semantic-ui';
+import jQuery from 'jquery'; // eslint-disable-line no-unused-vars
+import {PLATFORM} from 'aurelia-framework';
 
+import './semantic/semantic';
 
-export var VERSION = '0.0.1-alpha.21';
+export const VERSION = '0.0.2-alpha.1';
+
+// Aurelia plugin hook
+export function configure(config, callback=null) {
+	config.globalResources(
+		PLATFORM.moduleName('aurelia-semantic-ui/behaviors/ui-visibility'),
+		PLATFORM.moduleName('aurelia-semantic-ui/collections/ui-breadcrumb'),
+		PLATFORM.moduleName('aurelia-semantic-ui/collections/ui-form'),
+		PLATFORM.moduleName('aurelia-semantic-ui/collections/ui-grid'),
+		PLATFORM.moduleName('aurelia-semantic-ui/collections/ui-menu'),
+		PLATFORM.moduleName('aurelia-semantic-ui/collections/ui-message'),
+		PLATFORM.moduleName('aurelia-semantic-ui/collections/ui-table'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-button'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-container'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-divider'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-flag'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-header'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-icon'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-image'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-input'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-label'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-list'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-loader'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-rail'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-reveal'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-segment'),
+		PLATFORM.moduleName('aurelia-semantic-ui/elements/ui-step'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-accordion'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-checkbox'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-dimmer'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-dropdown'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-modal'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-popup'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-progress'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-search'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-sidebar'),
+		PLATFORM.moduleName('aurelia-semantic-ui/modules/ui-sticky'),
+		PLATFORM.moduleName('aurelia-semantic-ui/views/ui-card'),
+		PLATFORM.moduleName('aurelia-semantic-ui/views/ui-feed'),
+		PLATFORM.moduleName('./views/ui-statistic')
+	);
+}
 
 export * from './behaviors/ui-visibility';
 
@@ -51,45 +93,4 @@ export * from './modules/ui-sticky';
 export * from './views/ui-card';
 export * from './views/ui-feed';
 export * from './views/ui-statistic';
-
-// Aurelia plugin hook
-export function configure(config) {
-	config.globalResources(
-		'./behaviors/ui-visibility',
-		'./collections/ui-breadcrumb',
-		'./collections/ui-form',
-		'./collections/ui-grid',
-		'./collections/ui-menu',
-		'./collections/ui-message',
-		'./collections/ui-table',
-		'./elements/ui-button',
-		'./elements/ui-container',
-		'./elements/ui-divider',
-		'./elements/ui-flag',
-		'./elements/ui-header',
-		'./elements/ui-icon',
-		'./elements/ui-image',
-		'./elements/ui-input',
-		'./elements/ui-label',
-		'./elements/ui-list',
-		'./elements/ui-loader',
-		'./elements/ui-rail',
-		'./elements/ui-reveal',
-		'./elements/ui-segment',
-		'./elements/ui-step',
-		'./modules/ui-accordion',
-		'./modules/ui-checkbox',
-		'./modules/ui-dimmer',
-		'./modules/ui-dropdown',
-		'./modules/ui-modal',
-		'./modules/ui-popup',
-		'./modules/ui-progress',
-		'./modules/ui-search',
-		'./modules/ui-sidebar',
-		'./modules/ui-sticky',
-		'./views/ui-card',
-		'./views/ui-feed',
-		'./views/ui-statistic'
-	);
-}
 

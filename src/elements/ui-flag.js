@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
 * Flag - http://semantic-ui.com/elements/flag.html

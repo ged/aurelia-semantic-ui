@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Segment - http://semantic-ui.com/elements/segment.html

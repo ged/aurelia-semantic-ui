@@ -19,7 +19,7 @@ describe('the Aurelia configuration', () => {
 
 	it('should register a global resource', () => {
 		expect(mockedConfiguration.resources).toContain(
-			'./behaviors/ui-visibility'
+			'aurelia-semantic-ui/behaviors/ui-visibility'
 		);
 	});
 

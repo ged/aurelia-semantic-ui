@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Content Reveal - http://semantic-ui.com/elements/reveal.html

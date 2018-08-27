@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Sticky - http://semantic-ui.com/modules/sticky.html

@@ -1,13 +1,18 @@
 {
 	"parser": "babel-eslint",
+	"extends": "./node_modules/aurelia-tools/.eslintrc.json",
 	"env": {
 		"browser": true,
 		"node": true
 	},
 	"rules": {
-		"quotes": 0,
-		"no-multi-spaces": 0,
-		"no-trailing-spaces": 1,
-		"no-mixed-spaces-and-tabs": 0
+		"indent": ["error", "tab"],
+		"quotes": "off",
+		"no-else-return": "off",
+		"one-var": "off",
+		"brace-style": "off",
+		"padded-blocks": "off",
+		"space-infix-ops": "off",
+		"key-spacing": "off"
 	}
 }

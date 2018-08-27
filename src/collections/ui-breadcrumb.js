@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Breadcrumb - http://semantic-ui.com/collections/breadcrumb.html

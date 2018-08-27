@@ -1,5 +1,4 @@
 /* -*- javascript -*- */
-"use strict";
 
 /**
  * Feed - http://semantic-ui.com/views/feed.html
