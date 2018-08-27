@@ -11,7 +11,7 @@ import {PLATFORM} from 'aurelia-framework';
 
 import './semantic/semantic';
 
-export const VERSION = '0.0.2-alpha.1';
+export const VERSION = '0.2.0';
 
 // Aurelia plugin hook
 export function configure(config, callback=null) {
